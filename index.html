@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>developers</title>
+  <link rel="icon" href="assets/logo-b.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Style once, use everywhere. A build system for creating cross-platform styles.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify@4.8.0/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/docsify-themeable/dist/css/theme-defaults.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500|Source+Sans+Pro:400,400i,600" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="./my-theme.css">
+
+
+</head>
+<body>
+  <div id="app">  </div>
+  <div class="cusImg">Developers</div>
+  
+  <!-- 导航栏 -->
+  <!-- <navbar class="navbar-custom">
+    <a href="https://www.baidu.com/" rel = "nofollow" target = "_blank" title = "小z博客">developers</a> 
+    <a href="https://www.baidu.com/" rel="external nofollow" target = "_blank"  rel = "nofollow" target = "_blank" title = "IPinfo">developers</a> 
+  </navbar> -->
+  <script>
+    window.$docsify = {
+      navbar:true,
+	  // name: '<img src="assets/Group.svg" data-origin="assets/logo.png" alt="Style Dictionary logo" class="sidebar-logo">Style Dictionary',
+	  coverpage: false,
+	  auto2top: true,
+	  autoHeader: true,
+	  loadNavbar: true,
+	  subMaxLevel: 3,
+      maxLevel: 4,
+	  loadSidebar: true,
+	  mergeNavbar: true,
+      repo: '',
+
+	  themeable: {
+          readyTransition : true, // default
+          responsiveTables: true  // default
+      },
+    
+	  alias: {
+      '/_navbar.md': '/en-us/_navbar.md',
+	  '/_sidebar.md': '/en-us/_sidebar.md',
+      '/': '/en-us/',
+      
+	 },
+
+
+
+	// 完整配置参数
+    search: {
+      maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      paths: 'auto', // or 'auto'
+
+      // 支持本地化
+      placeholder: {
+		'/en-us/': 'Search',
+        '/zh-cn/': '搜索',
+		'/': 'Search'
+        
+      },
+
+      // 支持本地化
+      noData: {
+		'/en-us/': 'No Results',
+        '/zh-cn/': '找不到结果',
+		'/': 'No Results'
+      },
+
+      // 搜索标题的最大程级, 1 - 6
+      depth: 2
+    },
+
+
+	notFoundPage: {
+    '/zh-cn': 'zh-cn/_404.md',
+	'/en-us': 'en-us/_404.md'
+  },
+  plugins: [
+  function (hook, vm) {
+    hook.init(function() {
+      // 初始化时调用，只调用一次，没有参数。
+    })
+
+    hook.beforeEach(function(content) {
+      return content.replace(/(#{2,})/g,"----------\n$1");
+    })
+
+    hook.afterEach(function(html, next) {
+      // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
+      // ...
+      // 异步处理完成后调用 next(html) 返回结果
+      next(html)
+    })
+
+    hook.doneEach(function() {
+      // 每次路由切换时数据全部加载完成后调用，没有参数。
+      // ...
+    })
+
+    hook.mounted(function() {
+      // 初始化完成后调用 ，只调用一次，没有参数。
+    })
+
+    hook.ready(function() {
+      // 初始化并第一次加完成数据后调用，没有参数。
+    })
+  }
+ ]
+
+    }
+  </script>
+  <script src="//unpkg.com/docsify@4.8.6/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-objectivec.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify-themeable"></script>
+</body>
+</html>
