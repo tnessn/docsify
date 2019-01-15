@@ -45,7 +45,7 @@ At present，Samurai can run on Windows and Linux, please click [here](https://g
 
 *Just follow the Installation wizard for the first time Samurai being  installed, otherwith,  you need to manually delete the folder (Default path: <u>C:\Users\Username\AppData\Roaming\Samurai</u>，and the Username is the account name of your login to the PC. ) where you saved the Blockchain data and as shown in the following figure, and then follow the installation wizard to install.*
 
-![Image text](image/Keystore_address.png)
+![Image text](en-us/_platon-samurai-EN/image/Keystore_address.png)
 
 
 
