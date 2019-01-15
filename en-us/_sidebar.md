@@ -1,5 +1,5 @@
 - Basics
-
+- 
 - [Introduction](en-us/README)
 - [White Paper](en-us/[English]-Whitepaper)
 - [Getting Started](en-us/[English]-Getting-Started)

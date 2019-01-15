@@ -88,7 +88,7 @@
     })
 
     hook.beforeEach(function(content) {
-      return content.replace(/(#{2,})/g,"----------\n$1");
+      return content.replace(/(#{2,})/g,"----------\n$1").replace(/(#{3,})/g,"\n$1");
     })
 
     hook.afterEach(function(html, next) {

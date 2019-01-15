@@ -1,6 +1,6 @@
 -   [概览](#概览)
 -   [版本说明](#版本说明)
-    -   [v0.2.0 更新说明](#v0.2.0-更新说明)
+    -   [v0.2.0 更新说明](#v020-更新说明)
 -   [快速入门](#快速入门)
     -   [安装或引入](#安装或引入)
     -   [初始化代码](#初始化代码)
@@ -13,7 +13,7 @@
     -   [合约sendRawTransaction调用](#合约sendrawtransaction调用)
     -   [合约event](#合约event)
 -   [web3](#web3)
-    -   [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准json-rpc)
+    -   [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准JSON-RPC)
     -   [新增的接口](#新增的接口)
         -   [ethPendingTx](#ethpendingtx)
 
@@ -37,20 +37,30 @@
 ### maven
 1. 仓库地址 https://sdk.platon.network/nexus/content/groups/public/
 2. maven方式引用
+
+
 ```
 <dependency>
     <groupId>com.platon.client</groupId>
     <artifactId>core</artifactId>
     <version>x.x.x</version>
 </dependency>
+
+
 ```
 3. gradle方式引用
+
+
 ```
 compile "com.platon.client:core:x.x.x"
+
+
 ```
 ### 合约骨架生成工具
 1. 安装包下载 https://download.platon.network/client-sdk.zip
 2. 解压后说明
+
+
 ```
 .
 +-- _bin
@@ -59,8 +69,11 @@ compile "com.platon.client:core:x.x.x"
 +-- _lib
 |   +-- xxx.jar                        //类库
 |   +-- ...
+
+
 ```
 3. 到bin目录执行 ./client-sdk
+
 
 ```
               _      _____ _     _
@@ -73,16 +86,23 @@ __      _____| |__      / /_     _   ___
                         |__/
 
 Usage: client-sdk version|wallet|solidity|truffle|wasm ...
+
+
 ```
 
 ## 初始化代码
+
+
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
+
+
 ```
 
 # 合约
 
 ## 合约示例
+
 
 ```
 namespace platon {
@@ -134,16 +154,24 @@ extern "C" {
     }
 }
 //platon autogen end
+
+
 ```
 
 ## 合约骨架生成
 1. wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [wiki](https://github.com/PlatONnetwork/wiki/wiki)
 2. 使用合约骨架生成工具
+
+
 ```
 client-sdk wasm generate /path/to/token.wasm /path/to/token.cpp.abi.json -o /path/to/src/main/java -p com.your.organisation.name
+
+
 ```
 
 ## 加载合约
+
+
 ```
 Web3j web3j = Web3j.build(new HttpService("http://localhost:6789"));
 Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/walletfile");
@@ -152,9 +180,13 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Token contract = Token.load(binData, "0x<address>", web3j, credentials, new StaticGasProvider(GAS_PRICE, GAS_LIMIT));
+
+
 ```
 
 ## 部署合约
+
+
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
 Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/walletfile");
@@ -163,9 +195,13 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Token contract = Token.deploy(web3, credentials, binData, new StaticGasProvider(GAS_PRICE,GAS_LIMIT)).send();
+
+
 ```
 
 ## 合约call调用
+
+
 ```
 Request<?, org.web3j.protocol.core.methods.response.EthCall> req = web3j.ethCall(Transaction.createEthCallTransaction(
                "0xa70e8dd61c5d32be8058bb8eb970870f07233155",
@@ -175,9 +211,12 @@ Request<?, org.web3j.protocol.core.methods.response.EthCall> req = web3j.ethCall
 org.web3j.protocol.core.methods.response.EthCall res = req.send();
 String value = res.getValue();
 
+
 ```
 
 ## 合约sendRawTransaction调用
+
+
 ```
 Web3j web3j = Web3j.build(new HttpService("http://localhost:6789"));
 
@@ -186,9 +225,11 @@ Request<?, org.web3j.protocol.core.methods.response.EthSendTransaction> req = we
 org.web3j.protocol.core.methods.response.EthSendTransaction res = req.send();
 String transactionHash = res.getTransactionHash();
 
+
 ```
 ## 合约event
 假设合约中定义了名称为transfer的事件，则可以使用下面的代码监听：
+
 
 ```
 String contractAddress = "0x223424fskljlsldfsf";
@@ -199,10 +240,12 @@ filter.addSingleTopic(EventEncoder.encode(event));
 web3j.ethLogObservable(filter).subscribe(log -> {
     System.out.println(log);
 });
+
+
 ```
 
 # web3
-## web3 eth相关 (标准JSON RPC )
+## web3 eth相关 (标准JSON RPC)
 - java api的使用请参考[web3j github](https://github.com/web3j/web3j)
 
 ## 新增的接口
@@ -219,8 +262,12 @@ web3j.ethLogObservable(filter).subscribe(log -> {
 EthPendingTransactions属性中的transactions即为对应存储数据
 
 **示例**
+
+
 ```
 Request<?, EthPendingTransactions> req = web3j.ethPendingTx();
 EthPendingTransactions res = req.send();
 List<Transaction> transactions = res.getTransactions();
+
+
 ```

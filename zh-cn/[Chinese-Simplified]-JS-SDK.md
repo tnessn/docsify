@@ -12,7 +12,7 @@
   - [合约call调用](#合约call调用)
   - [合约sendRawTransaction调用](#合约sendRawTransaction调用)
 - [web3](#web3)
-  - [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准json-rpc)
+  - [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准JSON-RPC)
   - [新增的接口](#新增的接口)
     - [contract](#contract)
       - [getPlatONData](#contract.getPlatONData)
