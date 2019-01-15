@@ -29,6 +29,7 @@ Windows安装程序下载后，双击安装程序并按照说明进行操作。�
 *注意：由于当前测试阶段，底层版本更新比较大，非初次安装，请您先卸载完后再手动删除如下图所示的保存区块数据的文件夹（默认路径：C:\Users\Username\AppData\Roaming\Samurai，其中Username为您登陆PC的账号名称），然后再按照安装引导进行安装。*
 
 ![Image text](_platon-samurai/image/Keystore_address-cn.png)
+
 ### Linux安装
 
 deb文件安装说明：   
