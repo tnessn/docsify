@@ -6,15 +6,15 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 
 1.客户端【合约】页面，点击【部署合约】，如下图所示：
 
-![Image text](./platon-samurai/image/Contract_deploy-cn.png)
+![Image text](image/Contract_deploy-cn.png)
 
 2.页面切换进入【部署合约】页面，选择【发送方】、资产【发送数量】（非必填项）,导入【合约字节码】、【合约ABI（接口）】，设定手续费，点击【部署】，如下图所示：
 
-![Image text](./platon-samurai/image/Contract_info_input-cn.png)
+![Image text](image/Contract_info_input-cn.png)
 
 3.在弹出的确认对话框中，输入发送方【钱包密码】，点击【提交】，则该合约开始上链。
 
-![Image text](./platon-samurai/image/Contract_creation_confirm-cn.png)
+![Image text](image/Contract_creation_confirm-cn.png)
 
 **注：合约字节码**
 
@@ -29,11 +29,11 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 
 1.客户端【合约】页面，点击【观察合约】，如下图所示：
 
-![Image text](./platon-samurai/image/Add_contract-cn.png)
+![Image text](image/Add_contract-cn.png)
 
 2.进入添加【观察合约】页面，输入【合约名称】、【合约地址】、【合约接口】，点击【添加】，如下图所示：
 
-![Image text](./platon-samurai/image/Add_contract_info-cn.png)
+![Image text](image/Add_contract_info-cn.png)
 
 3.合约添加完成，在合约页面即可查看该合约。
 
@@ -43,22 +43,22 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 
 具体操作如下图所示：
 
-![Image text](./platon-samurai/image/Address+ABI-cn.png)
+![Image text](image/Address+ABI-cn.png)
 
 
 ## <a name="how_to_run"></a>怎样运行Wasm合约
 
 1.【合约】页面，点击任意一个创建好的合约，进入该合约详情页面，如下图所示：
 
-![Image text](./platon-samurai/image/Select_contract-cn.png)
+![Image text](image/Select_contract-cn.png)
 
 2.选择要执行的合约功能函数，输入相关参数，选择【执行钱包】，点击【执行】，如下图所示：
 
-![Image text](./platon-samurai/image/Execution_set-cn.png)
+![Image text](image/Execution_set-cn.png)
 
 3.弹出确认对话框，输入执行钱包密码，点击【提交】，则该合约交易及发送成功。
 
-![Image text](./platon-samurai/image/Execute_Contract-cn.png)
+![Image text](image/Execute_Contract-cn.png)
 
 
 

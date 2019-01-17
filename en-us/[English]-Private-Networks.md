@@ -14,6 +14,10 @@ Please note: the following operations are performed in the working directory.
 
 
 
+
+
+
+
 
 - Modify the file name after downloading to `D:\platon-node` through the browser on Windows
 
@@ -23,6 +27,10 @@ D:\platon-node> move ethkey-windows-amd64.exe ethkey.exe
 
 
 ```
+
+
+
+
 
 
 
@@ -43,6 +51,10 @@ $ mv ethkey-linux-amd64 ethkey
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -55,6 +67,10 @@ PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f52
 
 
 ```
+
+
+
+
 
 
 
@@ -79,6 +95,10 @@ PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -94,6 +114,10 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 
 ```
+
+
+
+
 
 
 
@@ -161,6 +185,10 @@ Please note: the echo command line argument is the node private key and needs to
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -172,6 +200,10 @@ D:\platon-node> type .\data\platon\nodekey
 
 
 ```
+
+
+
+
 
 
 
@@ -195,6 +227,10 @@ $ cat ./data/platon/nodekey
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -204,6 +240,10 @@ D:\platon-node> platon.exe --datadir .\data init platon.json
 
 
 ```
+
+
+
+
 
 
 
@@ -231,6 +271,10 @@ Successfully wrote genesis state
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -240,6 +284,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --r
 
 
 ```
+
+
+
+
 
 
 
@@ -294,8 +342,16 @@ In order to run multiple `platon` nodes locally, you must ensure that:
 
 
 
+
+
+
+
 
 - Each node instance has a separate data directory (--datadir)
+
+
+
+
 
 
 
@@ -304,8 +360,16 @@ In order to run multiple `platon` nodes locally, you must ensure that:
 
 
 
+
+
+
+
 
 - Each node must know about the other
+
+
+
+
 
 
 
@@ -313,6 +377,10 @@ In order to run multiple `platon` nodes locally, you must ensure that:
 - The IPC port must be restricted or unique
 
 1. **Create two data directories called data0 and data1 in platon-node directory and two new coinbase accounts for each of the two nodes.**
+
+
+
+
 
 
 
@@ -338,6 +406,10 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 
 
 ```
+
+
+
+
 
 
 
@@ -368,6 +440,10 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -385,6 +461,10 @@ PublicKey :  1b22ffc514b806c752b3f145aa644173469e2b425b4847c9ce7c318451a1a249d06
 
 
 ```
+
+
+
+
 
 
 
@@ -418,8 +498,16 @@ Modify the platon.json file:
 
 
 
+
+
+
+
 
 - Replace `node0-pubkey` with the ***node ID*** of node 0 generated in step 2.
+
+
+
+
 
 
 
@@ -428,8 +516,16 @@ Modify the platon.json file:
 
 
 
+
+
+
+
 
 - Replace `node0-account-address` with the ***Address*** of node 0 generated in step 1.
+
+
+
+
 
 
 
@@ -465,6 +561,10 @@ Please note: the echo command line argument is the node private key and needs to
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -480,6 +580,10 @@ D:\platon-node> type .\data1\platon\nodekey
 
 
 ```
+
+
+
+
 
 
 
@@ -505,6 +609,10 @@ $ cat ./data1/platon/nodekey
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -515,6 +623,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --
 
 
 ```
+
+
+
+
 
 
 
@@ -535,6 +647,10 @@ $ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 
 
 
 
+
+
+
+
 
 - Windows command line:
 
@@ -546,6 +662,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --
 
 ```
 Please note: all nodes except the first node must be started with --ipcdisable option on Windows.
+
+
+
+
 
 
 
