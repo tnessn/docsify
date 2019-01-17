@@ -73,7 +73,7 @@ Unlike Ethereum smart contracts mainly written in solidity, Platon's smart contr
 
 **Privacy Contracts** also support high-level language development and compile to executable Intermediate Language (LLVM IR). The input data to privacy contracts is stored locally on data nodes. The data nodes perform private computation off the chain using secure multiparty computation, and submit the computation result to the chain.
 
-## Can my data be exchanged through Platon under the premise of ensuring privacy?
+## Can my data be exchanged through PlatON under the premise of ensuring privacy?
 
 PlatON's privacy contracts can be used for secure transactions of data. Privacy contracts guarantee data privacy and the automatic delivery of data and tokens between two parties in a transaction.
 

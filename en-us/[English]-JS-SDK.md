@@ -120,10 +120,10 @@ How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [w
 
 ##### Parameters
 
-|  Name                  Type         Attributes   Description
-|----------------------- ------------ ------------ -------
-|deployData |String |Mandatory| Signed transaction data in hex|
-|callback|Funciton  |Optional| call back function for asynchronous execution|
+|  Name   |    Type  |       Attributes  | Description |
+|:-------- |:-------- |:-------- | :-------- |
+|deployData |String |Mandatory | Signed transaction data in hex |
+|callback |Funciton |Optional | call back function for asynchronous execution |
 
 ##### Sample code
 

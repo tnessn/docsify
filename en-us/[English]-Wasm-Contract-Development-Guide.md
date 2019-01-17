@@ -6,7 +6,7 @@ The smart contract system used in the `PlatON` platform is completely different 
 
 PlatON is essentially a `serverless`, distributed service platform under a decentralized topology. The Wasm contracts are FaaS (Functions as a Service) applications deployed on it. Users only need to submit the contract code to the PlatON platform in order to deploy the contracts as services, and then pay for the resources consumed in the process of executing the code.
 
-The Wasm contracts use `C++` syntax. A large class library - the [Wasm contract built-in library](https://pwasmdoc.platon.network/) \- is provided in order to simplify the process of integrating with the PlatON platform and writing high-performance, powerful smart contracts.
+The Wasm contracts use `C++` syntax. A large class library - the [Wasm contract built-in library](https://pwasmdoc.platon.network/modules.html) \- is provided in order to simplify the process of integrating with the PlatON platform and writing high-performance, powerful smart contracts.
 
 ### The PlatON virtual machine
 
@@ -23,7 +23,7 @@ This document is mainly an introduction to Wasm contract development guide under
 * [Write your first Wasm contract](en-us/wasm-contract-EN/_setting-up-Wasm-Contract-dev-env#write-contract)
 * [Deploying contracts and Testing](en-us/wasm-contract-EN/_setting-up-Wasm-Contract-dev-env#deploy-and-test)
 
-Common issues
+## Common issues
 
 **Unable to deploy contract**
 

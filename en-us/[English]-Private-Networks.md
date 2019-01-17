@@ -12,20 +12,6 @@ Please note: the following operations are performed in the working directory.
 1. **Download the public and private key pair generation tool `ethkey` for the corresponding platform [here](https://download.platon.network/ethkey-windows-amd64.exe).**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Modify the file name after downloading to `D:\platon-node` through the browser on Windows
 
@@ -35,20 +21,6 @@ D:\platon-node> move ethkey-windows-amd64.exe ethkey.exe
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -65,20 +37,6 @@ $ mv ethkey-linux-amd64 ethkey
 2. **Run the public and private key pair generation tool `ethkey` to generate a node ID and a node private key.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -91,20 +49,6 @@ PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f52
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -125,20 +69,6 @@ PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private
 3. **Generate a node coinbase account. For testing, you can pre-fund the account in the genesis block.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -154,20 +84,6 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -195,7 +111,7 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
 ```
 {
     "config": {
-    "chainId": 300,
+    "chainId": 100,
     "homesteadBlock": 1,
     "eip150Block": 2,
     "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -207,10 +123,10 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
     }
   },
   "nonce": "0x0",
-  "timestamp": "0x5c074288",
-  "extraData": "0x00",
-  "gasLimit": "0x47b760",
-  "difficulty": "0x40000",
+  "timestamp": "0x5bc94a8a",
+  "extraData": "0x00000000000000000000000000000000000000000000000000000000000000007a9ff113afc63a33d11de571a679f914983a085d1e08972dcb449a02319c1661b931b1962bce02dfc6583885512702952b57bba0e307d4ad66668c5fc48a45dfeed85a7e41f0bdee047063066eae02910000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0x99947b760",
+  "difficulty": "0x1",
   "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "coinbase": "0x0000000000000000000000000000000000000000",
   "alloc": {
@@ -231,20 +147,6 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
 Please note: the echo command line argument is the node private key and needs to be replaced with the node private key generated in step 2.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -256,20 +158,6 @@ D:\platon-node> type .\data\platon\nodekey
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -289,20 +177,6 @@ $ cat ./data/platon/nodekey
 6. **Execute the following command to initialize the genesis state.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -312,20 +186,6 @@ D:\platon-node> platon.exe --datadir .\data init platon.json
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -349,20 +209,6 @@ Successfully wrote genesis state
 7. **Start nodes**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -372,20 +218,6 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --r
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -413,7 +245,7 @@ $ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 -
 
 At this time, log records containing the words "blockNumber" and "growth" appearing in the standard output **indicate that consensus was reached, the chain started successfully, and that blocks are being successfully created**.
 
-We have now built a Platon private network containing a single node with the network name `platon` and a network `ID` of `300`.
+We have now built a Platon private network containing a single node with the network name `platon` and a network `ID` of `100`.
 You can perform any operation on it, just like on a single node in a public network.
 
 8. **Running in the background**
@@ -436,89 +268,19 @@ A `PlatON Cluster` is a network consisting of multiple nodes. At this point we a
 
 In order to run multiple `platon` nodes locally, you must ensure that:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Each node instance has a separate data directory (--datadir)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - Each instance runs on a different port, both `platon` and rpc (--port and --rpcport )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Each node must know about the other
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - The IPC port must be restricted or unique
 
 1. **Create two data directories called data0 and data1 in platon-node directory and two new coinbase accounts for each of the two nodes.**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -542,20 +304,6 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -582,20 +330,6 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 2. **Run`ethkey` to generate a node ID and a node private key for each of the two nodes.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -613,20 +347,6 @@ PublicKey :  1b22ffc514b806c752b3f145aa644173469e2b425b4847c9ce7c318451a1a249d06
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -656,70 +376,14 @@ Add the node information of the two nodes to the **initialNodes** array. Since w
 
 Modify the platon.json file:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Replace `node0-pubkey` with the ***node ID*** of node 0 generated in step 2.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - Replace `node1-pubkey` with the ***node ID*** of node 1 generated in step 2.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Replace `node0-account-address` with the ***Address*** of node 0 generated in step 1.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - Replace `node1-account-address` with the ***Address*** of node 1 generated in step 1.
@@ -751,20 +415,6 @@ Modify the platon.json file:
 Please note: the echo command line argument is the node private key and needs to be replaced with the node private key generated in step 2.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -780,20 +430,6 @@ D:\platon-node> type .\data1\platon\nodekey
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -815,20 +451,6 @@ $ cat ./data1/platon/nodekey
 5. **Initialize the genesis information for node 0 and start the node.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -839,20 +461,6 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -869,20 +477,6 @@ $ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 
 6. **Initialize the genesis information for node 1 and start the node.**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Windows command line:
 
@@ -894,20 +488,6 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --
 
 ```
 Please note: all nodes except the first node must be started with --ipcdisable option on Windows.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

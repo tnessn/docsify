@@ -19,7 +19,7 @@ $ mkdir -p ~/platon-node
 
 The Ubuntu runtime environment needs to meet the following requirements:
 - System version: `Ubuntu 16.04.1 above`
-- go language development kit: `go(1.7+)`
+- go language development kit: `go(1.11+)`
 
 1. First check if the go language development kit is installed.
 
@@ -30,8 +30,8 @@ $ go version
 
 ```
 If the prompt is empty, it means that golang is not installed. If so, install it with the following steps.
-If golang is already installed and the version is 1.7 and above, skip the following steps.
-If golang version is lower than 1.7, you need to execute `whereis go` to find the installation directory and delete it before installing.
+If golang is already installed and the version is 1.11 and above, skip the following steps.
+If golang version is lower than 1.11, you need to execute `whereis go` to find the installation directory and delete it before installing.
 
 2. Download golang package
 
@@ -74,7 +74,7 @@ $ source ~/.bash_profile
 
 ```
 $ go version
-Go version go1.11.4 linux/amd64
+Go version go1.11.1 linux/amd64
 
 
 ```
@@ -100,8 +100,8 @@ Todo.
 The Ubuntu build environment needs to meet the following requirements:
 - System version: `Ubuntu 16.04.1 above`
 - git：`2.19.1 above`
-- Compiler: `gcc(4.8.0+)`
-- go language development kit: `go(1.7+)`
+- Compiler: `gcc(4.9.2+)`
+- go language development kit: `go(1.11+)`
 
 The PlatON compilation and installation process is as follows:
 
@@ -113,7 +113,7 @@ $ gcc --version
 
 
 ```
-If the gcc version is lower than 4.8.0, you need to upgrade it:
+If the gcc version is lower than 4.9.2, you need to upgrade it:
 
 
 ```
@@ -123,7 +123,16 @@ $ sudo apt-get upgrade gcc
 
 ```
 
-2. Clone `platon` source code from the official repository:
+2. Install git
+
+
+```
+$ sudo apt-get install git
+
+
+```
+
+3. Clone `platon` source code from the official repository:
 
 
 ```
@@ -142,6 +151,45 @@ $ make all
 
 
 ```
+
+>**Hint**：
+>MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Currently only Ubuntu supported**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
+
+To enable MPC functionality on a node, you need to install the `platon` binary executable with `MPC` functionality. The corresponding steps are as follows
+
+- Download [mpclib](https://download.platon.network/mpclib.tar.gz). Here, we put the file under the platon node path (assume `~/platon-node/`) and extract the file.
+
+
+```bash
+$ pwd
+/home/platon/platon-node
+$ tar -xzvf mpclib.tar.gz
+
+
+```
+
+- After unzipping, the mpclib folder appears in `~/platon-node/`.
+
+- Open the profile file with root or sudo
+
+
+```bash
+$ vi /etc/profile
+
+
+```
+
+- Add an environment variable where `XXXX` is the platon user ID on this machine running platon node. Developers or root user need to change 'XXXX' to corresponding platon user ID.
+
+
+```bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/XXXX/platon-node/mpclib
+
+
+```
+
+- use `make all-with-mpc` instead of `make all`
+
 
 5. Copy the compiled `platon` file to `~/platon-node`
 
@@ -163,7 +211,7 @@ C:\Users\PlatON> mkdir D:\platon-node
 ```
 
 The Windows runtime environment needs to meet the following requirements:
-- go language development kit: `go(1.7+)`
+- go language development kit: `go(1.11+)`
 - mingw: `mingw(V6.0.0)`
 
 Open the command prompt with administrator privileges. Install golang and mingw using Chocolatey. If you don't have Chocolatey, you can follow the instructions on [Chocolatey](https://chocolatey.org).
@@ -175,20 +223,20 @@ C:\Users\PlatON> choco install mingw
 
 
 ```
-Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH. After installation, please make sure that the installed version of Go is 1.7 (or higher).
+Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH. After installation, please make sure that the installed version of Go is 1.11 (or higher).
 
 
 ```
 C:\Users\PlatON> go version
-go version go1.11.4 windows/amd64
+go version go1.11.1 windows/amd64
 
 
 ```
 
-There are three installation methods on Windows.
+There are different ways to install on Windows.
 
 ### Installing official binary 
-Windows version of PlatON have been pre-built and can be downloaded [here](https://download.platon.network/platon-windows-amd64.exe). After downloading, you can copy it to `D:\platon-node` directory and use it directly.
+Pre-built Windows version of PlatON can be downloaded [here](https://download.platon.network/platon-windows-amd64.exe). After downloading, you can copy it to `D:\platon-node` directory and use it directly.
 
 
 ```
@@ -200,15 +248,15 @@ C:\Users\PlatON> move platon-windows-amd64.exe D:\platon-node\platon.exe
 ### Installing Chocolatey
 Todo.
 
-### Installing from source
-The Windows build environment needs to meet the following requirements:
+### Building from source code
+The Windows build environment requires:
 - git:`2.19.1`
-- go language development kit: `go(1.11.1+)`
+- go language development kit: `go(1.11+)`
 - mingw: `mingw(V6.0.0)`
 
 The compilation process is as follows:
 
-1. We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [Chocolatey] (https://chocolatey.org).
+1. We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [Chocolatey](https://chocolatey.org).
 
 2. Open a command prompt with administrator privileges and install git:
 
@@ -243,7 +291,7 @@ WARNING: The data being saved is truncated to 1024 characters.
 
 ```
 
-If this happens, abort and make more room in Path and try again.
+If this happens, abort current process. Adjust Path environment varible length to less than 1024 bytes and try again.
 
 4. Get `platon` source code:
 

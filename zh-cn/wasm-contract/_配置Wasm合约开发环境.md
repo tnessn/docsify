@@ -8,6 +8,7 @@ Windows合约开发环境需要符合以下条件：
 * [mingw 6.0.0+](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z/download) 用于编译构建文件 
 * [git-bash](https://git-scm.com/downloads) `window`环境下强烈建议安装 `gitbash`，很多命令执行需要借助此工具完成
 
+
 1. CMake安装
 
 一键式安装，根据提示逐步安装即可。安装过程中，注意允许添加PATH环境变量。如果错过，请手动将cmake下bin文件夹所在路径添加到PATH。
@@ -16,10 +17,30 @@ Windows合约开发环境需要符合以下条件：
 
 下载解压后为绿色版本，直接配置`PATH`环境变量后即可使用。
 
+
+**Linux**合约开发环境需要符合以下条件：
+
+* [cmake 2.8+](https://cmake.org/download/) 
+
+
 ### 下载pWASM开发工具包
 
 `window` 版本pWASM开发工具包请从[这里](https://download.platon.network/pWASM.zip)下载。
-pWASM开发工具包为一个压缩包`pWASM.gz`，下载完成后解压到工作目录如`D:\`（以下关于合约环境搭建的操作均在该目录下完成），解压后所有文件均位于`pWASM`目录下，该目录文件结构如下：
+
+pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，如`D:\`（以下关于合约环境搭建的操作均在该目录下完成）。
+
+`Linux` 下载
+
+
+```shell
+$ wget https://download.platon.network/pWASM-linux.tar.gz
+$ tar -zxvf pWASM-linux.tar.gz
+$ mv pWASM-linux pWASM
+
+
+```
+
+解压后所有文件均位于`pWASM`目录下，该目录文件结构如下：
 
 
 ```txt
@@ -55,7 +76,7 @@ pWASM开发工具包为一个压缩包`pWASM.gz`，下载完成后解压到工�
 
 2.Windows下执行 `git-bash.exe` 文件以打开 `git-bash` 窗口。假设工程根目录 {pWASM} 为Windows对应目录 `D:\pWASM`。
 
-3.使用脚本 `{pWASM}/script/autoproject.bat` 可以快速构建工程目录。命令如下：
+3.使用脚本 `{pWASM}/script/autoproject.bat` (linux下脚本为：`{pWASM}/script/autoproject.sh`) 可以快速构建工程目录。命令如下：
 
 执行该脚本前有几点需要注意：
 
@@ -65,6 +86,8 @@ pWASM开发工具包为一个压缩包`pWASM.gz`，下载完成后解压到工�
 
 **执行脚本，重新构建，不生成新合约**
 
+Windows
+
 
 ```shell
 $ cd {pWASM}
@@ -73,12 +96,34 @@ $ ./script/autoproject.bat .
 
 ```
 
+Linux
+
+
+```shell
+$ cd {pWASM}
+$ ./script/autoproject.sh .
+
+
+```
+
 **执行脚本，生成新合约并构建**
+
+Windows
 
 
 ```shell
 $ cd {pWASM}
 $ ./script/autoproject.bat . firstdemo
+
+
+```
+
+Linux
+
+
+```shell
+$ cd {pWASM}
+$ ./script/autoproject.sh . firstdemo
 
 
 ```
@@ -161,10 +206,22 @@ PLATON_ABI(demo::FirstDemo, getName)
 2. 使用示例中的合约替换默认生成的 `firstdemo.cpp` 文件，完成合约部署。
 3. 执行编译命令：
 
+Windows
+
 
 ```shell
 $ cd {pWASM}/build/
 $ mingw32-make.exe
+
+
+```
+
+Linux
+
+
+```shell
+$ cd {pWASM}/build/
+$ make
 
 
 ```
@@ -218,14 +275,27 @@ json-compilation-database: Error while opening JSON database: No such file or di
 PlatON 平台提供了合约测试工具`ctool` ：
 
 - Windows版本 [点击下载](https://download.platon.network/ctool-windows-amd64.exe)
-- Linux版本 点击下载
+- Linux版本 [点击下载](https://download.platon.network/ctool-linux-amd64)
 
 **ctool工具用法**：
+
+Windows
 
 
 ```bash
 $ mv ctool-windows-amd64.exe ctool.exe
 $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
+
+
+```
+
+Linux
+
+
+```bash 
+$ wget https://download.platon.network/ctool-linux-amd64
+$ mv ctool-linux-amd64 ctool
+$ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
 
 
 ```
@@ -242,6 +312,9 @@ $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--f
 
 **提示2：**
 发布合约到PlatON网络，需要连接到节点，并保证发布合约的账户已进行了解锁操作，且没有超时。
+
+**提示3：**
+如果命令不能执行，请确保脚本具有执行权限，可使用命令：`chmod +x ctool` 进行授权。
 
 配置文件示例：
 
@@ -272,7 +345,7 @@ $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--f
 
 
 ```
-> personal.unlockAccount(“your-account”)
+> personal.unlockAccount("your-account")
 Unlock account 0x2d616026162ad2d513691b790806fa6f6bc3c2ef
 Passphrase:
 true
@@ -280,12 +353,24 @@ true
 
 ```
 
-4.进入编译目录`{pWASM}/build/user/firstdemo`，在此目录下创建 `config.json` 配置文件，并拷贝 `ctool.exe` 到当前目录。然后执行：
+4.进入编译目录`{pWASM}/build/user/firstdemo`，在此目录下创建 `config.json` 配置文件，并拷贝 `ctool.exe` (linux拷贝`ctool`) 到当前目录。然后执行：
+
+Windows
 
 
 ```shell
 $ cd {pWASM}/build/user/firstdemo 
 $ ./ctool.exe deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config ./config.json
+
+
+```
+
+Linux
+
+
+```shell
+$ cd {pWASM}/build/user/firstdemo 
+$ ./ctool deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config ./config.json
 
 
 ```
@@ -307,6 +392,8 @@ contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
 
 **发送交易**
 
+Windows
+
 
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
@@ -315,12 +402,34 @@ $ ./ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func '
 
 ```
 
+Linux
+
+
+```shell 
+$ cd {pWASM}/build/user/firstdemo
+$ ./ctool invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'invokeNotify("HelloWorld")' --abi ./firstdemo.cpp.abi.json --config ./config.json
+
+
+```
+
 **交易查询**
+
+Windows
 
 
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getName()' --abi ./firstdemo.cpp.abi.json --config ./config.json
+
+
+```
+
+Linux
+
+
+```shell 
+$ cd {pWASM}/build/user/firstdemo
+$ ./ctool invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getName()' --abi ./firstdemo.cpp.abi.json --config ./config.json
 
 
 ```

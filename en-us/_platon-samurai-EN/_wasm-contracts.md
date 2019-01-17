@@ -8,7 +8,7 @@ Wasm contracts are applications built with webassebly. and deployed on PlatON. U
 
 ![Image text](image/Contract_deploy.png)
 
-2.The client switches to [Deploy Contract] page, select the sender (From which wallet), import [Contract Bytecode] and [Contract ABI(Interface)], set [Fee], click [Deploy], as shown below:
+2.The client switches to [Deploy Contract] page, select the sender (From which wallet), and input the [Amount] of of funds(not mandatory), import [Contract Bytecode] and [Contract ABI(Interface)], set [Fee], click [Deploy], as shown below:
 
 ![Image text](image/Contract_info_input.png)
 

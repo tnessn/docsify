@@ -102,7 +102,7 @@ $ mv platon-linux-amd64 ~/platon-node/platon
 Ubuntu编译环境需要符合以下条件：
 - 系统版本：`Ubuntu 16.04.1 以上`
 - git：`2.19.1以上`
-- 编译器：`gcc(4.8.0+)`
+- 编译器：`gcc(4.9.2+)`
 - go语言开发包：`go(1.7+)`
 
 PlatON编译安装过程如下：
@@ -116,7 +116,7 @@ $ gcc --version
 
 ```
 
-如果gcc版本低于4.8.0，需要升级gcc。
+如果gcc版本低于4.9.2，需要升级gcc。
 
 
 ```
@@ -155,7 +155,44 @@ $ make all
 
 ```
 
-**注意：若使用MPC功能，应使用 `make all-with-mpc` 命令编译**
+>**提示**：
+>MPC 计算功能是PlatON 平台支持的安全多方计算功能，为实现隐私计算提供基础设施。**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
+
+若要在节点上启用 MPC 功能，需安装带 `MPC` 功能的 `platon` 二进制可执行程序。相应步骤如下：
+
+- 下载 MPC 计算依赖库 [mpclib](https://download.platon.network/mpclib.tar.gz) 到启动节点的服务器，这里我们放在节点路径 `~/platon-node/` 下，解压文件。
+
+
+```bash
+$ pwd
+/home/platon/platon-node
+$ tar -xzvf mpclib.tar.gz
+
+
+```
+
+- 解压后，在`~/platon-node/` 路径下出现 mpclib 文件夹。
+
+- 使用root用户或者sudo权限打开profile文件
+
+
+```bash
+$ vi /etc/profile
+
+
+```
+
+- 添加环境变量，其中，`XXXX` 在本机为 platon 用户。开发者需改为自己登录的用户。
+
+
+```bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/XXXX/platon-node/mpclib
+
+
+```
+
+- 使用 `make all-with-mpc` 替换 `make all` 命令编译
+
 
 5. 将编译生成的`platon`文件拷贝到`~/platon-node`目录
 

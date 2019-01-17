@@ -254,9 +254,7 @@ web3j.ethLogObservable(filter).subscribe(log -> {
 
 **Parameters**
 
-      Name                  Type            Attributes   Description
-    ----------------------- -------------- ------ -------
-                         (No Parameters)
+(No Parameters)
 
 **Return value**
 
