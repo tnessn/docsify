@@ -28,7 +28,7 @@
 ## 架构
 
 <div align=left>
-<img src="privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="zh-cn/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 架构图说明：
 
