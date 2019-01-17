@@ -78,7 +78,7 @@
 
 隐私合约运行依赖于`PlatON` 网络集群环境，提供区块链的核心功能，想要让节点提供 MPC 计算能力必须启用MPC计算功能。
 
-   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](%5BChinese-Simplified%5D-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
+   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/[Chinese-Simplified%]-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
 
    2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
 
