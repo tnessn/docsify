@@ -3,15 +3,15 @@
 
 1.On client’s [Wallet] home page, click [create Wallet], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Individual_wallet_creation.png)
+![Image text](assets/platon-samurai-EN/image/Individual_wallet_creation.png)
 
 2.The client will navigate to the [Create Individual Wallet] page, input [Name], and set the wallet’s [password], click [Create], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Wallet_info_input.png)
+![Image text](assets/platon-samurai-EN/image/Wallet_info_input.png)
 
 3.By default, the system generates a .json file under the local path:  C:/Users/Username/AppData/Roaming/PlatON/net_test/keystore/ (encrypted wallet file, default path, can be changed). Then, it will display ‘Create Individual Wallet Successfully’ message, together with all the important wallet information such as [Name], [Address], [Public Key], [Signature Scheme], [private key] etc. as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Wallet_success.png)
+![Image text](assets/platon-samurai-EN/image/Wallet_success.png)
 
 **Notes: Wallet safety**
 
@@ -25,11 +25,11 @@
 
 1.On client’s [Wallet] home page, click [Import Wallet], as below:
 
-![Image text](assets/_platon-samurai-EN/image/Wallet_importation.png)
+![Image text](assets/platon-samurai-EN/image/Wallet_importation.png)
 
 2.There are three ways to [Import Wallet]: private key (64 HEX), Keystore (.json) and mnemonic phrase. Let’s go through them one by one:
 
-![Image text](assets/_platon-samurai-EN/image/Three_type_importation.png)
+![Image text](assets/platon-samurai-EN/image/Three_type_importation.png)
 
 
 
@@ -95,7 +95,7 @@
 - **Private Key (64 HEX)**
 Input the private key of the wallet, set up a new [wallet name], and [wallet password], click [Import]. Once done successfully, the details of the new wallet imported will be displayed on the home page of [Wallet].
 
- Image text](assets/_platon-samurai-EN/image/Private_key_HEX.png)
+ Image text](assets/platon-samurai-EN/image/Private_key_HEX.png)
 
 
 
@@ -161,7 +161,7 @@ Input the private key of the wallet, set up a new [wallet name], and [wallet pas
 - **Keystore(.json)**
 Click [Keystore(.json)] tap, click [Select File] to open local resource manager, select the saved .json file, and then input the preset wallet Password, click [import], after succeeding, the newly imported wallet will be displayed on the home page of [Wallet]. 
 
-    ![Image text](assets/_platon-samurai-EN/image/Private_key_keystore.png)
+    ![Image text](assets/platon-samurai-EN/image/Private_key_keystore.png)
 
 
 
@@ -227,7 +227,7 @@ Click [Keystore(.json)] tap, click [Select File] to open local resource manager,
 - **Mnemonic Phrase**
 Click [Mnemonic Phrase] tap, input the wallet’s mnemonic phrase, set new [wallet name], and [wallet password], click [Import], once succeeded, the newly imported wallet will be displayed on the home page of [Wallet]. 
 
-    ![Image text](assets/_platon-samurai-EN/image/Private_keyemonic_phrase-cn.png)
+    ![Image text](assets/platon-samurai-EN/image/Private_keyemonic_phrase-cn.png)
 
 
 ## <a name="send_recv_atp"></a>How to send and receive funds
@@ -297,15 +297,15 @@ Click [Mnemonic Phrase] tap, input the wallet’s mnemonic phrase, set new [wall
 
 1.Click [Send], the client switches to the page as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Send_wallet.png)
+![Image text](assets/platon-samurai-EN/image/Send_wallet.png)
 
 2.Select the sender, and input the receiver’s Address, set [Amount] and [fee], click [send], and the dialogue box of confirmation pops up, as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Send_confirm-wallet.png)
+![Image text](assets/platon-samurai-EN/image/Send_confirm-wallet.png)
 
 3.Input the sender’s [Wallet Password], click [Submit] to submit the transaction. The progress of the transaction can be traced on the page of wallet details, as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Wallet_detail_transactions.png)
+![Image text](assets/platon-samurai-EN/image/Wallet_detail_transactions.png)
 
 
 
@@ -372,7 +372,7 @@ Click [Mnemonic Phrase] tap, input the wallet’s mnemonic phrase, set new [wall
 
 Click [receive], the client will display the page as below:
 
-![Image text](assets/_platon-samurai-EN/image/QR_code.png)
+![Image text](assets/platon-samurai-EN/image/QR_code.png)
 
 The page display the wallet’s [QR Code of Address], [Address], provide them to the sender as required.
 

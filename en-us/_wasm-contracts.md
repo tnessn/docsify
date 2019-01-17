@@ -6,15 +6,15 @@ Wasm contracts  are applications deployed on PlatON. User can publish services d
 
 1.On the [Contracts] page, click [Deploy Contract], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Contract_deploy.png)
+![Image text](assets/platon-samurai-EN/image/Contract_deploy.png)
 
 2.The client switches to [Deploy Contract] page, select the sender (From which wallet), and input the [Amount] of of funds(not mandatory), import [Contract Bytecode] and [Contract ABI(Interface)], set [Fee], click [Deploy], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Contract_info_input.png)
+![Image text](assets/platon-samurai-EN/image/Contract_info_input.png)
 
 3. A dialogue box will pop up as below，input the sender’s [Wallet Password], click [Submit], and the contract starts to be deployed.
 
-![Image text](assets/_platon-samurai-EN/image/Contract_creation_confirm.png)
+![Image text](assets/platon-samurai-EN/image/Contract_creation_confirm.png)
 
 **Note : Contract Bytecode**
 
@@ -29,11 +29,11 @@ After a contract being created by someone, you can add it to your client, the st
 
 1.On the [contract] page, click [Watch Contract], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Add_contract.png)
+![Image text](assets/platon-samurai-EN/image/Add_contract.png)
 
 2.The client switches to [Watch Contract] page, input [Contract Name], [Contract Address], [Contract ABI (Interface)], click [Add], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Add_contract_info.png)
+![Image text](assets/platon-samurai-EN/image/Add_contract_info.png)
 
 3.Once completed, the newly added contract will be displayed on the home page of [Contract]. 
 
@@ -46,15 +46,15 @@ You need to provide the contract interface and the contract address when Other u
 
 1.On the home page of [Contract], select an existing contract, the client navigates to [Contract Information] page, as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Contract_detail.png)
+![Image text](assets/platon-samurai-EN/image/Contract_detail.png)
 
 2.Select the function of contract to be executed, input relevant parameters, selected the executor, click [Execute], as shown below:
 
-![Image text](assets/_platon-samurai-EN/image/Execution_set.png)
+![Image text](assets/platon-samurai-EN/image/Execution_set.png)
 
 3.The confirmation dialogue box pops up, input Executor’s [Wallet Password], the contract’s function start to be executed.
 
-![Image text](assets/_platon-samurai-EN/image/Execute_Contract.png)
+![Image text](assets/platon-samurai-EN/image/Execute_Contract.png)
 
 
 

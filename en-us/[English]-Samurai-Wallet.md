@@ -56,38 +56,38 @@ Linux is not supported for the time being
 
 ### Network
 
-- [How to join in PlatON TestNet](en-us/_platon-samurai-EN/_join-in-a-network#join_net)
+- [How to join in PlatON TestNet](en-us/platon-samurai-EN/_join-in-a-network#join_net)
 
-- [How to create a PlatON Private-net](en-us/_platon-samurai-EN/_join-in-a-network#create_private)
+- [How to create a PlatON Private-net](en-us/platon-samurai-EN/_join-in-a-network#create_private)
 
 ### Wallet
 
-- [How to create a wallet](en-us/_platon-samurai-EN/_general-wallet#create_wallet)
+- [How to create a wallet](en-us/platon-samurai-EN/_general-wallet#create_wallet)
 
-- [How to import & restore a wallet](en-us/_platon-samurai-EN/_general-wallet#import_wallet)
+- [How to import & restore a wallet](en-us/platon-samurai-EN/_general-wallet#import_wallet)
 
-- [How to send and receive funds](en-us/_platon-samurai-EN/_general-wallet#send_recv_atp)
+- [How to send and receive funds](en-us/platon-samurai-EN/_general-wallet#send_recv_atp)
 
-- [Why is the test Energon in the wallet cleard](en-us/_platon-samurai-EN/_general-wallet#why_is_cleard)
+- [Why is the test Energon in the wallet cleard](en-us/platon-samurai-EN/_general-wallet#why_is_cleard)
 
 ### Shared Wallet
 
-- [What is shared wallet](en-us/_platon-samurai-EN/_shared-wallet#what_is)
-- [How to create a shared wallet](en-us/_platon-samurai-EN/_shared-wallet#how_to_create)
+- [What is shared wallet](en-us/platon-samurai-EN/_shared-wallet#what_is)
+- [How to create a shared wallet](en-us/platon-samurai-EN/_shared-wallet#how_to_create)
 
-- [How to add a shared wallet that has been created](en-us/_platon-samurai-EN/_shared-wallet#how_to_add)
-- [How to send and receive funds with shared wallet](en-us/_platon-samurai-EN/_shared-wallet#how_to_use)
+- [How to add a shared wallet that has been created](en-us/platon-samurai-EN/_shared-wallet#how_to_add)
+- [How to send and receive funds with shared wallet](en-us/platon-samurai-EN/_shared-wallet#how_to_use)
 
 ### Transaction
 
-- [How to confirm a transaction](en-us/_platon-samurai-EN/_confirm-transactions#comfire_txs)
+- [How to confirm a transaction](en-us/platon-samurai-EN/_confirm-transactions#comfire_txs)
 
 ### Wasm contracts
 
-- [What is wasm contract](en-us/_platon-samurai-EN/_wasm-contracts#what_is_msc)
+- [What is wasm contract](en-us/platon-samurai-EN/_wasm-contracts#what_is_msc)
 
-- [How to deploy a contract](en-us/_platon-samurai-EN/_wasm-contracts#how_to_deploy)
+- [How to deploy a contract](en-us/platon-samurai-EN/_wasm-contracts#how_to_deploy)
 
-- [How to add a contract that has been created ](en-us/_platon-samurai-EN/_wasm-contracts#how_to_add)
+- [How to add a contract that has been created ](en-us/platon-samurai-EN/_wasm-contracts#how_to_add)
 
-- [How to execute a contract ](en-us/_platon-samurai-EN/_wasm-contracts#how_to_run)
+- [How to execute a contract ](en-us/platon-samurai-EN/_wasm-contracts#how_to_run)

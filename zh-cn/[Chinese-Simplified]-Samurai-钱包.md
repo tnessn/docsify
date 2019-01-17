@@ -30,41 +30,41 @@ Windows安装程序下载后，双击安装程序并按照说明进行操作。�
 
 ### 网络初始化
 
-- [怎么加入PlatON测试网络](zh-cn/_platon-samurai/_网络初始化#join_net)
+- [怎么加入PlatON测试网络](zh-cn/platon-samurai/_网络初始化#join_net)
 
-- [如何创建PlatON本地私用网络](zh-cn/_platon-samurai/_网络初始化#create_private)
+- [如何创建PlatON本地私用网络](zh-cn/platon-samurai/_网络初始化#create_private)
 
 ### 钱包
 
-- [如何创建一个钱包](zh-cn/_platon-samurai/_钱包#create_wallet)
+- [如何创建一个钱包](zh-cn/platon-samurai/_钱包#create_wallet)
 
-- [如何导入/恢复一个已有的钱包](zh-cn/_platon-samurai/_钱包#import_wallet)
+- [如何导入/恢复一个已有的钱包](zh-cn/platon-samurai/_钱包#import_wallet)
 
-- [如何发送、接收Energon](zh-cn/_platon-samurai/_钱包#send_recv_energon)
+- [如何发送、接收Energon](zh-cn/platon-samurai/_钱包#send_recv_energon)
 
-- [为什么钱包中的测试币被清零了](zh-cn/_platon-samurai/_钱包#why_is_cleard)
+- [为什么钱包中的测试币被清零了](zh-cn/platon-samurai/_钱包#why_is_cleard)
 
 ### 共享钱包
 
-- [什么是共享钱包](zh-cn/_platon-samurai/_共享钱包#what_is)
+- [什么是共享钱包](zh-cn/platon-samurai/_共享钱包#what_is)
 
-- [如何创建一个共享钱包](zh-cn/_platon-samurai/_共享钱包#how_to_create)
+- [如何创建一个共享钱包](zh-cn/platon-samurai/_共享钱包#how_to_create)
 
-- [如何添加已创建的共享钱包](zh-cn/_platon-samurai/_共享钱包#how_to_add)
+- [如何添加已创建的共享钱包](zh-cn/platon-samurai/_共享钱包#how_to_add)
 
-- [如何使用共享钱包发送、接收Energon](zh-cn/_platon-samurai/_共享钱包#how_to_use)
+- [如何使用共享钱包发送、接收Energon](zh-cn/platon-samurai/_共享钱包#how_to_use)
 
 ### 交易
 
-- [如何确认交易](zh-cn/_platon-samurai/_交易#comfire_txs)
+- [如何确认交易](zh-cn/platon-samurai/_交易#comfire_txs)
 
 ### Wasm合约
 
-- [Wasm合约是什么](zh-cn/_platon-samurai/_Wasm合约#what_is_msc)
+- [Wasm合约是什么](zh-cn/platon-samurai/_Wasm合约#what_is_msc)
 
-- [如何部署一个Wasm合约](zh-cn/_platon-samurai/_Wasm合约#how_to_deploy)
+- [如何部署一个Wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_deploy)
 
-- [如何添加别人已部署的Wasm合约](zh-cn/_platon-samurai/_Wasm合约#how_to_add)
+- [如何添加别人已部署的Wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_add)
 
-- [怎样运行wasm合约](zh-cn/_platon-samurai/_Wasm合约#how_to_run)
+- [怎样运行wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_run)
 
