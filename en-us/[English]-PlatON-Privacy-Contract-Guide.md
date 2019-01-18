@@ -278,7 +278,6 @@ Generate the msg.pb.h header file and msg.pb.cc.
 
 - **Privacy contract source code**:
 
-下面编写一个输入Foo对象中两个整数item1，item2和另一个输入整型取绝对值，得到一个新的Foo对象。
 Write a privacy contract that contains the pb-generated files and the integer.h header file with a text editor.
 THen write the algorithm function with an input Foo object contains two integers items1 and item2, and another input of integer, followed by absolute value calculation and returns results in a new Foo object.
 

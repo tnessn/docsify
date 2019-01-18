@@ -62,7 +62,7 @@ if (typeof web3 !== 'undefined') {
 
 ### 合约
 
-wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [wiki](https://github.com/PlatONnetwork/wiki/wiki)
+wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WADSM合约开发指南](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 
 #### 合约示例
 
@@ -300,7 +300,7 @@ function getParams(data = '', value = "0x0") {
 
 ##### CandidateContract
 
-> PlatON经济模型中候选人相关的合约接口 [合约描述](https://note.youdao.com/)
+> PlatON经济模型中候选人相关的合约接口[合约描述](_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 ##### 加载合约
 

@@ -1,4 +1,4 @@
-**本文档提供`PlatON`在不同环境的安装，安装完成之后需要启动节点请参考文档[私有网络](#https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C)。**
+**本文档提供`PlatON`在不同环境的安装，安装完成之后需要启动节点请参考文档[私有网络](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C)。**
 
 PlatON支持不同的运行环境。
 + Linux/Unix环境安装
@@ -167,7 +167,7 @@ Windows版本的`platon`二进制文件下载地址：[https://download.platon.n
 
 
 ```
-C:\Users\PlatON> choco install platon --version=0.2.0
+choco install platon --version=0.2.0
 
 
 ```

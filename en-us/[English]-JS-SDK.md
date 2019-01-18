@@ -53,7 +53,7 @@ if (typeof web3 !== 'undefined') {
 
 ### Contract
 
-How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [wiki](https://github.com/PlatONnetwork/wiki/wiki)
+How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 #### Sample contract
 
@@ -223,7 +223,8 @@ contract.decodePlatONCall(result)
 
 #### Call contract sendRawTransaction
 
-> Send transaction signed by private key
+> Send transaction signed b
+> y private key
 
 ##### Interface
 

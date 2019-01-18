@@ -1,4 +1,4 @@
-**This document provides `PlatON` installation in different environments， After installation, you can refer to the document [Private Network](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Private-Networks) to start the node。**
+**This document provides `PlatON` installation guide for different environments， After installation, you can refer to the document [Private Network](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Private-Networks) to start.**
 
 Follow the appropriate link below to find installation instructions for your platform.
 + Installation Instructions for Linux/Unix
@@ -11,21 +11,19 @@ The Ubuntu runtime environment needs to meet the following requirements:
 - System version: `Ubuntu 16.04.1 or above`
 
 There are four ways of installation on Ubuntu: 
-- official binaries
+- binaries package
 - PPA source
 - debian package
 - source code
 
-### Installing official binary 
+### Binary package based installation
 
-The official binary package file download link for ubuntu version is: [https://download.platon.network/platon-linux-amd64-full.tar.gz](https://download.platon.network/platon-linux-amd64-full.tar.gz)
+The official binary package file download link for ubuntu is: [https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz](https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz)
 
 
 ```bash
-# download package
-$ wget https://download.platon.network/platon-linux-amd64-full.tar.gz
-# extract files
-$ tar -xvzf platon-linux-amd64-full.tar.gz
+$ wget https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz
+$ tar -xvzf platon-ubuntu-amd64-bin.tar.gz
 
 
 ```
@@ -33,14 +31,14 @@ The extracted files should be as following:
 - `platon` client executable file
 - `ethkey` key generator
 
-### Installing using PPA
+### PPA based installation
 
 Add PPA to your system and update：
 
 
-```bash
+```
 # add PPA
-$ sudo add-apt-repository ppa:yyl123456/platon-mpc-vm
+$ sudo add-apt-repository ppa:platonnetwork/platon
 $ sudo apt-get update
 
 # install platon
@@ -49,9 +47,9 @@ $ sudo apt-get install platon-all
 
 ```
 
-After the installation, the binaries and other components of the package should be installed to `/usr/bin/PlatON/`
+After the installation, the binaries and other components of the package should be installed to `/usr/bin/`
 
-### Installing using debian package 
+### Debian package based installation
 
 Download the `.deb` package and then install.
 
@@ -66,21 +64,21 @@ $ sudo dpkg -i platon-all-ubuntu-amd64.deb
 
 ```
 
-After the installation, the binaries and other components of the package should be installed to `/usr/bin/PlatON/`
+After the installation, the binaries and other components of the package should be installed to `/usr/bin/`
 
-### Installing from source
+### Source code based installation
 
 The Ubuntu build environment needs to meet the following requirements:
-- System version: `Ubuntu 16.04.1 above`
-- git：`2.19.1 above`
+- System version: `Ubuntu 16.04.1 or above`
+- git：`2.19.1 or above`
 - Compiler: `gcc(4.9.2+)`
 - go language development kit: `go(1.7+)`
 
->**Note**: Ensure that the compilation environment requirements are met！
+>**Note**: Make sure the compilation environment requirements are met！
 
 The PlatON compilation and installation process is as follows:
 
-#### 1. Clone `platon` source code:
+#### 1. Clone `platon` source code to local target folder:
 
 
 ```
@@ -91,7 +89,7 @@ $ git clone https://github.com/PlatONnetwork/PlatON-Go.git
 
 #### 2. Compilation
 
-##### Compiling `Platon` without `mpc` capability
+##### Compiling `Platon` without `mpc` capability by default
 
 
 ```bash
@@ -108,12 +106,12 @@ To enable `MPC` function on `platon`, compile `MPC VM` module and link it to the
 
 - Compiling `MPC VM`
 
-Please referring to[Privacy Contract VM Compilation](https://github.com/PlatONnetwork/privacy-contract-vm#building--installing)。
+Please referring to [Privacy Contract VM Compilation](https://github.com/PlatONnetwork/privacy-contract-vm#building--installing).
 Assuming that the compilation directory is `home/path/to/mpcvm/build`, the compilation will output the `MPC VM` runtime libraries to `home/path/to/mpcvm/build/lib`.
 
 - Setup environment
 
-Add the compiled `MPC VM` libraries path `~/home/path/to/mpcvm/build/lib` to current user environment variable:
+Append the compiled `MPC VM` libraries path `~/home/path/to/mpcvm/build/lib` to current user libraries environment variable:
 
 
 ```bash
@@ -137,17 +135,17 @@ $ make all-with-mpc
 After compilation, the `platon`and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.
 
 >**Hint**：
->MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Currently only Ubuntu supported**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
+>MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Only Ubuntu supported now**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
 
 
 ## Installing on Windows
 
 The Windows environment supports three installation modes:
-- Official binary package
+- Binary package
 - Chocolatey installation
 - source code
 
-### Installing official binary 
+### Binary package based installation
 
 Windows version of the Platon binary download link is: [https://download.platon.network/platon-windows-amd64-bin.zip](https://download.platon.network/platon-windows-amd64-bin.zip) download. No installation is required after downloading, and it can be used directly by decompression.
 
@@ -155,20 +153,20 @@ The extracted files should be as following:
 - `platon` client executable file
 - `ethkey` key generator
 
-### Installing Chocolatey
+### Installation via Chocolatey
 
 Start PowerShell as an administrator and install Platon using the choco command:
 
 
 ```
-choco install platon
+choco install platon --version=0.2.0
 
 
 ```
 
 You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
 
-### Building from source code
+### Source code based installation
 
 The Windows build environment requires:
 - git:`2.19.1`
@@ -221,4 +219,4 @@ go run build/ci.go install ./cmd/platon
 
 ```
 
-After compilation, the `platon`and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.
+After compilation, the `platon` and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.

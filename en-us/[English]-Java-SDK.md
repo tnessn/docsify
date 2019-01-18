@@ -159,7 +159,8 @@ extern "C" {
 ```
 
 ## Build contract Java wrapper
-1. How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [wiki](https://github.com/PlatONnetwork/wiki/wiki)
+1. How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Wasm-Contract-Development-Guide)
+
 2. Use contract Java wrapper building toolkit
 
 

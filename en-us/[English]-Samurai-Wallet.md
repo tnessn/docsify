@@ -47,7 +47,7 @@ At present，Samurai can run on Windows and Linux, please click [here](https://g
 
 
 
-![Image text](./_platon-samurai-EN/image/Keystore_address.png)
+![Image text](platon-samurai-EN/image/Keystore_address.png)
 
 
 
@@ -55,17 +55,10 @@ At present，Samurai can run on Windows and Linux, please click [here](https://g
 
 
 ```
-Installation instruction of .deb file.
-1.Find the corresponding Samurai package, such as Samurai. deb, and download it to a directory.
-2.Open the terminal and make 'su' be the root user.
-3.Enter the directory where the package is located.
-4.Execute `sudo dpkg-i Samurai.deb' to finish the installation.
-
 Installation instruction of tar.xz package.
-1.Find the corresponding Samurai package, such as Samurai-Linux64.tar.xz, and download it to a directory.
-2.Open the terminal and make 'su' be the root user.
-3.Enter the directory where the package is located.
-4.Execute `tar -xvzf Samurai-Linux64.tar.xz' to unzip the package and finish the installation.
+1.Download Linux Samurai package,such as Samurai-Linux64.tar.xz
+2.Right click to extract the installation package.
+3.Go to the extracted folder and double-click the executable Samurai to open the client.
 
 
 ```
