@@ -1,7 +1,7 @@
 > 一种概率性的委托权益证明协议
 
 ## 经济模型
-![economic model](./platon-ppos/images/platon_ppos_1.png)
+![economic model](images/platon_ppos_1.png)
 
 ### 初始发行
 初始发行的Energon在创世区块中预先分配给以下账户：
@@ -35,7 +35,7 @@ PlatON采用温和通胀来提供经济奖励，相当于全网用户一起支�
 隐私合约发布时需要设定数据费用、数据提供方（数据节点）、分成比例。用户发起隐私合约交易需要按约定支付数据费用，隐私合约交易在多个数据节点中协同执行，计算成功后结果提交到链上，在链上根据合约中设置的分成比例分配给多个数据节点。
 
 ## PPoS协议
-![ppos protocol](./platon-ppos/images/platon_ppos_2.png)
+![ppos protocol](images/platon_ppos_2.png)
 
 所有PoS系统都会存在去中心化（共识节点数量）和可扩展性（TPS）之间的权衡问题。DPoS偏向较少的共识节点，换取较高的性能。Algorand采用随机方式在全网选取共识节点，但是只能在强同步网络上运行。这是两个典型的极端方法。PlatON采取折衷的方法，这个候选人列表中采用VRF和概率分布方式随机选取。这种方法缩小了共识节点的选取范围，又有效避免了过于中心化的问题。
 

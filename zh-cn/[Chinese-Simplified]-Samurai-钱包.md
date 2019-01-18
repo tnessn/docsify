@@ -30,7 +30,7 @@ Windows安装程序下载后，双击安装程序并按照说明进行操作。�
 
 
 
-![Image text](./_platon-samurai/image/Keystore_address-cn.png)
+![Image text](./platon-samurai/image/Keystore_address-cn.png)
 ### Linux安装
 
 deb文件安装说明：   

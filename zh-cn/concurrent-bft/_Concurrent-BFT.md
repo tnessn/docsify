@@ -38,9 +38,9 @@
 
 `CBFT`，即 `Concurrent Byzantine Fault Tolerance` 是指并行的拜占庭将军容错共识，当前出块节点出块后立即广播区块给其他共识节点，其他共识节点在收到区块后对区块进行验证，验证通过后对区块`HASH`进行签名，并将签名广播给其他区块，当任意一个节点收到大于或等于15个签名后，该区块即为不可逆区块。
 
-![P1](./concurrent-bft/images/giskard_blockproduct_1.png)
+![P1](images/giskard_blockproduct_1.png)
 
-![P1](./concurrent-bft/images/giskard_blockproduct_2.png)
+![P1](images/giskard_blockproduct_2.png)
 
 ## 理论假设
 
@@ -119,7 +119,7 @@
 
 ## 流程图
 
-![Logic](./concurrent-bft/images/cbfg_logic.png)
+![Logic](images/cbfg_logic.png)
 
 如图，`CBFT`实施过程大概步骤解释如下：
 
