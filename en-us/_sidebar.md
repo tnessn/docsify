@@ -23,7 +23,7 @@
 - [Javascript SDK](en-us/[English]-JS-SDK)
 - [Java SDK](en-us/[English]-Java-SDK)
 - [Python SDK](en-us/[English]Python-SDK)
-- [Android SDK](en-us/[English]Android-SDK)
+- [Android SDK](en-us/[English]-Java-SDK)
 - [iOS SDK](en-us/[English]iOS-SDK)
 - 
 - Technologies
