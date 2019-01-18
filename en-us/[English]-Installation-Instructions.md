@@ -1,138 +1,86 @@
-﻿
+**This document provides `PlatON` installation in different environments， After installation, you can refer to the document [Private Network](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Private-Networks) to start the node。**
+
 Follow the appropriate link below to find installation instructions for your platform.
 + Installation Instructions for Linux/Unix
   - [Ubuntu](#Installing-on-Ubuntu)
-  - Arch
-  - FreeBSD
 + [Installation Instructions for Windows](#Installing-on-Windows)
-+ Usage instructions for Docker 
  
 ## Installing on Ubuntu
-We assumes that the installation directory is ~/platon-node. Make sure the platon-node directory has been created.
-
-
-```
-$ mkdir -p ~/platon-node
-
-
-```
 
 The Ubuntu runtime environment needs to meet the following requirements:
-- System version: `Ubuntu 16.04.1 above`
-- go language development kit: `go(1.11+)`
+- System version: `Ubuntu 16.04.1 or above`
 
-1. First check if the go language development kit is installed.
-
-
-```
-$ go version
-
-
-```
-If the prompt is empty, it means that golang is not installed. If so, install it with the following steps.
-If golang is already installed and the version is 1.11 and above, skip the following steps.
-If golang version is lower than 1.11, you need to execute `whereis go` to find the installation directory and delete it before installing.
-
-2. Download golang package
-
-
-```
-$ wget https://dl.google.com/go/go1.11.1.linux-amd64.tar.gz
-
-
-```
-
-3. Extract to `/usr/local/`
-
-
-```
-$ sudo tar -C /usr/local/ -xzf go1.11.1.linux-amd64.tar.gz
-
-
-```
-
-4. Modify environment variables，open file `~/.bash_profile` and add the following：
-
-
-```
-export PATH=$PATH:/usr/local/go/bin
-
-
-```
-
-5. Make environment variables take effect
-
-
-```
-$ source ~/.bash_profile
-
-
-```
-
-6. Verify that `golang` was installed successfully:
-
-
-```
-$ go version
-Go version go1.11.1 linux/amd64
-
-
-```
-If the prompt is not empty, it means that golang was installed successfully. 
-
-There are three installation methods on Ubuntu.
+There are four ways of installation on Ubuntu: 
+- official binaries
+- PPA source
+- debian package
+- source code
 
 ### Installing official binary 
-Ubuntu version of PlatON have been pre-built and can be downloaded [here](https://download.platon.network/platon-linux-amd64). After downloading, you can copy it to `~/platon-node` directory and use it directly.
+
+The official binary package file download link for ubuntu version is: [https://download.platon.network/platon-linux-amd64-full.tar.gz](https://download.platon.network/platon-linux-amd64-full.tar.gz)
+
+
+```bash
+# download package
+$ wget https://download.platon.network/platon-linux-amd64-full.tar.gz
+# extract files
+$ tar -xvzf platon-linux-amd64-full.tar.gz
 
 
 ```
-$ wget https://download.platon.network/platon-linux-amd64
-$ mv platon-linux-amd64 ~/platon-node/platon
-
-
-```
+The extracted files should be as following:
+- `platon` client executable file
+- `ethkey` key generator
 
 ### Installing using PPA
-Todo.
+
+Add PPA to your system and update：
+
+
+```bash
+# add PPA
+$ sudo add-apt-repository ppa:yyl123456/platon-mpc-vm
+$ sudo apt-get update
+
+# install platon
+$ sudo apt-get install platon-all
+
+
+```
+
+After the installation, the binaries and other components of the package should be installed to `/usr/bin/PlatON/`
+
+### Installing using debian package 
+
+Download the `.deb` package and then install.
+
+
+```bash
+# download
+$ wget https://download.platon.network/platon-all-ubuntu-amd64.deb
+
+# install
+$ sudo dpkg -i platon-all-ubuntu-amd64.deb
+
+
+```
+
+After the installation, the binaries and other components of the package should be installed to `/usr/bin/PlatON/`
 
 ### Installing from source
+
 The Ubuntu build environment needs to meet the following requirements:
 - System version: `Ubuntu 16.04.1 above`
 - git：`2.19.1 above`
 - Compiler: `gcc(4.9.2+)`
-- go language development kit: `go(1.11+)`
+- go language development kit: `go(1.7+)`
+
+>**Note**: Ensure that the compilation environment requirements are met！
 
 The PlatON compilation and installation process is as follows:
 
-1. Upgrade gcc:
-
-
-```
-$ gcc --version
-
-
-```
-If the gcc version is lower than 4.9.2, you need to upgrade it:
-
-
-```
-$ sudo apt-get update
-$ sudo apt-get upgrade gcc
-
-
-```
-
-2. Install git
-
-
-```
-$ sudo apt-get install git
-
-
-```
-
-3. Clone `platon` source code from the official repository:
+#### 1. Clone `platon` source code:
 
 
 ```
@@ -141,10 +89,12 @@ $ git clone https://github.com/PlatONnetwork/PlatON-Go.git
 
 ```
 
-4. Execute the following commands to compile the `platon` executable:
+#### 2. Compilation
+
+##### Compiling `Platon` without `mpc` capability
 
 
-```shell
+```bash
 $ cd PlatON-Go
 $ find ./build -name "*.sh" -exec chmod u+x {} \;
 $ make all
@@ -152,175 +102,123 @@ $ make all
 
 ```
 
+##### Compiling `Platon` with `mpc` capability 
+
+To enable `MPC` function on `platon`, compile `MPC VM` module and link it to the platon. Steps are as follows:
+
+- Compiling `MPC VM`
+
+Please referring to[Privacy Contract VM Compilation](https://github.com/PlatONnetwork/privacy-contract-vm#building--installing)。
+Assuming that the compilation directory is `home/path/to/mpcvm/build`, the compilation will output the `MPC VM` runtime libraries to `home/path/to/mpcvm/build/lib`.
+
+- Setup environment
+
+Add the compiled `MPC VM` libraries path `~/home/path/to/mpcvm/build/lib` to current user environment variable:
+
+
+```bash
+grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" ~/.bashrc || echo "export  LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" >> ~/.bashrc
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib
+
+
+```
+
+- Compiling `platon`
+
+
+```bash
+$ cd PlatON-Go
+$ find ./build -name "*.sh" -exec chmod u+x {} \;
+$ make all-with-mpc
+
+
+```
+After compilation, the `platon`and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.
+
 >**Hint**：
 >MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Currently only Ubuntu supported**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
 
-To enable MPC functionality on a node, you need to install the `platon` binary executable with `MPC` functionality. The corresponding steps are as follows
-
-- Download [mpclib](https://download.platon.network/mpclib.tar.gz). Here, we put the file under the platon node path (assume `~/platon-node/`) and extract the file.
-
-
-```bash
-$ pwd
-/home/platon/platon-node
-$ tar -xzvf mpclib.tar.gz
-
-
-```
-
-- After unzipping, the mpclib folder appears in `~/platon-node/`.
-
-- Open the profile file with root or sudo
-
-
-```bash
-$ vi /etc/profile
-
-
-```
-
-- Add an environment variable where `XXXX` is the platon user ID on this machine running platon node. Developers or root user need to change 'XXXX' to corresponding platon user ID.
-
-
-```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/XXXX/platon-node/mpclib
-
-
-```
-
-- use `make all-with-mpc` instead of `make all`
-
-
-5. Copy the compiled `platon` file to `~/platon-node`
-
-
-```
-$ mv build/bin/platon ~/platon-node
-
-
-```
 
 ## Installing on Windows
-We assumes that the installation directory is D:\platon-node. Make sure the platon-node directory has been created.
 
-
-```
-C:\Users\PlatON> mkdir D:\platon-node
-
-
-```
-
-The Windows runtime environment needs to meet the following requirements:
-- go language development kit: `go(1.11+)`
-- mingw: `mingw(V6.0.0)`
-
-Open the command prompt with administrator privileges. Install golang and mingw using Chocolatey. If you don't have Chocolatey, you can follow the instructions on [Chocolatey](https://chocolatey.org).
-
-
-```
-C:\Users\PlatON> choco install golang
-C:\Users\PlatON> choco install mingw
-
-
-```
-Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH. After installation, please make sure that the installed version of Go is 1.11 (or higher).
-
-
-```
-C:\Users\PlatON> go version
-go version go1.11.1 windows/amd64
-
-
-```
-
-There are different ways to install on Windows.
+The Windows environment supports three installation modes:
+- Official binary package
+- Chocolatey installation
+- source code
 
 ### Installing official binary 
-Pre-built Windows version of PlatON can be downloaded [here](https://download.platon.network/platon-windows-amd64.exe). After downloading, you can copy it to `D:\platon-node` directory and use it directly.
 
+Windows version of the Platon binary download link is: [https://download.platon.network/platon-windows-amd64-bin.zip](https://download.platon.network/platon-windows-amd64-bin.zip) download. No installation is required after downloading, and it can be used directly by decompression.
 
-```
-C:\Users\PlatON> move platon-windows-amd64.exe D:\platon-node\platon.exe
-
-
-```
+The extracted files should be as following:
+- `platon` client executable file
+- `ethkey` key generator
 
 ### Installing Chocolatey
-Todo.
+
+Start PowerShell as an administrator and install Platon using the choco command:
+
+
+```
+choco install platon
+
+
+```
+
+You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
 
 ### Building from source code
+
 The Windows build environment requires:
 - git:`2.19.1`
 - go language development kit: `go(1.11+)`
 - mingw: `mingw(V6.0.0)`
 
-The compilation process is as follows:
+> Note: You can install the above compilation environment by yourself. Before compiling the `Platon` source code, make sure that the above environment works properly. The `chocolatey` installation can also be used, referring to the following ways:
 
-1. We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [Chocolatey](https://chocolatey.org).
+#### 1. Install chocolatey 
 
-2. Open a command prompt with administrator privileges and install git:
+ We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [Chocolatey](https://chocolatey.org).
+
+#### 2. Install compilation environment
+
+Start PowerShell as an administrator and install Platon using the choco command:
 
 
 ```
-C:\Users\PlatON> choco install git
+// install git
+choco install git
+// install golang
+choco install golang
+// install mingw
+choco install mingw
 
 
 ```
+
 Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH. 
 
-3. Set up Go workspace:
+#### 3. Get `PlatON` source code
 
-Run the following steps in a new prompt without administrator privileges. If your Go workspace is *%USERPROFILE%*, skip to step 4:
+Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `%GOPATH%` directory and clone the source code of `PlatON-GO` under the `PlatONnetwork` directory:
 
 
 ```
-C:\Users\PlatON> set "GOPATH=%USERPROFILE%"
-C:\Users\PlatON> set "Path=%USERPROFILE%\bin;%Path%"
-C:\Users\PlatON> setx GOPATH "%GOPATH%"
-C:\Users\PlatON> setx Path "%Path%"
+git clone https://github.com/PlatONnetwork/PlatON-Go.git
 
 
 ```
 
-If you see the following warning message as a result of above command, it means the `setx` command truncated Path/GOPATH:
+#### 4. Compile
+
+Execute the compilation command under the source directory `PlatON-GO`, as follows:
 
 
 ```
-WARNING: The data being saved is truncated to 1024 characters.
-
-
-```
-
-If this happens, abort current process. Adjust Path environment varible length to less than 1024 bytes and try again.
-
-4. Get `platon` source code:
-
-
-```
-C:\Users\PlatON> mkdir %GOPATH%\src\github.com\PlatONnetwork\PlatON-Go %GOPATH%\bin
-C:\Users\PlatON> git clone https://github.com/PlatONnetwork/PlatON-Go.git
-C:\Users\PlatON> xcopy /S PlatON-Go %GOPATH%\src\github.com\PlatONnetwork\PlatON-Go
-C:\Users\PlatON> cd %GOPATH%\src\github.com\PlatONnetwork\PlatON-Go
+go run build/ci.go install ./cmd/platon
 
 
 ```
 
-5. Start building:
-
-The command to compile `platon` is:
-
-
-```
-C:\Users\PlatON\src\github.com\PlatONnetwork\PlatON-Go> go install -v ./cmd/platon
-
-
-```
-
-6. Copy the compiled `platon.exe` file to `D:\platon-node`
-
-
-```
-C:\Users\PlatON\src\github.com\PlatONnetwork\PlatON-Go> move %GOPATH%\bin\platon.exe D:\platon-node
-
-
-```
+After compilation, the `platon`and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.

@@ -1,10 +1,10 @@
-﻿
+
 > Quickstart: Installing and running PlatON nodes
 
 ## Installing PlatON
 PlatON supports various Linux flavors as well as Windows and Docker. For each platform installation instructions, please refer to [Installation Instructions](en-us/[English]-Installation-Instructions).
 
-We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. Please ensure that the `platon` program generated in [Installation Instructions](en-us/[English]-Installation-Instructions) is copied to the working directory. Note that the following operations are performed in the working directory.
+We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. Note that the following operations are performed in the working directory.
 
 ## Connecting to the network
 

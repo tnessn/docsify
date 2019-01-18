@@ -28,7 +28,7 @@
 ## 架构
 
 <div align=left>
-<img src="zh-cn/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 架构图说明：
 
@@ -78,7 +78,7 @@
 
 隐私合约运行依赖于`PlatON` 网络集群环境，提供区块链的核心功能，想要让节点提供 MPC 计算能力必须启用MPC计算功能。
 
-   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/[Chinese-Simplified]-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
+   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](%5BChinese-Simplified%5D-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
 
    2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
 
@@ -294,7 +294,7 @@ digest:
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
 
-1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/pWASM-linux.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
+1. 下载 Ubuntu 版本 [Wasm合约开发包 ]() 并解压到 ${pWasm} 。若已下载，跳至下一步。
 
 2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem`
 
