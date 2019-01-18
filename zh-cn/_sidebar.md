@@ -21,9 +21,8 @@
 - SDKs
 - 
 - [Javascript SDK](zh-cn/[Chinese-Simplified]-JS-SDK)
-- [Java SDK](zh-cn/[Chinese-Simplified]-Java-SDK)
+- [Java&Android SDK](zh-cn/[Chinese-Simplified]-Java-SDK)
 - [Python SDK](zh-cn/[Chinese-Simplified]Python-SDK)
-- [Android SDK](zh-cn/[Chinese-Simplified]-Java-SDK)
 - [iOS SDK](zh-cn/[Chinese-Simplified]-Swift-SDK)
 - 
 - 技术文档
