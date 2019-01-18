@@ -13,6 +13,10 @@
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -25,6 +29,10 @@ PublicKey :  8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5
 
 
 ```
+
+
+
+
 
 
 
@@ -53,6 +61,10 @@ PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点�
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -68,6 +80,10 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 
 ```
+
+
+
+
 
 
 
@@ -139,6 +155,10 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -150,6 +170,10 @@ D:\platon-node> type .\data\platon\nodekey
 
 
 ```
+
+
+
+
 
 
 
@@ -175,6 +199,10 @@ $ cat ./data/platon/nodekey
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -184,6 +212,10 @@ D:\platon-node> platon.exe --datadir .\data init platon.json
 
 
 ```
+
+
+
+
 
 
 
@@ -215,6 +247,10 @@ Successfully wrote genesis state
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -224,6 +260,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --r
 
 
 ```
+
+
+
+
 
 
 
@@ -281,8 +321,16 @@ $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0
 
 
 
+
+
+
+
 
 - 每个节点实例拥有单独的data目录（--datadir）
+
+
+
+
 
 
 
@@ -295,8 +343,16 @@ $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0
 
 
 
+
+
+
+
 
 - 节点必须知道对方的存在
+
+
+
+
 
 
 
@@ -307,6 +363,10 @@ $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0
 
 
 1.在platon-node目录下创建目录data0和data1，作为两个节点的数据目录。分别生成两个节点的coinbase账户。
+
+
+
+
 
 
 
@@ -333,6 +393,10 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 
 
 ```
+
+
+
+
 
 
 
@@ -367,6 +431,10 @@ Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -384,6 +452,10 @@ PublicKey :  1b22ffc514b806c752b3f145aa644173469e2b425b4847c9ce7c318451a1a249d06
 
 
 ```
+
+
+
+
 
 
 
@@ -419,8 +491,16 @@ PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点�
 
 
 
+
+
+
+
 
 - `node0-pubkey`为步骤2生成的节点0的 ***节点ID*** 
+
+
+
+
 
 
 
@@ -433,8 +513,16 @@ PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点�
 
 
 
+
+
+
+
 
 - `node0-account-address`为步骤1生成的节点0的 ***Address***
+
+
+
+
 
 
 
@@ -472,6 +560,10 @@ PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点�
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -487,6 +579,10 @@ D:\platon-node> type .\data1\platon\nodekey
 
 
 ```
+
+
+
+
 
 
 
@@ -515,6 +611,10 @@ $ cat ./data1/platon/nodekey
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -525,6 +625,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --
 
 
 ```
+
+
+
+
 
 
 
@@ -548,6 +652,10 @@ $ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 
 
 
 
+
+
+
+
 
 - Windows命令行：
 
@@ -559,6 +667,10 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --
 
 ```
 在Windows下除第一个节点外，其他节点都需要使用--ipcdisable启动。
+
+
+
+
 
 
 
@@ -614,6 +726,10 @@ LD_LIBRARY_PATH=/home/platon/platon-node/mpclib
 
 
 ```
+
+
+
+
 
 
 
