@@ -15,7 +15,7 @@ The Baleyworld TestNet is live. There are two ways to connect to it:
 * Use interactive command line tools to install and connect [learn more](https://github.com/PlatONnetwork/wiki/wiki/_javascript-console)
 
 ### Building a private network
-If you are unable to connect to external networks, or if you want to test Platon locally, see [Creating private networks](en-us/[English]-private-networks).
+If you are unable to connect to external networks, or if you want to test Platon locally, see [Creating private networks](en-us/[English]-Private-Networks).
 
 ### Connecting to nodes
 
@@ -61,7 +61,7 @@ The output is the account address.
 
 
 ```
-In this example, `0x566c274db7ac6d38da2b075b4ae41f4a5c481d21` is the coinbase account created when [creating private network](en-us/[English]-private-networks) and has been pre-allocated in the genesis block.
+In this example, `0x566c274db7ac6d38da2b075b4ae41f4a5c481d21` is the coinbase account created when [creating private network](en-us/[English]-Private-Networks) and has been pre-allocated in the genesis block.
 
 ## unlocking account
 You need to unlock your account before sending a transaction.

@@ -15,7 +15,7 @@ For getting started guides, see here
 * [Create a Wasm Contract in PlatON]
 * [Create a Verifiable Contract in PlatON]
 * [Create a Privacy Contract in PlatON](en-us/[English]PlatON-Privacy-Contract-Guide)
-* [How to create a private PlatON network Comments Feed](en-us/[English]-private-networks)
+* [How to create a private PlatON network Comments Feed](en-us/[English]-Private-Networks)
 
 ## Downloads
 PlatON Clients and Tools include:nnn- [Go PlatON](https://github.com//PlatONnetwork/PlatON-Go), fully working, Golang implementation of the PlatON protocolnnn- [Java PlatON](https://github.com//PlatONnetwork/PlatON-Java), Java implementation of the PlatON protocolnnn- [Wasm Contract Compiler], the Compiler for wasm contract based on secure multi-party computationnnn- [llvm-jit], the wrapper around the LLVM JITnnn- [pWASM], PlatON flavored WebAssemblynnn- [pWASM-compiler], the compiler for PWasmnnn- [pWASM-abigen], ABI code and data generator for pWASM VMnnn- [Samurai], the Electron host for PlatON Wallet appnnn- [ATON iOS], PlatON Wallet app for iOS devicennn- [ATON Andriod], PlatON Wallet app for Andriod device
