@@ -1,6 +1,6 @@
 - Basics
 - 
-- [Introduction](en-us/README)
+- [Introduction](en-us/[English]-Introduction)
 - [White Paper](en-us/[English]-Whitepaper)
 - [Getting Started](en-us/[English]-Getting-Started)
 - [Installation Instructions](en-us/[English]-Installation-Instructions)

@@ -1,6 +1,6 @@
 - 基础
 - 
-- [介绍](zh-cn/README)
+- [介绍](zh-cn/[Chinese-Simplified]-介绍)
 - [白皮书](zh-cn/[Chinese-Simplified]-白皮书)
 - [快速指南](zh-cn/[Chinese-Simplified]-快速指南)
 - [安装指南](zh-cn/[Chinese-Simplified]-安装指南)
