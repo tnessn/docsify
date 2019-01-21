@@ -1,8 +1,8 @@
-Javascript SDK
+# index
 
 - [Overview](#Overview)
 - [Release notes](#Release-notes)
-  - [v0.2.0 Release notes](#v020-Release-notes)
+  - [v0.2.0 Release notes](#v0.2.0-Release-notes)
 - [Quick start](#Quick-start)
   - [Installation instruction](#Installation-instruction)
   - [Code initialization](#Code-initialization)
@@ -40,15 +40,12 @@ Installation using node.js:
 
 Next step is to create a web3 instance with provider. To avoid overwrite your existing provider, better to check if web3 instance already exists. For example, when use Mist.
 
-
 ```js
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
 } else {
     web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:6789'));
 }
-
-
 ```
 
 ### Contract
@@ -56,7 +53,6 @@ if (typeof web3 !== 'undefined') {
 How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 #### Sample contract
-
 
 ```
     namespace platon {
@@ -108,8 +104,6 @@ How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [W
         }
     }
     //platon autogen end
-
-
 ```
 
 #### Deploy Contract
@@ -126,7 +120,6 @@ How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [W
 |callback |Funciton |Optional | call back function for asynchronous execution |
 
 ##### Sample code
-
 
 ````js
 const Web3 = require('web3'),
@@ -182,8 +175,6 @@ function sign(privateKey, data) {
     const result = '0x' + serializeTx.toString('hex')
     return result
 }
-
-
 ````
 
 #### Contract function call
@@ -204,7 +195,6 @@ Name                  Type         Attributes   Description
 
 ##### Sample code
 
-
 ````js
 const data = contract.getOwners.getPlatONData()
 
@@ -217,8 +207,6 @@ const result = web3.eth.call({
 console.log('call result:', result);
 
 contract.decodePlatONCall(result)
-
-
 ````
 
 #### Call contract sendRawTransaction
@@ -238,7 +226,6 @@ contract.decodePlatONCall(result)
 |callback|Funciton  |Optional|Callback function for asynchronous execution|
 
 ##### Sample code
-
 
 ````js
 const Tx = require('ethereumjs-tx');
@@ -284,8 +271,6 @@ function getParams(data = '', value = "0x0") {
 
     return params
 }
-
-
 ````
 
 ### web3
@@ -314,7 +299,6 @@ function getParams(data = '', value = "0x0") {
 `Object` - a contract object
 
 ##### Sample code
-
 
 ````js
 const abi=[
@@ -540,9 +524,7 @@ const MyContract = web3.eth.contract(abi);
 
 const myContractInstance = MyContract.at('0x91b0ac240b62de2f0152cac322c6c5eafe730a84');
 
-
 ````
-
 
 ````js
 var MyContract = web3.eth.contract(abi);
@@ -556,8 +538,6 @@ var contractInstance = MyContract.new([contructorParam1] [, contructorParam2], {
 // Get the data to deploy the contract manually
 var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2], {data: '0x12345...'});
 // contractData = '0x12345643213456000000000023434234'
-
-
 ````
 
 #### contract.getPlatONData
@@ -600,11 +580,8 @@ var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2
 
 ##### Sample code
 
-
 ````js
     MyContract.decodePlatONCall( '0x',)
-
-
 ````
 
 #### contract.decodePlatONLog
@@ -627,11 +604,8 @@ var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2
 
 ##### Sample code
 
-
 ````js
 const data=web3.eth.getTransactionReceipt('0xb1335d4db521ddc0b390448f919e5b5af1258b29e7ab4e0d68b0ef315af0cf5f');
 
 let res = myContractInstance.decodePlatONLog(data.logs[0]);
-
-
 ````

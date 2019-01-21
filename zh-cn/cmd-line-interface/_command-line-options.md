@@ -186,7 +186,5 @@ MISC OPTIONS:6
 
 
 COPYRIGHT:
-   Copyright 2013-2018 The PlatON-Go Authors
-
-
+   Copyright 2013-2018 The PlatON-Go Authors 
 ```

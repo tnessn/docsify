@@ -40,30 +40,21 @@ Let's take the 32-bits integer privacy addition as an example:
 
 1. Declare a 32-bits signed integer ``privacy calculation variable'`
 
-
 ```cpp
 emp::Integer v1(123, ALICE);//Declare privacy calculation variable for Alice
 emp::Integer v2(456, BOB);//Declare privacy calculation variable for Bob
-
-
 ```
 
 2. Two parties privacy addition
 
-
 ```cpp
 emp::Integer result = v1 + v2; //Private addition
-
-
 ```
 
 3. Get the decryped value from result
 
-
 ```cpp
 Int plain_result = result.reveal();//Alice and Bob both get the result of the calculation which is 579
-
-
 ```
 ***NOTE***:
      1. Privacy data variables of Alice and Bob must be same type and same length to have successful privacy calculation; otherwise, an error will be reported.
@@ -74,7 +65,6 @@ Int plain_result = result.reveal();//Alice and Bob both get the result of the ca
 The current privacy calculation can only support integer operation, ie **emp::Integer**. Privacy security calculations such as arithmetic operations, absolute values, and bit operations are provided.
 
 ### interface
-
 
 ```cpp
 namespace emp
@@ -126,8 +116,6 @@ namespace emp
     Bit& operator[](int index);
     Const Bit & operator[](int index) const;
 }//emp
-
-
 ```
 
 ## Privacy calculation function definition
@@ -138,22 +126,15 @@ namespace emp
 
 **Function definition prototype**:
 
-
 ```cpp
 return_type function_name(declare_type in1, declare_type in2, ...)
-
-
 ```
 **meaning**:
-
-
 ```
 return_type: return data type
 Declare_type: C++ primitive type or type defined by Google Protobuf
 in1: encryptd data from Alice
 in2: encryptd data from Bob
-
-
 ```
 **note**:
 1. Input parameter types and return type must be in below scope:
@@ -171,7 +152,6 @@ The following code describes a privacy calculation function implementation which
 
 1. Define a user-defined type Foo (use Google Protobuf defination)
 
-
 ```protobuf
 syntax = "proto3";
 message Foo {
@@ -179,8 +159,6 @@ message Foo {
 	int32 item2 = 2;
 	string info = 3;
 }
-
-
 ```
 
 2. Define the privacy calculation function
@@ -188,8 +166,6 @@ message Foo {
 Here, the function implemented as an absolute value calculation. The encrypted input values ​​of Alice and Bob will not be leaked during the process, and final result will be returned as foo of user defined type Foo.
 
 	code show as below:
-
-
 ```cpp
 /**
 * Perform the absolute value calculation of item1 and item2 input by Alice, then compare with Bob's input respectively. The calculation result returns as type foo.
@@ -208,8 +184,6 @@ Foo foo_abs(const Foo& in1, int32_t in2, const std::string& extra)
 
     return foo;
 }
-
-
 ```
 
 3. Call the function
@@ -217,8 +191,6 @@ Foo foo_abs(const Foo& in1, int32_t in2, const std::string& extra)
 For example, Alice enters {1000, 100}, and Bob enters 900 to conduct privacy calculation defined by foo_abs.
 
 Alice calls the function as below：
-
-
 ```cpp
  /**
  Prepare alice varible externally in advance
@@ -228,20 +200,14 @@ Alice calls the function as below：
  Foo alice;
  int in2 = 0;//Leave Bob's input empty
  Foo result = foo_abs(alice, in2, "abs");//The value of parameter 1 is only known to Alice who doesn't have knowledge of parameter 2, parameter 2 is from Bob who is the independent privacy calculation peer on the other end
-
-
 ```
 
 Bob calls the function as below：
-
-
 ```cpp
 //Bob doesn't need to know Alice's input
 Foo alice;
 int in2 = 900;//Bob's external seperate input
 Foo result = foo_abs(alice, in2, "abs");//The value of parameter 2 is only known to Bob who doesn't have knowledge of parameter 1 in reverse, parameter 1 is from Alice who is the independent privacy calculation peer on the other end
-
-
 ```
 You may find out that Alice and Bob run the same code: ``Foo result = foo_abs(alice, in2)`` with their own input data while leaving the counter party input data as 0 by default.
 
@@ -255,7 +221,6 @@ The privacy algorithm consists of two parts: the input data type definition and 
 
 - **protobuf defination**：
 
-
 ```protobuf
 syntax = "proto3";
 message Foo {
@@ -263,16 +228,11 @@ message Foo {
 	int32 item2 = 2;
 	string info = 3;
 }
-
-
 ```
 Save the protobuf defination into msg.pb file and compile it:
 
-
 ```bash
 > protoc msg.pb --cpp_out=./
-
-
 ```
 Generate the msg.pb.h header file and msg.pb.cc.
 
@@ -282,7 +242,6 @@ Write a privacy contract that contains the pb-generated files and the integer.h 
 THen write the algorithm function with an input Foo object contains two integers items1 and item2, and another input of integer, followed by absolute value calculation and returns results in a new Foo object.
 
 Code as below:
-
 
 ```cpp
 
@@ -306,8 +265,6 @@ Code as below:
 
         return foo;
     }
-
-
 ```
 Save file as foo_sample.cpp
 
@@ -317,8 +274,6 @@ Save file as foo_sample.cpp
 Compile foo_sample.cpp with Plang
 
 Configure the command parameter file:
-
-
 ```bash
 config.json is configured as below：
 {
@@ -329,21 +284,14 @@ config.json is configured as below：
      "urls":{"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219":"DirectNodeServer:default -h 10.10.8.155 -p 10001",
              "0x3771c08952f96e70af27324de11bb380ec388ec3":"DirectNodeServer:default -h 10.10.8.155 -p 10002"}
 }
-
-
 ```
 
 Execute command:
 
-
 ```bash
 plang foo.proto foo_sample.cpp -config config.json
-
-
 ```
 Outputs：
-
-
 ```
 digest:
  * IR NAME: MPC8171688343840523029_bc
@@ -353,25 +301,18 @@ digest:
  * 6f9bbe6c90391233e73816de5aff6ba1  foo_abs         
  * aec7576d649940857aca097770321722  operator&       
  * 65b42adf4b685c5b9f4dc98c9f4a36c5  MakeTa
-
-
 ```
 The following files will be generated:
-
-
 ```
 Compiling intermdiate file: foo_sample.cpp.bc
 Privacy contract(wasm): mpcc.cpp
 JAVA data access agent： MPCfoo_sample.java (uner folder code/java)
 protobuf output files: msg.pb.h, msg.pb.cc
-
-
 ```
 Please refer to [Plang compiler user manual] for more details
 
 ### Sample 1： Millionaires's problem
 [Yao's Millionaires' problem] is a secure multi-party computation problem which was introduced in 1982 by Andrew Yao. The problem discusses two millionaires, Alice and Bob, who are interested in knowing which of them is richer without revealing their actual wealth. With [PlatON]**the privacy contract**, we can resolve the problem with no effort. The implementation of privacy contract is below:
-
 
 ```cpp
 #include "integer.h"
@@ -385,8 +326,6 @@ int Millionaire(int32_t in1, int32_t in2, const std::string& category)
     emp::Integer ret = (item1 - item2);//compare
     return ret.reveal() > 0 ? 1 : 0;//get the result
 }
-
-
 ```
 
 ### More samples and details

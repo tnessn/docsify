@@ -29,7 +29,6 @@
 
 ## Other
 
-
 ```
     <mirror>
         <id>alimaven</id>
@@ -37,6 +36,4 @@
         <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         <mirrorOf>central</mirrorOf>
     </mirror>
-
-
 ```

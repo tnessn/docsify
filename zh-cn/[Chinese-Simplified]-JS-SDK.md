@@ -2,7 +2,7 @@
 
 - [概览](#概览)
 - [版本说明](#版本说明)
-  - [v0.2.0 更新说明](#v020-更新说明)
+  - [v0.2.0 更新说明](#v0.2.0-更新说明)
   - [v0.3.0 更新说明](#v0.3.0-更新说明)
 - [快速入门](#快速入门)
   - [安装或引入](#安装或引入)
@@ -11,11 +11,11 @@
   - [合约示例](#合约示例)
   - [部署合约](#部署合约)
   - [合约call调用](#合约call调用)
-  - [合约sendRawTransaction调用](#合约sendRawTransaction调用)
+  - [合约sendRawTransaction调用](#合约sendrawtransaction调用)
   - [内置合约](#内置合约)
     - [CandidateContract](#CandidateContract)
 - [web3](#web3)
-  - [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准JSON-RPC)
+  - [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准json-rpc)
   - [新增的接口](#新增的接口)
     - [contract](#contract)
       - [getPlatONData](#contract.getPlatONData)
@@ -49,23 +49,19 @@
 
 然后你需要创建一个web3的实例，设置一个provider。为了保证你不会覆盖一个已有的provider，比如使用Mist时有内置，需要先检查是否web3实例已存在。
 
-
 ```js
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
 } else {
     web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:6789'));
 }
-
-
 ```
 
 ### 合约
 
-wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WADSM合约开发指南](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
+wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WASM合约开发指南](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 
 #### 合约示例
-
 
 ```
     namespace platon {
@@ -117,8 +113,6 @@ wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请�
         }
     }
     //platon autogen end
-
-
 ```
 
 #### 部署合约
@@ -135,7 +129,6 @@ wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请�
 |callback|Funciton  |可选|回调函数，用于支持异步的方式执行|
 
 ##### 示例
-
 
 ````js
 const Web3 = require('web3'),
@@ -191,8 +184,6 @@ function sign(privateKey, data) {
     const result = '0x' + serializeTx.toString('hex')
     return result
 }
-
-
 ````
 
 #### 合约call调用
@@ -213,7 +204,6 @@ function sign(privateKey, data) {
 
 ##### 示例
 
-
 ````js
 const data = contract.getOwners.getPlatONData()
 
@@ -226,8 +216,6 @@ const result = web3.eth.call({
 console.log('call result:', result);
 
 contract.decodePlatONCall(result)
-
-
 ````
 
 #### 合约sendRawTransaction调用
@@ -246,7 +234,6 @@ contract.decodePlatONCall(result)
 |callback|Funciton  |可选|回调函数，用于支持异步的方式执行|
 
 ##### 示例
-
 
 ````js
 const Tx = require('ethereumjs-tx');
@@ -292,8 +279,6 @@ function getParams(data = '', value = "0x0") {
 
     return params
 }
-
-
 ````
 
 #### 内置合约
@@ -303,7 +288,6 @@ function getParams(data = '', value = "0x0") {
 > PlatON经济模型中候选人相关的合约接口[合约描述](_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 ##### 加载合约
-
 
 ````js
 const Web3 = require('web3'),
@@ -334,12 +318,9 @@ function getParams(data = '', value = "0x0") {
     }
     return params;
 }
-
-
 ````
 
 ./toObj.js
-
 
 ````js
 function toObj(str) {
@@ -372,12 +353,9 @@ function toObj(str) {
 }
 
 module.exports = toObj;
-
-
 ````
 
 ./sign.js文件
-
 
 ````js
 const Tx = require('ethereumjs-tx');
@@ -397,12 +375,9 @@ module.exports = (privateKey, data) => {
 
     return result;
 };
-
-
 ````
 
 ./getTransactionReceipt.js
-
 
 ````js
 const Web3 = require('web3'),
@@ -434,8 +409,6 @@ function getTransactionReceipt(hash, fn) {
 }
 
 module.exports = getTransactionReceipt
-
-
 ````
 
 ##### CandidateDeposit
@@ -455,7 +428,6 @@ module.exports = getTransactionReceipt
 
 Extra描述
 
-
 ````json
 {
     "nodeName":string,                     //节点名称
@@ -464,8 +436,6 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
-
-
 ````
 
 **返回值 或 回调**
@@ -475,19 +445,14 @@ Extra描述
 |param1|String|解析后的日志数组|
 
 param1描述
-
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 ###### 示例
-
 
 ````js
 const privateKey = '099cad12189e848f70570196df434717c1ccc04f421da6ab651f38297a065cb7';
@@ -533,8 +498,6 @@ getTransactionReceipt(hash, (code, data) => {
         console.warn(`节点候选人申请 / 增加质押异常`);
     }
 });
-
-
 ````
 
 ##### CandidateApplyWithdraw
@@ -555,19 +518,14 @@ getTransactionReceipt(hash, (code, data) => {
 |param1|String|解析后的日志数组|
 
 param1描述
-
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 ###### 示例
-
 
 ````js
 const privateKey = '099cad12189e848f70570196df434717c1ccc04f421da6ab651f38297a065cb7';
@@ -596,8 +554,6 @@ getTransactionReceipt(hash, (code, data) => {
         console.warn(`节点质押金退回申请异常`)
     }
 })
-
-
 ````
 
 ##### CandidateWithdraw
@@ -617,19 +573,14 @@ getTransactionReceipt(hash, (code, data) => {
 |param1|String|解析后的日志数组|
 
 param1描述
-
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 ###### 示例
-
 
 ````js
 const privateKey = '099cad12189e848f70570196df434717c1ccc04f421da6ab651f38297a065cb7';
@@ -657,8 +608,6 @@ getTransactionReceipt(hash, (code, data) => {
         console.warn(`节点质押金提取异常`);
     }
 })
-
-
 ````
 
 ##### SetCandidateExtra
@@ -673,7 +622,6 @@ getTransactionReceipt(hash, (code, data) => {
 
 Extra描述
 
-
 ````json
 {
     "nodeName":string,                     //节点名称
@@ -682,8 +630,6 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
-
-
 ````
 **返回值 或 回调**
 
@@ -692,19 +638,14 @@ Extra描述
 |param1|String|解析后的日志数组|
 
 param1描述
-
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 ###### 示例
-
 
 ````js
 const privateKey = '099cad12189e848f70570196df434717c1ccc04f421da6ab651f38297a065cb7';
@@ -742,8 +683,6 @@ getTransactionReceipt(hash, (code, data) => {
         console.log(`设置节点附加信息失败`)
     }
 })
-
-
 ````
 
 ##### CandidateWithdrawInfos
@@ -762,7 +701,6 @@ getTransactionReceipt(hash, (code, data) => {
 | :------: |:------: |:------: |
 |string|String|解析后的日志数组|
 
-
 ````json
 {
     "Ret": true,
@@ -773,12 +711,9 @@ getTransactionReceipt(hash, (code, data) => {
         "LockBlockCycle": 1            //退款金额锁定周期
     }]
 }
-
-
 ````
 
 ###### 示例
-
 
 ````js
 const nodeId = '0xeebeaa496d954f8ee864e6460719755398f1e5b36e7a0c911f527fe3247b02a0a4db17aa59c5235e923602df1aeb26042149b8d2fd71cf990046b08d3b323b9a' //[64]byte 节点ID(公钥)
@@ -793,8 +728,6 @@ const result = web3.eth.call({
 const result1 = candidateContract.decodePlatONCall(result);
 const result2 = toObj(result1.data)
 console.log('获取节点申请的退款记录列表结果:', result2);
-
-
 ````
 
 ##### CandidateDetails
@@ -806,7 +739,6 @@ console.log('获取节点申请的退款记录列表结果:', result2);
 | 名称 |类型|属性|含义|
 | :------: |:------: |:------: | :------: |
 |nodeId|String|必选|节点id, 16进制格式， 0x开头|
-
 
 ````json
 {
@@ -831,8 +763,6 @@ console.log('获取节点申请的退款记录列表结果:', result2);
     //出块奖励佣金比，以10000为基数(eg：5%，则fee=500)
     "Fee": 500
 }
-
-
 ````
 **返回值 或 回调**
 
@@ -841,19 +771,14 @@ console.log('获取节点申请的退款记录列表结果:', result2);
 |param1|String|解析后的日志数组|
 
 param1描述
-
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 ###### 示例
-
 
 ````js
 const nodeId = '0xeebeaa496d954f8ee864e6460719755398f1e5b36e7a0c911f527fe3247b02a0a4db17aa59c5235e923602df1aeb26042149b8d2fd71cf990046b08d3b323b9a' // 节点ID(公钥)
@@ -869,8 +794,6 @@ const result = web3.eth.call({
 const result1 = candidateContract.decodePlatONCall(result);
 const result2 = toObj(result1.data)
 console.log('获取候选人信息结果:', result2);
-
-
 ````
 
 ##### candidateDetails
@@ -887,7 +810,6 @@ console.log('获取候选人信息结果:', result2);
 
 `string` - `String` json格式字符串
 
-
 ````json
 {
     //质押金额
@@ -911,12 +833,9 @@ console.log('获取候选人信息结果:', result2);
     //出块奖励佣金比，以10000为基数(eg：5%，则fee=500)
     "Fee": 500
 }
-
-
 ````
 
 ###### 示例
-
 
 ````js
 const nodeId = '0xeebeaa496d954f8ee864e6460719755398f1e5b36e7a0c911f527fe3247b02a0a4db17aa59c5235e923602df1aeb26042149b8d2fd71cf990046b08d3b323b9a' // 节点ID(公钥)
@@ -932,8 +851,6 @@ const result = web3.eth.call({
 const result1 = candidateContract.decodePlatONCall(result);
 const result2 = toObj(result1.data)
 console.log('获取候选人信息结果:', result2);
-
-
 ````
 
 ##### CandidateList
@@ -949,7 +866,6 @@ console.log('获取候选人信息结果:', result2);
 
 `string` - `String` json格式字符串
 
-
 ````json
 [{
     "Deposit": 11100000000000000000,
@@ -974,12 +890,9 @@ console.log('获取候选人信息结果:', result2);
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
-
-
 ````
 
 ###### 示例
-
 
 ````js
 const data = candidateContract.CandidateList.getPlatONData()
@@ -993,8 +906,6 @@ const result = web3.eth.call({
 const result1 = candidateContract.decodePlatONCall(result);
 const result2 = toObj(result1.data)
 console.log(`所有入围节点的信息列表:`, result2);
-
-
 ````
 
 ##### VerifiersList
@@ -1010,7 +921,6 @@ console.log(`所有入围节点的信息列表:`, result2);
 
 `string` - `String` json格式字符串
 
-
 ````json
 [{
     "Deposit": 11100000000000000000,
@@ -1035,12 +945,9 @@ console.log(`所有入围节点的信息列表:`, result2);
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
-
-
 ````
 
 ###### 示例
-
 
 ````js
 const data = candidateContract.VerifiersList.getPlatONData()
@@ -1054,8 +961,6 @@ const result = web3.eth.call({
 const result1 = candidateContract.decodePlatONCall(result);
 const result2 = toObj(result1.data);
 console.log('获取参与当前共识的验证人列结果:', result2);
-
-
 ````
 
 
@@ -1085,7 +990,6 @@ console.log('获取参与当前共识的验证人列结果:', result2);
 `Object` - 一个合约对象
 
 ##### 示例
-
 
 ````js
 const abi=[
@@ -1311,9 +1215,7 @@ const MyContract = web3.eth.contract(abi);
 
 const myContractInstance = MyContract.at('0x91b0ac240b62de2f0152cac322c6c5eafe730a84');
 
-
 ````
-
 
 ````js
 var MyContract = web3.eth.contract(abi);
@@ -1327,8 +1229,6 @@ var contractInstance = MyContract.new([contructorParam1] [, contructorParam2], {
 // Get the data to deploy the contract manually
 var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2], {data: '0x12345...'});
 // contractData = '0x12345643213456000000000023434234'
-
-
 ````
 
 #### contract.getPlatONData
@@ -1371,11 +1271,8 @@ var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2
 
 ##### 示例
 
-
 ````js
     MyContract.decodePlatONCall( '0x',)
-
-
 ````
 
 #### contract.decodePlatONLog
@@ -1398,12 +1295,9 @@ var contractData = MyContract.new.getData([contructorParam1] [, contructorParam2
 
 ##### 示例
 
-
 ````js
 const data=web3.eth.getTransactionReceipt('0xb1335d4db521ddc0b390448f919e5b5af1258b29e7ab4e0d68b0ef315af0cf5f');
 
 let res = myContractInstance.decodePlatONLog(data.logs[0]);
-
-
 ````
 

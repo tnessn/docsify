@@ -28,12 +28,8 @@ or
     $ platon --verbosity 0 console
 
 PlatON has support to load custom JavaScript files into the console through the `--preload` argument. This can be used to load often used functions, setup web3 contract objects, or ...
-
-
 ```
 platon --preload "/my/scripts/folder/utils.js,/my/scripts/folder/contracts.js" console
-
-
 ```
 
 
