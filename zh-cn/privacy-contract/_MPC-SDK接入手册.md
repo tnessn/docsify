@@ -80,6 +80,7 @@ MPC算法编写需要读者对`C++`语言，`Google Protocol Buffer`协议有一
 
 * `YaoMillionairesProblem.cpp`
 
+
 ```c++
 #include <iostream>
 #include "integer.h"    
@@ -100,7 +101,9 @@ bool YaoMillionairesProblem(int money1, int money2) {
     std::cout << __FUNCTION__ << " result(=Alice-Bob): " << ret << std::endl;
 
     return ret >= 0;
-} 
+}
+
+
 ```
 
 ### 快速开始 
@@ -111,6 +114,7 @@ bool YaoMillionairesProblem(int money1, int money2) {
 
 - 工作区目录
 
+
 ```conf
 .
 ├── include                                             # 头文件
@@ -118,11 +122,14 @@ bool YaoMillionairesProblem(int money1, int money2) {
 ├── plang                                               # plang编译器
 ├── config.json                                         # 配置文件
 └── YaoMillionairesProblem.cpp                          # 隐私合约
+
+
 ```
 
 * `YaoMillionairesProblem.cpp` 此处拷入上述案例中的代码
 * `plang` 工具是可执行程序，用于编译算法
 * `config.json` 配置了两个参与方的基本信息，配置如下：
+
 
 ```json 
 {
@@ -143,6 +150,8 @@ bool YaoMillionairesProblem(int money1, int money2) {
 		"0x3771c08952f96e70af27324de11bb380ec388ec3": "DirectNodeServer:default -h 10.10.8.155 -p 10002"
 	}
 }
+
+
 ```
 
 配置文件说明：
@@ -155,8 +164,11 @@ bool YaoMillionairesProblem(int money1, int money2) {
 
 #### 编译
 
+
 ```shell
-$ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include  
+$ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
+
+
 ```
 关于plang编译器的更多使用方式请参考[Plang Compiler](https://github.com/PlatONnetwork/privacy-contract-compiler/blob/master/README.md)
 
@@ -170,6 +182,8 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 	 * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem
 
 文件输出如下:
+
+
 ```
 ├── code
 │   └── java
@@ -179,6 +193,8 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 │       └── ProxyYaoMillionairesProblem-README.TXT
 ├── mpcc.cpp                                            # 生成WASM合约
 └── YaoMillionairesProblem.cpp.bc                       # 生成的ir二进制
+
+
 ```
 
 注意：配置文件或隐私合约内容的更新，都需要重新编译。
@@ -201,6 +217,7 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 
 * 创建普通的Java Maven工程，修改`pom.xml`,添加maven仓库地址
 
+
 ```xml
     <repositories>
         <repository>
@@ -209,9 +226,12 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
             <url>http://sdk.juzix.net/content/groups/public/</url>
         </repository>
     </repositories>
+
+
 ```
 
 * 引入`mpc-data-sdk`依赖
+
 
 ```xml
 <dependency>
@@ -219,6 +239,8 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 	<artifactId>mpc-data-sdk</artifactId>
 	<version>1.0</version>
 </dependency>
+
+
 ```
 
 * 编写代码
@@ -227,6 +249,8 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 并实现`inputImpl`方法。`不要修改包名！！！`。`ProxyYaoMillionairesProblem.java`在发起计算时需要使用。
 
 Alice方只需要实现`MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01`中的方法即可，如下：
+
+
 ```java
 /**
  * YaoMillionairesProblem(int,int)
@@ -241,9 +265,13 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01 extends 
         return Data.Int32(ret_value);
     }
 }
+
+
 ```
 
 Bob方只需要实现`MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02`中的方法即可，如下：
+
+
 ```java
 /**
  * YaoMillionairesProblem(int,int)
@@ -258,6 +286,8 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends 
         return Data.Int32(ret_value);
     }
 }
+
+
 ```
 
 类名格式说明
@@ -282,6 +312,8 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends 
 * 定义程序入口
 
 新增应用主类用来编写程序入口，该入口主要用于启动应用程序，接受参数并启动服务：
+
+
 ```java
 public class Client {
     public static void main(String[] args) {
@@ -291,6 +323,8 @@ public class Client {
         app.start(args);
     }
 }
+
+
 ```
 
 说明：启动需要一下3个参数，该参数可以通过args传入，也可以在`main`函数通过硬编码指定。
@@ -306,15 +340,23 @@ public class Client {
 * 配置文件准备
 
 Alice方的配置cfg.client1.config如下：
+
+
 ```
 TaskCallback.Proxy=tasksession:default -h 192.168.18.31 -p 10001
 Callback.Client.Endpoints=default -h 10.10.8.163
+
+
 ```
 
 Bob方的配置cfg.client2.config如下：
+
+
 ```
 TaskCallback.Proxy=tasksession:default -h 192.168.18.31 -p 10002
 Callback.Client.Endpoints=default -h 10.10.8.163
+
+
 ```
 
 其中`TaskCallback.Proxy`的端口地址为分别启动两个PlatON节点时参数`--mpc.ice`配置中的MPC服务地址和端口，
@@ -326,27 +368,42 @@ Callback.Client.Endpoints=default -h 10.10.8.163
 可以将该maven项目打成可执行的jar包运行，也可直接执行main函数，我们以jar包的形式运行,命令入下：
 
 Alice方：
+
+
 ```bash
 $ java -jar mpc-data-sdk-client1-1.0-SNAPSHOT.jar --walletPath=./config/60ceca9c1290ee56b98d4e160ef0453f7c40d219 --walletPass=11111111 --iceCfgFile=./config/cfg.client1.linux.config
+
+
 ```
 
 Bob方：
+
+
 ```bash
 $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/3771c08952f96e70af27324de11bb380ec388ec3 --walletPass=11111111 --iceCfgFile=./config/cfg.client2.linux.config
+
+
 ```
 
 上述命令会在启动会与MPC计算节点进行连接，需要注意的是Alice必须与Alice计算节点相连，Bob与Bob计算节点
 相连，当连接只有当各自的连接都成功，才能进行下一步操作。
 
 连接成功之后在各自节点日志中能看到一下信息：
+
+
 ```
 [mpc_task_session_impl.cpp:15:registTransactionCallback] ##  user_address:0x60ceca9c1290ee56b98d4e160ef0453f7c40d219, registTransactionCallback
 [mpc_task_session_impl.cpp:26:registerIR]    ## ir_hash:0x60ceca9c1290ee56b98d4e160ef0453f7c40d219, registerIR
+
+
 ```
+
 
 ```
 [mpc_task_session_impl.cpp:15:registTransactionCallback]##  user_address:0x3771c08952f96e70af27324de11bb380ec388ec3, registTransactionCallback 
-[mpc_task_session_impl.cpp:26:registerIR]	## ir_hash:0x3771c08952f96e70af27324de11bb380ec388ec3, registerIR 
+[mpc_task_session_impl.cpp:26:registerIR]	## ir_hash:0x3771c08952f96e70af27324de11bb380ec388ec3, registerIR
+
+
 ```
 
 **注意：Alice方和Bob方的启动没有先后顺序。**
@@ -368,15 +425,21 @@ $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/3771c089
 这里我们使用IDE进行调试
 
 - 新建maven工程，在pom.xml中加入`mpc-proxy-sdk`依赖。
+
+
 ```xml
 <dependency>
     <groupId>net.platon.mpc</groupId>
     <artifactId>mpc-proxy-sdk</artifactId>
     <version>1.0</version>
 </dependency>
+
+
 ```
 
 - 添加maven仓库地址
+
+
 ```xml
 <repositories>
     <repository>
@@ -385,11 +448,14 @@ $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/3771c089
         <url>http://sdk.juzix.net/content/groups/public/</url>
     </repository>
 </repositories>
+
+
 ```
 
 **编写代码**
 
 将`Plang`编译之后生成java代码中`ProxyYaoMillionairesProblem.java`放入`platon.mpc.proxy`包下，`不要修改包名！！！`，并创建程序入口，main函数实现如下：
+
 
 ```java
 public static void main(String[] args) {
@@ -417,16 +483,24 @@ public static void main(String[] args) {
     String transactionHash = client.startCalc(ProxyYaoMillionairesProblem.Method.boolean_YaoMillionairesProblem_int_int, 3);
 
 }
+
+
 ```
 
 **发起计算**
 
 启动main函数，就可以发起计算了，此时在控制台中会输出发起计算的交易hash:
+
+
 ```
 transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c
+
+
 ```
 
 计算过程需要出20个块后才有日志输出和结果，计算成功后，在两方节点日志中会分别出现以下信息：
+
+
 ```
 ===================================================
         taskId: 54396487fef9eb7e3a098755ed88e187866e6d2032aba55592a1ba2e0ab7b4e8
@@ -444,7 +518,11 @@ transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5
         status: PROCESS_OK
         errmsg: OK
 ===================================================
+
+
 ```
+
+
 ```
 ===================================================
          taskId: 54396487fef9eb7e3a098755ed88e187866e6d2032aba55592a1ba2e0ab7b4e8    
@@ -463,12 +541,15 @@ transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5
          errmsg: OK
  ===================================================
 
+
 ```
 **注意：只有在两方均出现`PROCESS_OK`才算计算成功。**
 
 #### 查询结果
 
 - 方式一：程序获取，可通过sdk中提供的方法获取，实现如下：
+
+
 ```java
 public static void main(String[] args) {
     /*
@@ -501,11 +582,15 @@ public static void main(String[] args) {
         }
    }
 }
+
+
 ```
 
 **注意：通过交易hash返回的结果cipher是密文，在getBool(cipher)中会将密文解密，然后转换为相应类型。注意只能由上一步中的计算发起方解密，获取明文，其他方只能获取密文，如果是密文，则会转换失败。**
 
 查询交易回执如下：
+
+
 ```
 {
   blockHash: "0x7b59c274d6e4e67cbee9e92e754ada44e6ff88fe4de632680758a3d6eb9eecc0",
@@ -531,6 +616,8 @@ public static void main(String[] args) {
   transactionHash: "0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c",
   transactionIndex: 0
 }
+
+
 ```
 **注意说明：在获取的结果回执中，如果logs中为空，则说明任务执行失败！**
 
@@ -542,14 +629,19 @@ public static void main(String[] args) {
 
 * MPC回调接口：
 
+
 ```java
 public interface MpcCallbackInterface {
     public byte[] input(final InputRequestPara para);                    // data input
     public void error(final InputRequestPara para, ErrorCode error);     // error notify
     public void result(final InputRequestPara para, final byte[] data);  // result notify
 }
+
+
 ```
 在用`plang`生成的客户端代码中会生成该接口的实现类，如下：
+
+
 ```
 abstract class MpcCallbackBase_fbbf2d8c40e87f406991b1d40bdd94dd implements MpcCallbackInterface {
         public abstract byte[] inputImpl(final InputRequestPara para);
@@ -568,16 +660,25 @@ abstract class MpcCallbackBase_fbbf2d8c40e87f406991b1d40bdd94dd implements MpcCa
             // TODO: do what you want to do
         }
  }
+
+
 ```
 方法使用说明：
+
+
 ```
 input:  通过inputImpl方法传入数据参与计算的数据，可以直接通过ret_value给基础类型赋值，或者通过builder.set_XXX给 message 结构体进行赋值；
 error:  计算过程出现的错误会通过该接口返回，用户可以在这里对错误信息进行处理；
 result：目前在计算参与Bob方能够通过该接口获得计算结果，其中`data`是明文的16进制串;
+
+
 ```
+
 
 ```
 更多示例，参考[MPCSamples.java](../../samples/mpc-data-sdk-client/src/main/java/net/platon/vm/mpc/MPCSamples.java)。
+
+
 ```
 
 ### 计算发起方
@@ -586,9 +687,12 @@ result：目前在计算参与Bob方能够通过该接口获得计算结果，�
 
 **1.发起计算**
 
+
 ```java
 public String startCalc(Method method)
 public String startCalc(Method method, int retry)
+
+
 ```
 函数功能：
  * 通过该方法发起计算，并返回交易hash，根据该交易hash，可以获取计算任务ID、交易回执、结果密文等。
@@ -601,9 +705,12 @@ public String startCalc(Method method, int retry)
 
 **2.获取任务ID**
 
+
 ```java
 public String getTaskId(String transactionHash)
 public String getTaskId(String transactionHash, long timeout)
+
+
 ```
 函数功能：
  * 根据交易hash，获取计算任务Id,后续可以通过任务Id查询结果。
@@ -615,8 +722,11 @@ public String getTaskId(String transactionHash, long timeout)
 
 **3.获取交易回执**
 
+
 ```java
 public TransactionReceipt getTransactionReceipt(String transactionHash);
+
+
 ```
 函数功能：
  * 根据交易hash，获取交易回执。
@@ -626,6 +736,7 @@ public TransactionReceipt getTransactionReceipt(String transactionHash);
 * 返回交易回执。
 
 **注意：如果计算成功，返回的交易回执中logs参数不为空，否则表示计算失败，如下：**
+
 
 ```
 logs: [{
@@ -639,14 +750,20 @@ logs: [{
       transactionHash: "0x9bbf80f7d976e422472bd3cb3b96eb9fc71116c581da31da5102928db3fe4db3",
       transactionIndex: 0
   }],
+
+
 ```
 
 **4.获取结果密文**
+
+
 ```java
 public String getResultByTransactionHash(String transactionHash)
 public String getResultByTransactionHash(String transactionHash, long timeout)
 public String getResultByTaskId(String taskId)
 public String getResultByTaskId(String taskId, long timeout)
+
+
 ```
 函数功能：
  * 根据交易hash或者任务ID，查询计算结果，结果是用计算发起方的公钥加密(ECIES)后的密文。
@@ -659,12 +776,16 @@ public String getResultByTaskId(String taskId, long timeout)
 
 
 **5.获取结果明文**
+
+
 ```java
 public int getInt32(String cipher)
 public long getInt64(String cipher)
 // getUInt32 getUInt64 getBool getFloat getDouble getString ... 
 public com.abc.sample.Samples.Foo getFoo(String cipher)
 // ...
+
+
 ```
 函数功能：
 * 该类接口将获取到的密文进行解密之后转换为相应的基本类型，或者自定义的`protobuf`结构体。其中基本类型的的转换在`mpc-proxy-sdk`中已经进行封装，而自定义的`protobuf`结构体的转换在`plang`编译获得的java文件中生成，可以直接使用。
@@ -677,8 +798,12 @@ public com.abc.sample.Samples.Foo getFoo(String cipher)
 **注意：由于该方法中需要将密文解析为明文，需要计算发起方才能通过该方法获取明文，非计算发起方调用此方法会因无法解密而报错！**
 
 **6.其他**
+
+
 ```java
 public static void showMethodMap()
+
+
 ```
 函数功能：     
 * 显示函数方法名，函数原型，函数枚举。
@@ -686,6 +811,8 @@ public static void showMethodMap()
 
 ```java
 public String getPlainText(String cipher)
+
+
 ```
 函数功能：     
 * 传入密文，获取结果明文(16进制字符串)。这个在知道私钥和密文的情况下即可使用。

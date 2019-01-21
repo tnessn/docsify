@@ -21,12 +21,15 @@ Ubuntu环境支持以下四种安装方式：
 
 ubuntu版本官方二进制包文件下载地址：[https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz)
 
+
 ```bash
 # 下载
 $ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz
 
 # 解压
 $ tar -xvzf platon-ubuntu-amd64-0.3.0.tar.gz
+
+
 ```
 
 解压内容如下：
@@ -39,6 +42,7 @@ $ tar -xvzf platon-ubuntu-amd64-0.3.0.tar.gz
 
 添加`PPA`源并安装`platon`软件包，安装命令如下：
 
+
 ```bash
 # 添加PPA
 $ sudo add-apt-repository ppa:platonnetwork/platon
@@ -46,6 +50,8 @@ $ sudo apt-get update
 
 # 安装PlatON包
 $ sudo apt-get install platon-all
+
+
 ```
 
 安装完成后，可执行程序将安装到： `/usr/bin/`
@@ -54,12 +60,15 @@ $ sudo apt-get install platon-all
 
 下载和安装：
 
+
 ```bash
 # 下载安装包 
 $ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.deb
 
 # 安装
 $ sudo dpkg -i platon-ubuntu-amd64-0.3.0.deb
+
+
 ```
 
 安装完成后，可执行程序将安装到： `/usr/bin/`
@@ -81,18 +90,24 @@ Ubuntu编译环境要求：
 
 源码地址：[https://github.com/PlatONnetwork/PlatON-Go.git](https://github.com/PlatONnetwork/PlatON-Go.git)，执行如下命令编译生成 `platon` 可执行文件:
 
+
 ```
 $ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
- ```
+
+
+```
 
 #### 2. 编译
 
 ##### 编译无`MPC`功能`platon`客户端
 
+
 ```bash
 $ cd PlatON-Go
 $ find ./build -name "*.sh" -exec chmod u+x {} \;
 $ make all
+
+
 ```
 
 ##### 编译带`MPC`功能`platon`客户端
@@ -108,24 +123,30 @@ $ make all
 
 将编译之后的`MPC VM`库`~/home/path/to/mpcvm/build/lib`路径添加到当前用户环境变量:
 
+
 ```bash
 grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" ~/.bashrc || echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" >> ~/.bashrc
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib
+
+
 ```
 
 - 编译`platon`
+
 
 ```bash
 $ cd PlatON-Go
 $ find ./build -name "*.sh" -exec chmod u+x {} \;
 $ make all-with-mpc
+
+
 ```
 
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
 >**提示**：
 
->`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](%5bChinese-Simplified%5d-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
+>`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
 
 ## Windows安装
 
@@ -152,8 +173,11 @@ Windows版本的`platon`二进制文件下载地址：[https://download.platon.n
 
 用管理员身份启动`PowerShell`,然后使用`choco`命令安装`platon`：
 
+
 ```
 choco install platonnetwork --version=0.3.0
+
+
 ```
 
 `platon`,`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
@@ -172,6 +196,7 @@ Windows编译环境需要符合以下条件：
 
 用管理员身份启动`PowerShell`，然后执行以下命令：
 
+
 ```
 // 安装git
 choco install git
@@ -179,6 +204,8 @@ choco install git
 choco install golang
 // 安装mingw
 choco install mingw
+
+
 ```
 
 利用`chocolatey`包管理器安装的软件大部分有默认的安装路径，部分软件可能会有各种各样的路径，这取决于软件的发布者。安装这些包将修改Path环境变量。最后安装路径可查看PATH。安装完之后请确保已安装的Go版本为1.7（或更高版本）。
@@ -187,16 +214,22 @@ choco install mingw
 
 在当前`%GOPATH%`目录下创建`src/github.com/PlatONnetwork/`和`bin`目录，在`PlatONnetwork`目录下克隆`PlatON-GO`的源码:
 
+
 ```
 git clone https://github.com/PlatONnetwork/PlatON-Go.git
+
+
 ```
 
 #### 4. 编译
 
 在源码目录`PlatON-GO`下执行编译命令，如下：
 
+
 ```
 go run build/ci.go install ./cmd/platon
+
+
 ```
 
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。

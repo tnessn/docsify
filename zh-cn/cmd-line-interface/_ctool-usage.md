@@ -22,8 +22,11 @@
 
 ## 使用说明
 
+
 ```
 $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
+
+
 ```
 
 * `command` 待执行的命令,主要有：deploy(发布合约)、invoke(合约调用)、getTxReceipt(查询回执)；
@@ -42,11 +45,15 @@ $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--fun
 **配置文件**
 
 范例：
+
+
 ```JSON
 {
   "url":"http://127.0.0.1:8545",
   "from":"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219"
-} 
+}
+
+
 ```
 
 - `url` PlatON开放的`JSON-RPC`地址信息； 
@@ -57,13 +64,19 @@ $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--fun
 此步用于演示如何进行合约发布，合约发布需要两个文件，一个为后缀为`.wasm`(合约二进制)文件，
 另一个为后缀`.json`(合约接口描述)文件。如何获取这两个文件请参考：[WASM合约开发指南](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 
+
 ```shell
-$ ctool.exe deploy --abi ./demo.cpp.abi.json --code ./demo.wasm --config ./config.json 
+$ ctool.exe deploy --abi ./demo.cpp.abi.json --code ./demo.wasm --config ./config.json
+
+
 ```
+
 
 ```
 trasaction hash: 0xdb0f9a28fcd447702e8d5961f47144d1ea830979e3c984acc8f72c0dca8bdcfc
 contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
+
+
 ```
 
 命令执行后，会返回交易哈希与合约地址。
@@ -73,8 +86,11 @@ contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
 合约发布成功后，接下来进行合约调用，假定测试合约中包含了方法`sayHello(string _word);`,现在对
 该方法进行调用：
 
+
 ```shell 
 $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'sayHello("HelloWorld")' --abi ./demo.cpp.abi.json --config ./config.json
+
+
 ```
 
 **查询结果**
@@ -82,8 +98,11 @@ $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'sa
 继续假设，在上一步我们执行了合约方法`sayHello`,下一步我们将调用该函数存储的值进行读取出来，这种动作
 我们成为查询（call）调用。假定测试合约用包含方法：`char * getWorld();`，调用如下：
 
+
 ```shell 
 $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getWorld()' --abi ./demo.cpp.abi.json --config ./config.json
+
+
 ```
 
 > 预期结果获取到屏幕输出的结果应该为：`HelloWorld`。
@@ -92,8 +111,11 @@ $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'ge
 
 有时候可能需要对交易发送后的回执信息进行查看，则：
 
+
 ```shell 
 $ ctool.exe getTxReceipt 0x0b8996dadd6fd821f055affd1f95dbdf718d288a17e4ac5ed4133f3393bca44d(交易哈希)
+
+
 ```
 
 

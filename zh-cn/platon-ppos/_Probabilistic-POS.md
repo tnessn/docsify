@@ -2,7 +2,7 @@
 
 ## PPoS协议
 
-![ppos protocol](./platon-ppos/images/platon_ppos_2.png)
+![ppos protocol](images/platon_ppos_2.png)
 
 所有PoS系统都会存在去中心化（共识节点数量）和可扩展性（TPS）之间的权衡问题。DPoS偏向较少的共识节点，换取较高的性能。Algorand采用随机方式在全网选取共识节点，但是只能在强同步网络上运行。这是两个典型的极端方法。PlatON采取折衷的方法，这个候选人列表中采用VRF和概率分布方式随机选取。这种方法缩小了共识节点的选取范围，又有效避免了过于中心化的问题。
 
@@ -44,15 +44,19 @@
 
 ### 验证人共识
 
-验证节点选出后，采用[CBFT](_Concurrent-BFT)协议进行共识产生区块。
+验证节点选出后，采用[CBFT](zh-cn/concurrent-bft/_Concurrent-BFT)协议进行共识产生区块。
 
 ## <a name="verify-pool"></a>验证池合约
 
 ### 合约地址
 
 候选池合约内置在创世区块中，合约地址如下：
+
+
 ```
 0x1000000000000000000000000000000000000001
+
+
 ```
 
 ### <a name="CandidateDeposit"></a>质押申请/增加：CandidateDeposit

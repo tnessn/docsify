@@ -53,19 +53,28 @@
 ### CocoaPods
 
 2. 在Podfile文件中添加引用
+
+
 ```
 pod 'platonWeb3', '~> 0.3.0'
+
+
 ```
 
 
 ## 初始化代码
+
+
 ```
 let web3 : Web3 = Web3(rpcURL: "http://192.168.1.100:6789")
+
+
 ```
 
 # 合约
 
 ## 合约示例
+
 
 ```
 #include <stdlib.h>
@@ -113,6 +122,8 @@ namespace demo {
 // 此处定义的函数会生成ABI文件供外部调用
 PLATON_ABI(demo::FirstDemo, invokeNotify)
 PLATON_ABI(demo::FirstDemo, getName)
+
+
 ```
 
 ## 部署合约
@@ -138,6 +149,7 @@ PLATON_ABI(demo::FirstDemo, getName)
 
 ContractDeployCompletion定义如下
 
+
 ```
 public typealias ContractDeployCompletion = (
 _ result : PlatonCommonResult,                  //执行结果
@@ -145,9 +157,12 @@ _ result : PlatonCommonResult,                  //执行结果
 _ address : String?,                            //合约地址
 _ receipt: EthereumTransactionReceiptObject?    //交易回执
 ) -> ()
+
+
 ```
 
 示例：
+
 
 ```
     func deploy(completion: () -> Void){
@@ -166,6 +181,8 @@ _ receipt: EthereumTransactionReceiptObject?    //交易回执
             }
         })
     }
+
+
 ```
 
 ## 合约call调用
@@ -187,6 +204,7 @@ _ receipt: EthereumTransactionReceiptObject?    //交易回执
 
 ExecuteCode含义如下
 
+
 ```
 public enum ExecuteCode {
 case Transfer           //主币转账交易
@@ -200,18 +218,24 @@ case ReducePledge       //减持质押
 case DrawPledge         //提取质押
 case InnerContract      //内置合约调用
 }
+
+
 ```
 
 ContractCallCompletion定义如下
+
 
 ```
 public typealias ContractCallCompletion = (
 _ result : PlatonCommonResult,      //执行结果
 _ data : AnyObject?                 //返回数据
 ) -> ()
+
+
 ```
 
 示例：
+
 
 ```
     func getName(){
@@ -233,6 +257,8 @@ _ data : AnyObject?                 //返回数据
             }
         }
     }
+
+
 ```
 
 ## 合约sendRawTransaction调用
@@ -256,14 +282,18 @@ _ data : AnyObject?                 //返回数据
 
 ContractSendRawCompletion定义如下
 
+
 ```
 public typealias ContractSendRawCompletion = (
 _ result : PlatonCommonResult,          //执行结果
 _ data : Data?                          //交易hash
 ) -> ()
+
+
 ```
 
 示例：
+
 
 ```
     func invokeNotify(msg: String){
@@ -287,6 +317,7 @@ _ data : Data?                          //交易hash
         }
     }
 
+
 ```
 
 ## 合约Event
@@ -304,14 +335,18 @@ _ data : Data?                          //交易hash
 
 PlatonCommonCompletion定义如下
 
+
 ```
 public typealias PlatonCommonCompletion = (
 _ result : PlatonCommonResult,          //执行结果
 _ obj : AnyObject?                      //返回数据
 ) -> ()
+
+
 ```
 
 示例：
+
 
 ```
     func Notify(){
@@ -333,6 +368,7 @@ _ obj : AnyObject?                      //返回数据
             }
         }
     }
+
 
 ```
 
@@ -363,6 +399,8 @@ _ obj : AnyObject?                      //返回数据
 
 
 Extra描述
+
+
 ```
 {
     "nodeName":string,                     //节点名称
@@ -371,6 +409,8 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
+
+
 ```
 
 
@@ -380,6 +420,8 @@ Extra描述
 * `ErrMsg`: string 错误信息
 
 合约方法
+
+
 ```
     func CandidateDeposit(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";//节点id
@@ -428,6 +470,8 @@ Extra描述
             }
         }
     }
+
+
 ```
 
 #### **`CandidateApplyWithdraw`**
@@ -453,14 +497,20 @@ Extra描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
+
+
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
+
+
 ```
 
 **合约使用**
+
+
 ```
     func CandidateApplyWithdraw(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";
@@ -496,6 +546,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`CandidateWithdraw`**
@@ -520,14 +572,20 @@ param1描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
+
+
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
+
+
 ```
 
 **合约使用**
+
+
 ```
     func CandidateWithdraw(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";
@@ -558,6 +616,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`SetCandidateExtra`**
@@ -575,6 +635,8 @@ param1描述
 | value  | BigUInt  | 转账金额，一般为nil                   |
 | completion  | PlatonCommonCompletion  | 回调闭包                   |
 Extra描述
+
+
 ```
 {
     "nodeName":string,                     //节点名称
@@ -583,6 +645,8 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
+
+
 ```
 
 **返回事件**
@@ -592,14 +656,20 @@ Extra描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
+
+
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
+
+
 ```
 
 **合约使用**
+
+
 ```
     func SetCandidateExtra(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";//节点id
@@ -645,6 +715,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`CandidateWithdrawInfos`**
@@ -660,6 +732,7 @@ param1描述
 
 - String：json格式字符串
 
+
 ```
 {
     "Ret": true,                      
@@ -670,9 +743,13 @@ param1描述
         "LockBlockCycle": 1            //退款金额锁定周期
     }]
 }
+
+
 ```
 
 **合约使用**
+
+
 ```
     func CandidateWithdrawInfos() {
         contract.CandidateWithdrawInfos(nodeId: "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3") { (result, data) in
@@ -686,6 +763,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`CandidateDetails`**
@@ -700,6 +779,7 @@ param1描述
 **返回**
 
 - String：json格式字符串
+
 
 ```
 {
@@ -724,9 +804,13 @@ param1描述
     //出块奖励佣金比，以10000为基数(eg：5%，则fee=500)
     "Fee": 500
 }
+
+
 ```
 
 **合约使用**
+
+
 ```
     func CandidateDetails(){
         contract.CandidateDetails(nodeId: "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3") { (result, data) in
@@ -740,6 +824,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`GetBatchCandidateDetail`**
@@ -754,6 +840,7 @@ param1描述
 **返回**
 
 - String：json格式字符串
+
 
 ```
 [{
@@ -779,9 +866,13 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
+
+
 ```
 
 **合约使用**
+
+
 ```
     func GetBatchCandidateDetail(){
        var nodes = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3"
@@ -799,6 +890,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`CandidateList`**
@@ -812,6 +905,7 @@ param1描述
 
 - String：json格式字符串
 
+
 ```
 [{
     "Deposit": 11100000000000000000,
@@ -836,9 +930,13 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
+
+
 ```
 
 **合约使用**
+
+
 ```
     func CandidateList(){
         contract.CandidateList { (result, data) in
@@ -852,6 +950,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 #### **`VerifiersList`**
@@ -864,6 +964,7 @@ param1描述
 **返回**
 
 - String：json格式字符串
+
 
 ```
 [{
@@ -889,9 +990,13 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
+
+
 ```
 
 合约使用：
+
+
 ```
     func VerifiersList(){
         contract.VerifiersList { (result, data) in
@@ -905,6 +1010,8 @@ param1描述
             }
         }
     }
+
+
 ```
 
 # web3

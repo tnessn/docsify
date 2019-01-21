@@ -15,9 +15,10 @@
 
 ### 合约模板
 
-合约语法规则请参考资料：[Wasm合约开发指南]([Chinese-Simplified]-Wasm合约开发指南)
+合约语法规则请参考资料：[Wasm合约开发指南](zh-cn/[Chinese-Simplified]-Wasm合约开发指南)
 
 `Privacy Contract` 范例：[点击查看](privacy-contract/mpcc.cpp)
+
 
 ```c++
 namespace mpc {
@@ -165,6 +166,7 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 #endif
 
+
 ```
 
 ### 全局变量说明
@@ -173,8 +175,11 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **1. IR_VALUE**
 
+
 ```
 #define IR_VALUE "$IR_VALUE_TEMPLATE$"
+
+
 ```
 
 **含义**
@@ -183,14 +188,20 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
-#define IR_VALUE "3b204d6f64756 ... 3732" 
+#define IR_VALUE "3b204d6f64756 ... 3732"
+
+
 ```
 
 **2. INVITOR_VALUE**
 
+
 ```
 #define INVITOR_VALUE "$INVITOR_VALUE_TEMPLATE$"
+
+
 ```
 
 **含义**
@@ -199,14 +210,20 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
 #define INVITOR_VALUE "0x60ceca9c1290ee56b98d4e160ef0453f7c40d219"
+
+
 ```
 
 **3. PARTIES_VALUE**
 
+
 ```
 #define PARTIES_VALUE "$PARTIES_VALUE_TEMPLATE$"
+
+
 ```
 
 **含义**
@@ -215,14 +232,20 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
 #define PARTIES_VALUE "0x60ceca9c1290ee56b98d4e160ef0453f7c40d219&0x3771c08952f96e70af27324de11bb380ec388ec3"
+
+
 ```
 
 **4. URLS_VALUE**
 
+
 ```
 #define URLS_VALUE "$URLS_VALUE_TEMPLATE$"
+
+
 ```
 
 **含义**
@@ -231,14 +254,20 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
 #define URLS_VALUE "0x60ceca9c1290ee56b98d4e160ef0453f7c40d219$DirectNodeServer:default -h 192.168.18.31 -p 10001,0x3771c08952f96e70af27324de11bb380ec388ec3$DirectNodeServer:default -h 192.168.18.31 -p 10002"
+
+
 ```
 
 **5. PROFIT_RULES_VALUE**
 
+
 ```
 #define PROFIT_RULES_VALUE "$PROFIT_RULES_VALUE$"
+
+
 ```
 
 **含义**
@@ -248,14 +277,20 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
 #define PROFIT_RULES_VALUE "A:30,B:70"
+
+
 ```
 
 **6. METHOD_PRICE_VALUE**
 
+
 ```
 #define METHOD_PRICE_VALUE "$METHOD_PRICE_VALUE$"
+
+
 ```
 
 **含义**
@@ -265,16 +300,22 @@ PLATON_ABI(mpc::MPC, get_url_by_id);
 
 **举例**
 
+
 ```
 #define METHOD_PRICE_VALUE "add$1000000,sub$2000000,xor$40000000000"
+
+
 ```
 
 ### 功能函数说明
 
 **1. Event: start_calc_event**
 
+
 ```
 PLATON_EVENT(start_calc_event, uint64_t, const char *)
+
+
 ```
 
 **含义**
@@ -286,8 +327,11 @@ PLATON_EVENT(start_calc_event, uint64_t, const char *)
 
 **2. Event: set_result_event**
 
+
 ```
 PLATON_EVENT(set_result_event, uint64_t, const char *)
+
+
 ```
 
 **含义**
@@ -299,8 +343,11 @@ PLATON_EVENT(set_result_event, uint64_t, const char *)
 
 **3. Func: init**
 
+
 ```
 void init(){}
+
+
 ```
 
 **含义**
@@ -308,6 +355,7 @@ void init(){}
   初始化函数，在合约第一次发布时会执行一次。默认在该函数中实现对静态数据进行入 `db` 操作，主要就是将宏定义的各项静态数据入库，为计算做初始数据准备。
 
 **伪逻辑**
+
 
 ```c++
 	void init() {
@@ -318,6 +366,8 @@ void init(){}
 		// 5、设置算法数据
 		// 6、设置算法价格
 	}
+
+
 ```
 
 
@@ -356,6 +406,7 @@ void init(){}
 
 **伪逻辑**
 
+
 ```c++
 void start_calc(const char *method, const char *extra) {
 	// 校验调用者是否为预定义的参与者（根据实际情况决定，此判断可省略）	
@@ -364,6 +415,8 @@ void start_calc(const char *method, const char *extra) {
 	// 保存本次任务信息，存入一条新记录
 	// 返回 `event`
 }
+
+
 ```
 
 
@@ -378,10 +431,13 @@ void start_calc(const char *method, const char *extra) {
 
 **伪逻辑**
 
+
 ```c++
 void set_result(const char *taskId, uint64_t status, const char *data) {
 	// ...
 }
+
+
 ```
 
 
@@ -396,10 +452,13 @@ void set_result(const char *taskId, uint64_t status, const char *data) {
 
 **伪逻辑**
 
+
 ```c++
 void set_fees(const char *fees) {
 	// ...
 }
+
+
 ```
 
 
@@ -414,10 +473,13 @@ void set_fees(const char *fees) {
 
 **伪逻辑**
 
+
 ```c++
 const char * get_ir_data() const {
 	// ...
 }
+
+
 ```
 
 
@@ -434,10 +496,13 @@ const char * get_ir_data() const {
 
 **伪逻辑**
 
+
 ```c++
 const char * get_participants() const {
 	// ...
 }
+
+
 ```
 
 
@@ -454,18 +519,24 @@ const char * get_participants() const {
 
 **伪逻辑**
 
+
 ```c++
 const char * get_urls() const {
 	// ...
 }
+
+
 ```
 
 
 
 **12. Func: get_url_by_id**
 
+
 ```
 const char * get_url_by_id(const char *id) const {}
+
+
 ```
 
 **含义**
@@ -476,10 +547,13 @@ const char * get_url_by_id(const char *id) const {}
 
 **伪逻辑**
 
+
 ```c++
 const char * get_url_by_id(const char *id) const {
 	// ...
 }
+
+
 ```
 
 
@@ -494,10 +568,13 @@ const char * get_url_by_id(const char *id) const {
 
 **伪逻辑**
 
+
 ```c++
 const char * get_result(const char *task_id) const {
 	// ...
 }
+
+
 ```
 
 
@@ -512,10 +589,13 @@ const char * get_result(const char *task_id) const {
 
 **伪逻辑**
 
+
 ```c++
 uint64_t get_status(const char *task_id) const {
 	// ...
 }
+
+
 ```
 
 
@@ -532,10 +612,13 @@ uint64_t get_status(const char *task_id) const {
 
 **伪逻辑**
 
+
 ```c++
 uint64_t get_fee(const char* method) const {
 	// ...
 }
+
+
 ```
 
 

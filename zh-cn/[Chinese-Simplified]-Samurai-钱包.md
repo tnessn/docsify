@@ -30,7 +30,7 @@ Windows安装程序下载后，双击安装程序并按照说明进行操作。�
 
 
 
-![Image text](./platon-samurai/image/Keystore_address-cn.png)
+![Image text](platon-samurai/image/Keystore_address-cn.png)
 
 
 ### Linux安装
@@ -47,49 +47,49 @@ tar.xz源代码包安装说明：
 
 ### 网络初始化
 
-- [怎么加入PlatON测试网络](_网络初始化#join_net)
+- [怎么加入PlatON测试网络](zh-cn/platon-samurai/_网络初始化#join_net)
 
-- [如何创建PlatON本地私用网络](_网络初始化#create_private)
+- [如何创建PlatON本地私用网络](zh-cn/platon-samurai/_网络初始化#create_private)
 
 ### 钱包
 
-- [如何创建一个钱包](_钱包#create_wallet)
+- [如何创建一个钱包](zh-cn/platon-samurai/_钱包#create_wallet)
 
-- [如何导入/恢复一个已有的钱包](_钱包#import_wallet)
+- [如何导入/恢复一个已有的钱包](zh-cn/platon-samurai/_钱包#import_wallet)
 
-- [如何发送、接收Energon](_钱包#send_recv_energon)
+- [如何发送、接收Energon](zh-cn/platon-samurai/_钱包#send_recv_energon)
 
-- [为什么钱包中的测试币被清零了](_钱包#why_is_cleard)
+- [为什么钱包中的测试币被清零了](zh-cn/platon-samurai/_钱包#why_is_cleard)
 
 ### 联名钱包
 
-- [什么是联名钱包](_联名钱包#what_is)
+- [什么是联名钱包](zh-cn/platon-samurai/_联名钱包#what_is)
 
-- [如何创建一个联名钱包](_联名钱包#how_to_create)
+- [如何创建一个联名钱包](zh-cn/platon-samurai/_联名钱包#how_to_create)
 
-- [如何添加已创建的联名钱包](_联名钱包#how_to_add)
+- [如何添加已创建的联名钱包](zh-cn/platon-samurai/_联名钱包#how_to_add)
 
-- [如何使用联名钱包发送、接收Energon](_联名钱包#how_to_use)
+- [如何使用联名钱包发送、接收Energon](zh-cn/platon-samurai/_联名钱包#how_to_use)
 
 ### 交易
 
-- [如何确认交易](_交易#comfire_txs)
+- [如何确认交易](zh-cn/platon-samurai/_交易#comfire_txs)
 
 ### Wasm合约
 
-- [Wasm合约是什么](_Wasm合约#what_is_msc)
+- [Wasm合约是什么](zh-cn/platon-samurai/_Wasm合约#what_is_msc)
 
-- [如何部署一个Wasm合约](_Wasm合约#how_to_deploy)
+- [如何部署一个Wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_deploy)
 
-- [如何添加别人已部署的Wasm合约](_Wasm合约#how_to_add)
+- [如何添加别人已部署的Wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_add)
 
-- [怎样运行wasm合约](_Wasm合约#how_to_run)
+- [怎样运行wasm合约](zh-cn/platon-samurai/_Wasm合约#how_to_run)
 
 ### 应用-竞选节点
-- [什么是候选节点](_竞选节点#what_is_CN)
-- [怎样参与候选节点竞选](_竞选节点#how_to_be_VN)
-- [如何提高成为验证人概率](_竞选节点#how_to_improve)
-- [候选节点为什么会被淘汰](_竞选节点#why_be_eliminated)
-- [被淘汰的节点如何再次加入竞选](_竞选节点#how_to_re-apply)
-- [如何退出竞选](_竞选节点#how_to_withdraw)
-- [如何提取被质押的资产](_竞选节点#how_to_redeem_stakes)
+- [什么是候选节点](zh-cn/platon-samurai/_竞选节点#what_is_CN)
+- [怎样参与候选节点竞选](zh-cn/platon-samurai/_竞选节点#how_to_be_VN)
+- [如何提高成为验证人概率](zh-cn/platon-samurai/_竞选节点#how_to_improve)
+- [候选节点为什么会被淘汰](zh-cn/platon-samurai/_竞选节点#why_be_eliminated)
+- [被淘汰的节点如何再次加入竞选](zh-cn/platon-samurai/_竞选节点#how_to_re-apply)
+- [如何退出竞选](zh-cn/platon-samurai/_竞选节点#how_to_withdraw)
+- [如何提取被质押的资产](zh-cn/platon-samurai/_竞选节点#how_to_redeem_stakes)

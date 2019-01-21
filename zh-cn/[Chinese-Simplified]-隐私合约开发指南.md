@@ -23,12 +23,12 @@
 
 ## 简介
 
-[PlatON](%5bChinese-Simplified%5d+%e5%bf%ab%e9%80%9f%e6%8c%87%e5%8d%97) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
+[PlatON](zh-cn/[Chinese-Simplified]-快速指南) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
 
 ## 架构
 
 <div align=left>
-<img src="privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="zh-cn/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 架构图说明：
 
@@ -78,15 +78,16 @@
 
 隐私合约运行依赖于`PlatON` 网络集群环境，提供区块链的核心功能，想要让节点提供 MPC 计算能力必须启用MPC计算功能。
 
-   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](%5BChinese-Simplified%5D-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
+   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/%5BChinese-Simplified%5D-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
 
-   2. 集群环境搭建，查看 [PlatON集群环境](%5bChinese-Simplified%5d-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
+   2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
 
-   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](%5bChinese-Simplified%5d-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
+   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
 
 - protobuf 3.5.2
 
 在隐私合约中用 [protobuf](https://github.com/protocolbuffers/protobuf) 来实现自定义结构体，并提供pb消息打包和解包能力。当前 protobuf 需为 `3.5.2` 版本，安装步骤如下：
+
 
 ```bash
 # 下载v3.5.2代码
@@ -97,6 +98,8 @@ $ git checkout v3.5.2
 $ mkdir -p build
 $ cd build && cmake ..
 $ sudo make && make install
+
+
 ```
 
 - plang 编译器
@@ -110,11 +113,15 @@ plang 编译器集成了 `llvm` 和 `clang 编译器` 源码包，运行时依�
 
 使用 [emp-tool](https://github.com/PlatONnetwork/emp-tool) 提供核心的MPC计算对象，下载合约包使用以下命令。
 
+
 ```bash
 $ git clone https://github.com/PlatONnetwork/emp-tool.git
+
+
 ```
 
 emp-tool/include目录包含所需头文件：
+
 
 ```bash
 include/
@@ -128,11 +135,14 @@ include/
 ├── integer.h
 ├── number.h
 └── swappable.h
+
+
 ```
 
 ### 隐私合约实现
 
 编写一个隐私合约 `YaoMillionairesProblem.cpp` 解决姚氏百万富翁问题。代码实现如下：
+
 
 ```c++
 #include <iostream>
@@ -157,15 +167,20 @@ bool YaoMillionairesProblem(int money1, int money2) {
     std::cout << __FUNCTION__ << " result(=Alice-Bob): " << ret << std::endl;
 
     return ret >= 0;
-} 
+}
+
+
 ```
 
 当前，隐私合约项目需要在 `plang` 项目 `make` 之后进入 `{privacy-contract-compiler}/build/bin` 目录下创建工程目录，这里为 `YaoProblem`。
+
 
 ```bash
 $ pwd
 /home/platon/privacy-contract/privacy-contract-compiler/build/bin
 $ mkdir YaoProblem && cd YaoProblem
+
+
 ```
 
 保存以上代码为文件`YaoMillionairesProblem.cpp`，将代码文件保存到 `YaoProblem` 目录下
@@ -173,6 +188,7 @@ $ mkdir YaoProblem && cd YaoProblem
 ### 隐私合约编译
 
 编译隐私合约前，拷贝 `emp-tool/include` 到工程目录 `YaoProblem`，查看工作区目录树类似如下：
+
 
 ```bash
 .
@@ -185,9 +201,12 @@ $ mkdir YaoProblem && cd YaoProblem
 |       ├── integer.h                         # 隐私计算对象头文件
 |       └── ...
 └── ...
+
+
 ```
 
 `config.json` 为配置两个数据提供方基本信息的配置文件。用户需改为自己提供数据服务的账户地址。配置如下：
+
 
 ```json
 {
@@ -208,6 +227,8 @@ $ mkdir YaoProblem && cd YaoProblem
         "0x3771c08952f96e70af27324de11bb380ec388ec3": "DirectNodeServer:default -h 127.0.0.1 -p 10002"
     }
 }
+
+
 ```
 
 配置文件说明：
@@ -216,15 +237,20 @@ $ mkdir YaoProblem && cd YaoProblem
 * `parties`    数据提供方钱包地址列表，目前只支持两方参与。
 * `method-price`    为每个函数进行定价，示例中将函数`YaoMillionairesProblem`定价为 **200000**
 * `profit-rules`    指定计算结束后的分配规则，暂时按计算人数等比例分配
-* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里](%5bChinese-Simplified%5d-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
+* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
 
 编译命令：
 
+
 ```shell
 $ ../plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include -mpcc YaoMillionairesContract.cpp
+
+
 ```
 
 终端输出：
+
+
 ```
 debug digest:
  * IR NAME: MPCYaoMillionairesProblem
@@ -239,9 +265,12 @@ digest:
  * <p>
  * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
  * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+
+
 ```
 
 输出文件如下:
+
 
 ```
 ├── code
@@ -251,6 +280,8 @@ digest:
 │       ├── ProxyYaoMillionairesProblem.java            # 给计算发起方使用
 │       └── ProxyYaoMillionairesProblem-README.TXT
 └── YaoMillionairesContract.cpp                         # 生成WASM合约，最终上链的合约文件
+
+
 ```
 
 更多 `plang` 编译器使用详情，参考 [**Usage**](https://github.com/PlatONnetwork/privacy-contract-compiler#Usage)
@@ -259,28 +290,35 @@ digest:
 
 ### 隐私合约发布
 
-隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](%5bChinese-Simplified%5d-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
+隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
 
 1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
 
-2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem` 
+2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem`
+
 
 ```bash
 $ cd {pWasm}
 $ ./script/autoproject.sh . YaoProblem
+
+
 ```
 
 3. 拷贝隐私合约编译后的文件 `YaoMillionairesContract.cpp` 内容到 `{pWasm}/user/YaoProblem/YaoProblem.cpp`，然后进入 `{pWasm}/build` 编译
+
 
 ```bash
 $ cp YaoMillionairesContract.cpp ${pWasm}/user/YaoProblem/YaoProblem.cpp
 $ cd {pWasm}/build
 $ make
+
+
 ```
 
 4. 创建 `config.json` 配置文件，配置当前合约发布的信息：
+
 
 ```bash
 {
@@ -288,11 +326,14 @@ $ make
   "gas":"0x99999788888",
   "gasPrice":"0x333330",
   "from":"0x9a568e649c3a9d43b7f565ff2c835a24934ba447"
-} 
+}
+
+
 ```
 说明：发布合约可以是由任意账户发起。
 
 5. 连接 `http://127.0.0.1:6789` 节点，解锁 `0x9a568e649c3a9d43b7f565ff2c835a24934ba447` 账户
+
 
 ```bash
 $ platon 
@@ -300,19 +341,24 @@ $ platon
 Unlock account 0x9a568e649c3a9d43b7f565ff2c835a24934ba447
 Passphrase:
 true
+
+
 ```
 
 6. 发布 Wasm 合约
 
+
 ```bash
 $ chmod u+x ctool
-$ ./ctool deploy --abi ./YaoProblem.cpp.abi.json --code ./YaoProblem.wasm --config ./config.json 
+$ ./ctool deploy --abi ./YaoProblem.cpp.abi.json --code ./YaoProblem.wasm --config ./config.json
+
+
 ```
 
 假定合约发布后的合约地址为：
 > 0x43355c787c50b647c425f594b441d4bd75198888
 
-**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](%5bChinese-Simplified%5d-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
+**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
 ### 隐私数据服务实现
 
@@ -328,6 +374,7 @@ MPC计算节点上保存隐私数据提供方的钱包文件，数据提供方�
 
 * 创建 JAVA 普通 Maven 工程，修改`pom.xml`，添加maven仓库地址
 
+
 ```xml
 <repositories>
    <repository>
@@ -336,9 +383,12 @@ MPC计算节点上保存隐私数据提供方的钱包文件，数据提供方�
         <url>https://sdk.platon.network/nexus/content/groups/public/</url>
     </repository>
 </repositories>
+
+
 ```
 
 * 引入`mpc-data-sdk`依赖
+
 
 ```xml
 <dependency>
@@ -346,6 +396,8 @@ MPC计算节点上保存隐私数据提供方的钱包文件，数据提供方�
     <artifactId>mpc-data-sdk</artifactId>
     <version>1.0</version>
 </dependency>
+
+
 ```
 
 * 代码实现
@@ -353,6 +405,7 @@ MPC计算节点上保存隐私数据提供方的钱包文件，数据提供方�
 在工程中新建 `net.platon.vm.mpc` 包，将 `plang` 编译隐私合约后生成的 JAVA 代码 `MPCYaoMillionairesProblem.java` 放入包中。**不要修改包名！！** 接下来实现`inputImpl`方法。
 
 Alice方只需要实现 `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01` 类中的方法，代码实现如下：
+
 
 ```java
 /**
@@ -368,9 +421,13 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01 extends 
         return Data.Int32(ret_value);
     }
 }
+
+
 ```
 
 Bob方只需要实现 `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02` 类中的方法，代码实现如下：
+
+
 ```java
 /**
  * YaoMillionairesProblem(int,int)
@@ -385,6 +442,8 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends 
         return Data.Int32(ret_value);
     }
 }
+
+
 ```
 
 文件中出现文件名与方法名恰好一样并且都还不短，但这是符合命名规范的。所以不要纠结类名或方法名太长，再次强调 **不要修改类名！！** 类名格式说明：
@@ -407,6 +466,8 @@ final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends 
 * 定义程序入口
 
 新增应用程序入口类，该入口函数用于在启动应用程序时接受参数并启动服务：
+
+
 ```java
 public class Client {
     public static void main(String[] args) {
@@ -419,6 +480,8 @@ public class Client {
         app.start(args);
     }
 }
+
+
 ```
 
 程序启动需要传入3个参数，这些参数可以通过 `args`系统变量传入，也可以在 `main` 函数中通过硬编码指定。
@@ -435,22 +498,28 @@ public class Client {
 
 `Alice` 方的 `cfg.client1.config` 配置如下：
 
+
 ```
 TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10001
 Callback.Client.Endpoints=default -h 10.10.8.163
+
+
 ```
 
 `Bob` 方的 `cfg.client2.config` 配置如下：
 
+
 ```
 TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10002
 Callback.Client.Endpoints=default -h 10.10.8.163
+
+
 ```
 
 配置文件说明：
 
 - MPC 计算过程中需要两个数据提供方（`Alice` & `Bob`）同时启动隐私数据服务，但 `Alice` 方和 `Bob` 方的启动没有先后顺序。
--  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能](%5bChinese-Simplified%5d-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
+-  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
 - 如果启动节点的时候没有指定 `--mpc.ice` 的配置，则默认端口是`8201`
 - `Callback.Client.Endpoints`为启动数据隐私服务所在的服务器地址
 
@@ -459,25 +528,39 @@ Callback.Client.Endpoints=default -h 10.10.8.163
 可以将该 maven 项目打成可执行的 jar 包运行，也可直接执行main函数，我们以 jar 包的形式运行，命令如下：
 
 Alice方：
+
+
 ```bash
 $ java -jar mpc-data-sdk-client1-1.0-SNAPSHOT.jar --walletPath=./config/9a568e649c3a9d43b7f565ff2c835a24934ba447 --walletPass=11111111 --iceCfgFile=./config/cfg.client1.config
+
+
 ```
 
 Bob方：
+
+
 ```bash
 $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/ce3a4aa58432065c4c5fae85106aee4aef77a115 --walletPass=11111111 --iceCfgFile=./config/cfg.client2.config
+
+
 ```
 
 上述命令会让程序启动时与 MPC 计算节点进行连接。需要注意的是，只有数据提供方与各自的 `MPC` 计算节点都连接成功，才能进行下一步操作。连接成功之后在各自节点 `log` 目录下 `platon_mpc_XXXX.log` 日志中能看到以下信息，其中 `XXXX` 为节点进程号：
 
+
 ```
 [mpc_task_session_impl.cpp:15:registTransactionCallback] ##  user_address:0x9a568e649c3a9d43b7f565ff2c835a24934ba447, registTransactionCallback
 [mpc_task_session_impl.cpp:26:registerIR]    ## ir_hash:0x9a568e649c3a9d43b7f565ff2c835a24934ba447, registerIR
+
+
 ```
+
 
 ```
 [mpc_task_session_impl.cpp:15:registTransactionCallback]##  user_address:0xce3a4aa58432065c4c5fae85106aee4aef77a115, registTransactionCallback 
-[mpc_task_session_impl.cpp:26:registerIR]	## ir_hash:0xce3a4aa58432065c4c5fae85106aee4aef77a115, registerIR 
+[mpc_task_session_impl.cpp:26:registerIR]	## ir_hash:0xce3a4aa58432065c4c5fae85106aee4aef77a115, registerIR
+
+
 ```
 
 ### 隐私客户端实现
@@ -495,6 +578,8 @@ $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/ce3a4aa5
 **步骤一：隐私客户端实现代码**
 
 - 创建 JAVA 普通 Maven 工程，修改`pom.xml`，添加maven仓库地址
+
+
 ```xml
 <repositories>
    <repository>
@@ -503,20 +588,27 @@ $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/ce3a4aa5
         <url>https://sdk.platon.network/nexus/content/groups/public/</url>
     </repository>
 </repositories>
+
+
 ```
 
 - 引入`mpc-proxy-sdk`依赖。
+
+
 ```xml
 <dependency>
     <groupId>net.platon.mpc</groupId>
     <artifactId>mpc-proxy-sdk</artifactId>
     <version>1.0</version>
 </dependency>
+
+
 ```
 
 - 代码实现
 
 在工程中新建 `platon.mpc.proxy` 包，将`plang`编译之后生成 JAVA 代码中`ProxyYaoMillionairesProblem.java`放入包中，**不要修改包名！！** 创建程序入口，main函数实现如下：
+
 
 ```java
 public static void main(String[] args) {
@@ -544,16 +636,24 @@ public static void main(String[] args) {
     String transactionHash = client.startCalc(ProxyYaoMillionairesProblem.Method.boolean_YaoMillionairesProblem_int_int, 3);
 
 }
+
+
 ```
 
 **步骤二：发起计算请求**
 
 在此步骤为便于调试，可在 IDE 端直接运行main函数发起计算，此时在控制台中会输出发起计算的交易hash:
+
+
 ```
 transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c
+
+
 ```
 
 计算过程需要出20个块后才有日志输出和结果，计算成功后，在两方节点 `log` 目录下 `platon_mpc_XXXX.log` 日志中能看到以下信息，其中 `XXXX` 为节点进程号：
+
+
 ```
 ===================================================
         taskId: 54396487fef9eb7e3a098755ed88e187866e6d2032aba55592a1ba2e0ab7b4e8
@@ -571,7 +671,11 @@ transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5
         status: PROCESS_OK
         errmsg: OK
 ===================================================
+
+
 ```
+
+
 ```
 ===================================================
          taskId: 54396487fef9eb7e3a098755ed88e187866e6d2032aba55592a1ba2e0ab7b4e8    
@@ -590,12 +694,15 @@ transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5
          errmsg: OK
  ===================================================
 
+
 ```
 **注意：只有在两方均 `PROCESS_OK` 才算计算成功。**
 
 **步骤三：查询结果**
 
 可通过sdk中提供的方法获取，代码实现如下：
+
+
 ```java
 public static void main(String[] args) {
     /*
@@ -629,6 +736,8 @@ public static void main(String[] args) {
         }
    }
 }
+
+
 ```
 
 通过交易 hash 返回的结果 `cipher` 是密文，`getBool(cipher)` 方法会将密文解密，然后转换为相应类型。
@@ -636,6 +745,8 @@ public static void main(String[] args) {
 **注意：只能由上一步中的计算发起方解密获取明文，其他人只能获取密文，用 `getBool(cipher)` 方法转换会失败。**
 
 查询交易回执：
+
+
 ```
 {
   blockHash: "0x7b59c274d6e4e67cbee9e92e754ada44e6ff88fe4de632680758a3d6eb9eecc0",
@@ -661,13 +772,15 @@ public static void main(String[] args) {
   transactionHash: "0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c",
   transactionIndex: 0
 }
+
+
 ```
 在获取的结果回执中，如果logs中为空，则说明任务执行失败！更多细节与描述参考完整工程[mpc-proxy-sdk](https://github.com/PlatONnetwork/privacy-contract-sdk/blob/master/README.md)。
 
 
 ## 隐私合约
 
-**隐私合约**是 [PlatON](%5bChinese-Simplified%5d+%e5%bf%ab%e9%80%9f%e6%8c%87%e5%8d%97) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
+**隐私合约**是 [PlatON](zh-cn/[Chinese-Simplified]-快速指南) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
 
 **注意**：当前版本仅提供两方安全计算的隐私合约编写的规范，三方及多方隐私计算计算版本将陆续推出。
 
@@ -675,6 +788,8 @@ public static void main(String[] args) {
 
 PlatON底层封装了对隐私计算对象，用来承接隐私数据，目前仅仅支持整型隐私计算对象，即**emp::Integer**，并提供了一些构造方法，将基础数据类型转化为隐私对象，然后对隐私对象进行运算操作实现隐私计算逻辑。 
 - 构造方法：
+
+
 ```
 Integer(const int8_t& value, int party = PUBLIC);
 Integer(const int16_t& value, int party = PUBLIC);
@@ -683,15 +798,22 @@ Integer(const int64_t& value, int party = PUBLIC);
 	
 //长整数构造，length表示位数，str表示十进制整数
 Integer(int length, const string& str, int party = PUBLIC);
+
+
 ```
 在提供的构造方法中，支持将8位、16位、32位、64位整型以及其他任意长度的整型转化为隐私计算对象，并指定对应的参与方，目前参与方只能为`emp::ALICE`或`emp:BOB`。 如声明32位有符号整型隐私计算对象方式如下：
+
 
 ```cpp
 int32_t in=123;
 emp::Integer v1(in, emp::ALICE); //声明Alice 隐私计算变量
 emp::Integer v2(in, emp::BOB);   //声明Bob 隐私计算变量
+
+
 ```
 - 操作符重载：
+
+
 ```
 //位运算
 Integer operator<<(int shamt)const;
@@ -711,18 +833,25 @@ Integer operator%(const Integer& rhs)const;
 Integer operator&(const Integer& rhs)const;
 Integer operator|(const Integer& rhs)const;
 Integer operator^(const Integer& rhs) const;
+
+
 ```
 对整型隐私对象`emp::Integer`提供了位运算、算术运算和逻辑运算的接口，使用方式如下：
+
+
 ```
 int32_t in=123;
 emp::Integer v1(in, emp::ALICE); 
 emp::Integer v2(in, emp::BOB);  
 emp::Integer ret1 = v1 << 1;     
 emp::Integer ret2 = v1 + v2;      
-emp::Integer ret3 = (v1 & v2);    
+emp::Integer ret3 = (v1 & v2);
+
+
 ```
 
 - 运算方法：
+
 
 ```
 //比较emp::Integer大小
@@ -731,33 +860,51 @@ Bit geq(const Integer & rhs) const;
 Bit equal(const Integer & rhs) const;
 //将emp::Integer取绝对值
 Integer abs() const;
+
+
 ```
 对整型隐私对象`emp::Integer`提供了比较大小和绝对值运算接口，如比较两个整型隐私对象的差值做绝对值运算如下：
+
+
 ``` 
 int32_t in=123;
 emp::Integer v1(in, emp::ALICE); 
 emp::Integer v2(in, emp::BOB);  
 emp::Integer ret1 = (v1 - v2).abs()
+
+
 ```
 - 取值
+
+
 ```
 string reveal_string(int party = PUBLIC) const;
 int64_t reveal(int party = PUBLIC) const;
 uint64_t reveal_uint(int party = PUBLIC) const;
+
+
 ```
 用于取出隐私对象中的值，转为相应的基础类型，使用方式如下：
+
+
 ```
 int32_t in=123;
 emp::Integer v1(in, emp::ALICE); 
 emp::Integer v2(in, emp::BOB); 
 emp::Integer ret1 = (v1 - v2).abs()
-int32_t ret = ret1.reveal()  
+int32_t ret = ret1.reveal()
+
+
 ```
 - 其他
+
+
 ```
 int size() const;                        //计算隐私对象的位数
 Bit& operator[](int index);              //取index上的值
 const Bit & operator[](int index) const; //取index上的值
+
+
 ```
 完整的隐私计算对象`emp::Integer`头文件可在[这里](https://github.com/kelvinskk/emp-tool/blob/8d86e41a8f5e234465698fe4da4a6730cf4e0cee/include/integer.h)查看。
 
@@ -771,15 +918,22 @@ const Bit & operator[](int index) const; //取index上的值
 
 函数定义原型：
 
+
 ```cpp
 return_type function_name(declare_type in1, declare_type in2)
+
+
 ```
 参数说明：
+
+
 ```
 in1:           Alice方数据
 in2:           Bob方的数据
 declare_type:  入参类型
 return_type:   返回类型
+
+
 ```
 **注意：**
 
@@ -796,6 +950,8 @@ return_type:   返回类型
 ### 使用范例
 
 - 范例一：编写一个输入和返回为基础类型的隐私计算函数如下：
+
+
 ```cpp
 #include "integer.h"    
 
@@ -807,10 +963,14 @@ bool YaoMillionairesProblem(int in1, int in2) {
     emp::Integer bob(in2, emp::BOB);       	// Bob输入
     int ret = (alice - bob).reveal();      	// 执行比较大小，并获取比较结果
     return ret >= 0;
-} 
+}
+
+
 ```
 
 - 范例二：编写一个带有`protobuf`自定义类型的隐私计算函数如下：
+
+
 ```
 #include "msg.pb.h"
 #include "integer.h"   
@@ -829,8 +989,12 @@ Foo foo_abs(const Foo& in1, int32_t in2){
     foo.set_item2(ret2.reveal());                   //重置item2
     return foo;                                     
 }
+
+
 ```
 其中Foo定义如下：msg.proto
+
+
 ```protobuf
 syntax = "proto3";
 message Foo {
@@ -838,11 +1002,16 @@ message Foo {
     int32 item2 = 2;
     string info = 3;
 };
+
+
 ```
 在隐私合约中使用自定义类型的引用之前，需要将`proto`文件编译生成`msg.pb.h`、`msg.pb.cc`、`Msg.java` 三个文件，其中`msg.pb.h`作为隐私合约编写的头文件，`msg.pb.cc`、`Msg.java` 在 `plang` 编译隐私合约时分别通过参数`-protobuf-cc`、`-protobuf-java`指定参与编译，且`Msg.java`在数据输入端和计算发起端时候需要引入。`proto`编译方式如下：
 
+
 ```bash
 $ protoc msg.proto --cpp_out=./ --java_out=./ -I{path/to/protobuf/include}
+
+
 ```
 其中 `{path/to/protobuf/include}`需替换为`protobuf`安装头文件路径。
 
@@ -852,14 +1021,19 @@ $ protoc msg.proto --cpp_out=./ --java_out=./ -I{path/to/protobuf/include}
 
 ### MPC回调接口
 
+
 ```java
 public interface MpcCallbackInterface {
     public byte[] input(final InputRequestPara para);                    // data input
     public void error(final InputRequestPara para, ErrorCode error);     // error notify
     public void result(final InputRequestPara para, final byte[] data);  // result notify
 }
+
+
 ```
 在用`plang`生成的客户端代码中会生成该接口的实现类，如下：
+
+
 ```
 abstract class MpcCallbackBase_fbbf2d8c40e87f406991b1d40bdd94dd implements MpcCallbackInterface {
         public abstract byte[] inputImpl(final InputRequestPara para);
@@ -878,6 +1052,8 @@ abstract class MpcCallbackBase_fbbf2d8c40e87f406991b1d40bdd94dd implements MpcCa
             // TODO: do what you want to do
         }
  }
+
+
 ```
 
 方法使用说明：
@@ -896,9 +1072,12 @@ abstract class MpcCallbackBase_fbbf2d8c40e87f406991b1d40bdd94dd implements MpcCa
 
 ### 发起计算
 
+
 ```java
 public String startCalc(Method method)
 public String startCalc(Method method, int retry)
+
+
 ```
 函数功能：
 
@@ -912,9 +1091,12 @@ public String startCalc(Method method, int retry)
 
 ### 获取任务ID
 
+
 ```java
 public String getTaskId(String transactionHash)
 public String getTaskId(String transactionHash, long timeout)
+
+
 ```
 函数功能：
 
@@ -927,8 +1109,11 @@ public String getTaskId(String transactionHash, long timeout)
 
 ### 获取交易回执
 
+
 ```java
 public TransactionReceipt getTransactionReceipt(String transactionHash);
+
+
 ```
 函数功能：
  * 根据交易hash，获取交易回执。
@@ -936,6 +1121,7 @@ public TransactionReceipt getTransactionReceipt(String transactionHash);
 参数说明：
 * `transactionHash`：发起计算方法 `startCalc` 返回的交易哈希
 * 返回值：交易回执。如果计算成功，返回的交易回执中 `logs` 参数不为空，否则表示计算失败。`logs` 实例如下：
+
 
 ```
 logs: [{
@@ -949,15 +1135,20 @@ logs: [{
       transactionHash: "0x9bbf80f7d976e422472bd3cb3b96eb9fc71116c581da31da5102928db3fe4db3",
       transactionIndex: 0
   }],
+
+
 ```
 
 ### 获取结果密文
+
 
 ```java
 public String getResultByTransactionHash(String transactionHash)
 public String getResultByTransactionHash(String transactionHash, long timeout)
 public String getResultByTaskId(String taskId)
 public String getResultByTaskId(String taskId, long timeout)
+
+
 ```
 函数功能：
  * 根据交易hash或者任务ID，查询计算结果，结果是用计算发起方的公钥加密(ECIES)后的密文。
@@ -971,12 +1162,15 @@ public String getResultByTaskId(String taskId, long timeout)
 
 ### 获取结果明文
 
+
 ```java
 public int getInt32(String cipher)
 public long getInt64(String cipher)
 // getUInt32 getUInt64 getBool getFloat getDouble getString ... 
 public com.abc.sample.Samples.Foo getFoo(String cipher)
 // ...
+
+
 ```
 函数功能：
 
@@ -990,8 +1184,11 @@ public com.abc.sample.Samples.Foo getFoo(String cipher)
 
 ### 其他
 
+
 ```java
 public static void showMethodMap()
+
+
 ```
 函数功能：     
 
@@ -1000,6 +1197,8 @@ public static void showMethodMap()
 
 ```java
 public String getPlainText(String cipher)
+
+
 ```
 函数功能：     
 
