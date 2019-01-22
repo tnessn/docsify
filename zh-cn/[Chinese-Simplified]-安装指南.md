@@ -1,4 +1,4 @@
-**本文档提供`PlatON`在不同环境的安装，安装完成之后需要启动节点请参考文档[私有网络](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C)。**
+**本文档提供`PlatON`在不同环境的安装，安装完成之后需要启动节点请参考文档[私有网络](/zh-cn/%5BChinese-Simplified%5D-%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C)。**
 
 PlatON支持不同的运行环境。
 + Linux/Unix环境安装
@@ -126,7 +126,7 @@ $ make all-with-mpc
 
 >**提示**：
 
->`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里]([Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
+>`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
 
 ## Windows安装
 

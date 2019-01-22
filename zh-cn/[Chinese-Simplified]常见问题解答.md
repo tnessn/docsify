@@ -94,7 +94,7 @@ PlatON目前仅发布了GO版本，软件需求如下：
 - Golang：Go 1.7以上
 - mingw：Windows需要mingw 6.0.0以上
 
-更加具体的节点安装部署说明请参考[PlatON Wiki]([Chinese-Simplified]-快速指南)
+更加具体的节点安装部署说明请参考[PlatON Wiki](zh-cn/[Chinese-Simplified]-快速指南)
 
 <div style="text-align: right;font-style:italic;color:#C0C0C0">感谢微信昵称为“韭菜包子”的热心网友提问</div>
 

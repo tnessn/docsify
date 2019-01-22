@@ -15,7 +15,7 @@
 
 ### 合约模板
 
-合约语法规则请参考资料：[Wasm合约开发指南]([Chinese-Simplified]-Wasm合约开发指南)
+合约语法规则请参考资料：[Wasm合约开发指南](zh-cn/[Chinese-Simplified]-Wasm合约开发指南)
 
 `Privacy Contract` 范例：[点击查看](privacy-contract/mpcc.cpp)
 

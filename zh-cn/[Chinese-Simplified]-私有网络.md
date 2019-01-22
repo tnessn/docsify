@@ -1,6 +1,6 @@
 如果你不能或不想连接到外部网络，也可以选择搭建自己的私有网络。
 
-设置前确保已经按照[PlatON安装指南]([Chinese-Simplified]-安装指南)安装好PlatON。
+设置前确保已经按照[PlatON安装指南](zh-cn/[Chinese-Simplified]-安装指南)安装好PlatON。
 
 本文假设Ubuntu环境下工作目录为 `~/platon-node` ，Windows环境下工作目录为 `D:\platon-node`。注意后续均在工作目录下进行。
 
@@ -482,9 +482,9 @@ $ nohup ./platon ... --nodekey "./data1/platon/nodekey" >> node1.log 2>&1 &
 
 ## 为节点启用MPC功能
 
-MPC 计算功能是PlatON 平台支持的安全多方计算功能，为实现隐私计算提供基础设施。更多MPC相关请[参考这里]([Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)。**MPC计算功能仅能在[集群环境](#PlatON-%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)下启用，并且当前只支持 Ubuntu 系统。**
+MPC 计算功能是PlatON 平台支持的安全多方计算功能，为实现隐私计算提供基础设施。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)。**MPC计算功能仅能在[集群环境](#PlatON-%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)下启用，并且当前只支持 Ubuntu 系统。**
 
-如需要使用MPC计算功能，首先务必确保是用[源码编译安装]([Chinese-Simplified]-%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97#%e6%ba%90%e7%a0%81%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85)带 `MPC` 功能的 `platon` 二进制可执行程序。并且下载配置了 mpclib 依赖库文件。
+如需要使用MPC计算功能，首先务必确保是用[源码编译安装](zh-cn/[Chinese-Simplified]-%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97#%e6%ba%90%e7%a0%81%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85)带 `MPC` 功能的 `platon` 二进制可执行程序。并且下载配置了 mpclib 依赖库文件。
 
 在启动节点时还需要如下操作：
 

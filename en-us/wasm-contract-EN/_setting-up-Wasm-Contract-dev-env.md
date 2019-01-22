@@ -235,7 +235,7 @@ $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--f
 * `command`: The command to be executed. For more feature options, please run `./ctool.exe help`.
 * `abi_path`: The path to the ABI file. In the example this is where the file `firstdemo.cpp.abi.json` is located.
 * `wasm_path` : The path to the WASM file. In the example this is where the file `firstdemo.wasm` is located.
-* `config_path` : The path to the configuration file. The configuration file is used for setting up [PlatON Nodes]([English]-Getting-Started) and account information.
+* `config_path` : The path to the configuration file. The configuration file is used for setting up [PlatON Nodes](en-us/[English]-Getting-Started) and account information.
 
 **Please note:**
 If the configuration file path is not explicitly set on the command line, a file with the name `config.json` will be read from the current working path. 
@@ -265,10 +265,10 @@ Profile field description:
 
 ### Deploying contracts
 
-1. You can either deploy the Wasm contracts to the [Test Network]([English]-Getting-Started#Connect-to-the-Baleyworld-testnet) ,
-or to our PlatON main network (not yet open). The only condition is that you already have an account in the network that holds a certain amount of Energon. If not, you can also build a [Private Network]([English]-Private-Networks) for testing.
+1. You can either deploy the Wasm contracts to the [Test Network](en-us/[English]-Getting-Started#Connect-to-the-Baleyworld-testnet) ,
+or to our PlatON main network (not yet open). The only condition is that you already have an account in the network that holds a certain amount of Energon. If not, you can also build a [Private Network](en-us/[English]-Private-Networks) for testing.
 
-2. For instructions on how to connect to a PlatON node, see the [Quick Start]([English]-Getting-Started#Connecting-to-the-network) guide.
+2. For instructions on how to connect to a PlatON node, see the [Quick Start](en-us/[English]-Getting-Started#Connecting-to-the-network) guide.
 
 3. Make sure that the `personal` RPC interface is enabled when the node starts. Unlock an account holding Energon and enter the account password:
 

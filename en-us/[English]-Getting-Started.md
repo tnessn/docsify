@@ -2,7 +2,7 @@
 > Quickstart: Installing and running PlatON nodes
 
 ## Installing PlatON
-PlatON supports various Linux flavors as well as Windows and Docker. For each platform installation instructions, please refer to [Installation Instructions]([English]-Installation-Instructions).
+PlatON supports various Linux flavors as well as Windows and Docker. For each platform installation instructions, please refer to [Installation Instructions](en-us/[English]-Installation-Instructions).
 
 We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. Note that the following operations are performed in the working directory.
 
@@ -11,11 +11,11 @@ We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\pl
 ### Connect to the Baleyworld testnet
 
 The Baleyworld TestNet is live. There are two ways to connect to it:
-* download the [Samurai Wallet](https://download.platon.network/0.3/samurai-windows-x86_64-0.3.0.zip) client and follow the [instructions here]([English]-Samurai-Wallet) to install and connect to TestNet.
+* download the [Samurai Wallet](https://download.platon.network/0.3/samurai-windows-x86_64-0.3.0.zip) client and follow the [instructions here](en-us/[English]-Samurai-Wallet) to install and connect to TestNet.
 * Use interactive command line tools to install and connect [learn more](https://github.com/PlatONnetwork/wiki/wiki/_javascript-console)
 
 ### Building a private network
-If you are unable to connect to external networks, or if you want to test Platon locally, see [Creating private networks]([English]-Private-Networks).
+If you are unable to connect to external networks, or if you want to test Platon locally, see [Creating private networks](en-us/[English]-Private-Networks).
 
 ### Connecting to nodes
 
@@ -61,7 +61,7 @@ The output is the account address.
 
 
 ```
-In this example, `0x566c274db7ac6d38da2b075b4ae41f4a5c481d21` is the coinbase account created when [creating private network]([English]-Private-Networks) and has been pre-allocated in the genesis block.
+In this example, `0x566c274db7ac6d38da2b075b4ae41f4a5c481d21` is the coinbase account created when [creating private network](en-us/[English]-Private-Networks) and has been pre-allocated in the genesis block.
 
 ## unlocking account
 You need to unlock your account before sending a transaction.
