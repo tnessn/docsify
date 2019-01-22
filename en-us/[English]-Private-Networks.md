@@ -1,7 +1,7 @@
 
 Sometimes you might not need to connect to the live public network, you can instead choose to create your own private testnet. This is very useful if you don't need to test external contracts and want just to test the technology, because you won't have to compete with other minters and will easily generate a lot of test energon play around.
 
-We assume you are able to install `platon` following the [Installation Instructions](en-us/[English]-Installation-Instructions).
+We assume you are able to install `platon` following the [Installation Instructions]([English]-Installation-Instructions).
 
 We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. 
 

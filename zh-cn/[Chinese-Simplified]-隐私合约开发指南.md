@@ -23,7 +23,7 @@
 
 ## 简介
 
-[PlatON](zh-cn/[Chinese-Simplified]-快速指南) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
+[PlatON]([Chinese-Simplified]-快速指南) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
 
 ## 架构
 
@@ -80,9 +80,9 @@
 
    1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/%5BChinese-Simplified%5D-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
 
-   2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
+   2. 集群环境搭建，查看 [PlatON集群环境]([Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
 
-   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
+   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能]([Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
 
 - protobuf 3.5.2
 
@@ -237,7 +237,7 @@ $ mkdir YaoProblem && cd YaoProblem
 * `parties`    数据提供方钱包地址列表，目前只支持两方参与。
 * `method-price`    为每个函数进行定价，示例中将函数`YaoMillionairesProblem`定价为 **200000**
 * `profit-rules`    指定计算结束后的分配规则，暂时按计算人数等比例分配
-* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
+* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里]([Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
 
 编译命令：
 
@@ -290,7 +290,7 @@ digest:
 
 ### 隐私合约发布
 
-隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
+隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约]([Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
 
@@ -358,7 +358,7 @@ $ ./ctool deploy --abi ./YaoProblem.cpp.abi.json --code ./YaoProblem.wasm --conf
 假定合约发布后的合约地址为：
 > 0x43355c787c50b647c425f594b441d4bd75198888
 
-**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
+**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南]([Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
 ### 隐私数据服务实现
 
@@ -519,7 +519,7 @@ Callback.Client.Endpoints=default -h 10.10.8.163
 配置文件说明：
 
 - MPC 计算过程中需要两个数据提供方（`Alice` & `Bob`）同时启动隐私数据服务，但 `Alice` 方和 `Bob` 方的启动没有先后顺序。
--  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
+-  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能]([Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
 - 如果启动节点的时候没有指定 `--mpc.ice` 的配置，则默认端口是`8201`
 - `Callback.Client.Endpoints`为启动数据隐私服务所在的服务器地址
 
@@ -780,7 +780,7 @@ public static void main(String[] args) {
 
 ## 隐私合约
 
-**隐私合约**是 [PlatON](zh-cn/[Chinese-Simplified]-快速指南) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
+**隐私合约**是 [PlatON]([Chinese-Simplified]-快速指南) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
 
 **注意**：当前版本仅提供两方安全计算的隐私合约编写的规范，三方及多方隐私计算计算版本将陆续推出。
 
