@@ -175,3 +175,20 @@
 .markdown-section pre{
     padding: 1em
 }
+.sidebar ul li a {
+    height: 35px;
+    font-size: 13px
+}
+.sidebar li {
+    margin: 0;
+    /* height: 35px; */
+}
+.markdown-section p{
+    font-size: 15px
+}
+.markdown-section pre{
+    font-size: 12px
+}
+.markdown-section pre, .markdown-section pre > code{
+    font-size: 12px
+}
