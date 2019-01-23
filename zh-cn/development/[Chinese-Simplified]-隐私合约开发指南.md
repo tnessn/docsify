@@ -80,9 +80,9 @@
 
    1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/basics/[Chinese-Simplified]-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
 
-   2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
+   2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
 
-   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
+   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
 
 - protobuf 3.5.2
 
@@ -216,7 +216,7 @@ $ mkdir YaoProblem && cd YaoProblem
 * `parties`    数据提供方钱包地址列表，目前只支持两方参与。
 * `method-price`    为每个函数进行定价，示例中将函数`YaoMillionairesProblem`定价为 **200000**
 * `profit-rules`    指定计算结束后的分配规则，暂时按计算人数等比例分配
-* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
+* `urls`    指定计算参与方MPC服务地址信息。其值为json对象，json对象的 key 为计算参与方地址；json对象的 value 为字符串，用来设置MPC服务地址信息，其中 `DirectNodeServer` 固定，`-h` 和 `-p` 分别为节点地址和 MPC 服务端口。MPC端口在[这里](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#为节点启用MPC功能)设定。
 
 编译命令：
 
@@ -260,7 +260,7 @@ digest:
 
 ### 隐私合约发布
 
-隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
+隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
 
@@ -313,7 +313,7 @@ $ ./ctool deploy --abi ./YaoProblem.cpp.abi.json --code ./YaoProblem.wasm --conf
 假定合约发布后的合约地址为：
 > 0x43355c787c50b647c425f594b441d4bd75198888
 
-**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](zh-cn/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
+**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
 ### 隐私数据服务实现
 
@@ -453,7 +453,7 @@ Callback.Client.Endpoints=default -h 10.10.8.163
 配置文件说明：
 
 - MPC 计算过程中需要两个数据提供方（`Alice` & `Bob`）同时启动隐私数据服务，但 `Alice` 方和 `Bob` 方的启动没有先后顺序。
--  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能](zh-cn/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
+-  `TaskCallback.Proxy` 的地址和端口与[启动带MPC计算功能](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)的 PlatON 节点时，参数 `--mpc.ice` 指定的 ICE 配置文件中配置的地址和端口保持一致
 - 如果启动节点的时候没有指定 `--mpc.ice` 的配置，则默认端口是`8201`
 - `Callback.Client.Endpoints`为启动数据隐私服务所在的服务器地址
 
