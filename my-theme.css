@@ -137,7 +137,7 @@
 } */
 
 /* 展开箭头 */
-.sidebar-nav li>a[href^="#/"]:not([href*="?id="]):only-child{
+/*.sidebar-nav li>a[href^="#/"]:not([href*="?id="]):only-child{
     background: var(--sidebar-nav-pagelink-background-image);
 }
 .sidebar-nav li.active>a[href^="#/"]:not([href*="?id="]):not(:only-child){
@@ -150,6 +150,7 @@
 .sidebar-nav li p.active>a[href^="#/"]:not([href*="?id="]):not(:only-child){
     background: var(--sidebar-nav-pagelink-background-image--active);
 }
+*/
 
 /* .anchor::before{
     position: static;
