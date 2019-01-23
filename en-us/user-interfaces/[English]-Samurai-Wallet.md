@@ -69,9 +69,9 @@ MacOS is not supported for the time being
 
 ### Network
 
-- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-join-in-PlatON-TestNet)
+- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_join-in-a-Network#How-to-join-in-PlatON-TestNet)
 
-- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-create-a-PlatON-Private-net)
+- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_join-in-a-Network#How-to-create-a-PlatON-Private-net)
 
 ### Wallet
 
