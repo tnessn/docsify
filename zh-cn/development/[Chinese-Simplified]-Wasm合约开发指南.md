@@ -16,12 +16,12 @@ PlatON 虚拟机 `pWASM` 是Wasm合约的运行环境。具有沙盒化运行，
 
 ## 开发环境配置
 
-* [配置Wasm合约开发环境](zh-cn/wasm-contract/_配置Wasm合约开发环境#%E9%85%8D%E7%BD%AEwasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
+* [配置Wasm合约开发环境](zh-cn/development/wasm-contract/_配置Wasm合约开发环境#%E9%85%8D%E7%BD%AEwasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
 
 ## 快速开始
 
-* [编写第一个Wasm合约](zh-cn/wasm-contract/_配置Wasm合约开发环境#%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAwasm%E5%90%88%E7%BA%A6)
-* [合约发布及测试](zh-cn/wasm-contract/_配置Wasm合约开发环境#%E5%90%88%E7%BA%A6%E5%8F%91%E5%B8%83%E5%8F%8A%E6%B5%8B%E8%AF%95)
+* [编写第一个Wasm合约](zh-cn/development/wasm-contract/_配置Wasm合约开发环境#%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAwasm%E5%90%88%E7%BA%A6)
+* [合约发布及测试](zh-cn/development/wasm-contract/_配置Wasm合约开发环境#%E5%90%88%E7%BA%A6%E5%8F%91%E5%B8%83%E5%8F%8A%E6%B5%8B%E8%AF%95)
 
 ## 常见问题
 

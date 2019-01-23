@@ -15,17 +15,17 @@
 
 ### platon 
 
-* [Platon Command Line Options Introduction](en-us/cmd-line-interface/_command-line-options)
+* [Platon Command Line Options Introduction](en-us/user-interfaces/cmd-line-interface/_command-line-options)
 	- Introducing the program `platon` instructions
 
 ### ctool
 
-* [ctool instructions for use](en-us/cmd-line-interface/_ctool-usage)
+* [ctool instructions for use](en-us/user-interfaces/cmd-line-interface/_ctool-usage)
 	- Easy tools for contract deploy, transaction delivery and call functions.
 
 ### console
 
-* [console command line tool](en-us/cmd-line-interface/_javascript-console)
+* [console command line tool](en-us/user-interfaces/cmd-line-interface/_javascript-console)
 	- A javascript runtime environment (JSRE) that can be used in either interactive (console) or non-interactive (script) mode.
 
 ### Other projects, tools, etc.

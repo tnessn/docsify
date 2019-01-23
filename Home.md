@@ -1,2 +1,2 @@
-### [English]-(en-us/[English]-Introduction) 
-### [中文](zh-cn/[Chinese-Simplified]-介绍)
+### [English]-(en-us/en-us/basics/[English]-Introduction) 
+### [中文](zh-cn/basics/[Chinese-Simplified]-介绍)

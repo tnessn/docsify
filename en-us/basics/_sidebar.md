@@ -1,6 +1,6 @@
 - Basics
  
-	- [Introduction](en-us/basics/[English]-Introduction)
+	- [Introduction](en-us/basics/en-us/basics/[English]-Introduction)
 	- [White Paper](en-us/basics/[English]-Whitepaper)
 	- [Getting Started](en-us/basics/[English]-Getting-Started)
 	- [Installation Instructions](en-us/basics/[English]-Installation-Instructions)

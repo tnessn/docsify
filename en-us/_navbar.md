@@ -1,9 +1,9 @@
 <ul>
-<li><a href="#/en-us/">Basics</a></li>
+<li><a href="#/en-us/basics/">Basics</a></li>
 <li><a href="#/en-us/user-interfaces/"> User Interfaces</a></li>
-<li><a href="#/en-us/development/[English]-Wasm-Contract-Development-Guide">Development</a></li>
-<li><a href="#/en-us/interact-with-platon/[English]-JS-SDK">SDKs</a></li>
-<li><a href="#/en-us/technologies/[English]-Webassebly-on-PlatON">Technologies</a></li>
+<li><a href="#/en-us/development/">Development</a></li>
+<li><a href="#/en-us/interact-with-platon/">SDKs</a></li>
+<li><a href="#/en-us/technologies/">Technologies</a></li>
 <ul>
 
 * Language

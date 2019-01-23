@@ -43,7 +43,7 @@
 
 ### 验证人共识
 
-验证节点选出后，采用[CBFT](zh-cn/concurrent-bft/_Concurrent-BFT)协议进行共识产生区块。
+验证节点选出后，采用[CBFT](zh-cn/technologies/concurrent-bft/_Concurrent-BFT)协议进行共识产生区块。
 
 ## 验证池合约
 

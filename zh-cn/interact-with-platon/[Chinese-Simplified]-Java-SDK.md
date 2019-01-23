@@ -253,7 +253,7 @@ for(NotifyEventResponse r:eventResponses) {
 
 ###  CandidateContract
 
-> PlatOn经济模型中候选人相关的合约接口[合约描述](zh-cn/platon-ppos/_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
+> PlatOn经济模型中候选人相关的合约接口[合约描述](zh-cn/technologies/platon-ppos/_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 #### 加载合约
 

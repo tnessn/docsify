@@ -23,12 +23,12 @@
 
 ## 简介
 
-[PlatON](zh-cn/[Chinese-Simplified]-快速指南) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
+[PlatON](zh-cn/basics/[Chinese-Simplified]-快速指南) 平台作为下一代`Trustless`安全数据计算架构，为实现隐私计算提供了基础设施，安全多方计算(`MPC`) 为隐私计算提供安全执行的协议实现。PlatON公链网络和外部计算网络组合成一个数据为中心的复合网络，为用户提供安全计算服务，实现数据的价值的流动。在 `PlatON`平台上，**MPC计算虚拟机**(`MPC VM`) 作为 PlatON 计算架构中关键组件，其使用**隐私合约**进行`MPC`计算，并提供了稳定的运行时服务。
 
 ## 架构
 
 <div align=left>
-<img src="zh-cn/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="zh-cn/development/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 架构图说明：
 
@@ -679,7 +679,7 @@ public static void main(String[] args) {
 
 ## 隐私合约
 
-**隐私合约**是 [PlatON](zh-cn/[Chinese-Simplified]-快速指南) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
+**隐私合约**是 [PlatON](zh-cn/basics/[Chinese-Simplified]-快速指南) 上一种特殊的 MPC 合约，使用`C++`语言进行开发，运行在 PlatON 节点的MPC计算虚拟机（MPC VM）里。隐私合约借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。
 
 **注意**：当前版本仅提供两方安全计算的隐私合约编写的规范，三方及多方隐私计算计算版本将陆续推出。
 

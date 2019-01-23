@@ -1,7 +1,7 @@
 
 Sometimes you might not need to connect to the live public network, you can instead choose to create your own private testnet. This is very useful if you don't need to test external contracts and want just to test the technology, because you won't have to compete with other minters and will easily generate a lot of test energon play around.
 
-We assume you are able to install `platon` following the [Installation Instructions](en-us/[English]-Installation-Instructions).
+We assume you are able to install `platon` following the [Installation Instructions](en-us/basics/[English]-Installation-Instructions).
 
 We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. 
 
@@ -184,10 +184,14 @@ This way the process will keep running in the background even if you exit the te
 
 A `PlatON Cluster` is a network consisting of multiple nodes. At this point we assume that you already know how to build a single Platon node. We will now build a network consisting of two nodes; a network of more nodes will follow a similar workflow.
 
-In order to run multiple `platon` nodes locally, you must ensure that:
-- Each node instance has a separate data directory (--datadir)
-- Each instance runs on a different port, both `platon` and rpc (--port and --rpcport )
-- Each node must know about the other
+In order to run multiple `platon` nodes locally, you must ensure that:
+
+- Each node instance has a separate data directory (--datadir)
+
+- Each instance runs on a different port, both `platon` and rpc (--port and --rpcport )
+
+- Each node must know about the other
+
 - The IPC port must be restricted or unique
 
 1. **Create two data directories called data0 and data1 in platon-node directory and two new coinbase accounts for each of the two nodes.**
@@ -265,11 +269,14 @@ PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private
 
 Add the node information of the two nodes to the **initialNodes** array. Since we are generating a cluster consisting of two nodes, the array length will be two. 
 
-Modify the platon.json file:
-- Replace `node0-pubkey` with the ***node ID*** of node 0 generated in step 2.
+Modify the platon.json file:
+
+- Replace `node0-pubkey` with the ***node ID*** of node 0 generated in step 2.
+
 - Replace `node1-pubkey` with the ***node ID*** of node 1 generated in step 2.
 
-- Replace `node0-account-address` with the ***Address*** of node 0 generated in step 1.
+- Replace `node0-account-address` with the ***Address*** of node 0 generated in step 1.
+
 - Replace `node1-account-address` with the ***Address*** of node 1 generated in step 1.
 
 ```

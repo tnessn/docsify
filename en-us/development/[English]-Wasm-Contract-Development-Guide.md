@@ -16,7 +16,7 @@ This document is mainly an introduction to Wasm contract development guide under
 
 ## Development environment setup
 
-* [Setting up a Wasm contract development environment](en-us/wasm-contract-EN/_setting-up-Wasm-Contract-dev-env#setting-up)
+* [Setting up a Wasm contract development environment](en-us/basics/wasm-contract-EN/_setting-up-Wasm-Contract-dev-env#setting-up)
 
 ## Quick start
 
