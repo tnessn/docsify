@@ -397,4 +397,4 @@ For more samples and privacy data providing services, please refer [privacy cont
 [Plang]:https://github.com/PlatONnetwork/private-contract-compiler/
 [Yao's Millionaires' Problem]:https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem
 [Plang compiler user manual]:https://github.com/PlatONnetwork/wiki/plang-user-manual/
-[privacy contract sdk]:https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97
+[privacy contract sdk]:https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97

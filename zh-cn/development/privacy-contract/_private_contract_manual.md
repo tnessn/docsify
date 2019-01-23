@@ -398,7 +398,7 @@ int Millionaire(int32_t in1, int32_t in2, const std::string& category)
 
 ```
 ###  更多范例
-更多范例及细节可以参考[privacy contract sdk](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97)
+更多范例及细节可以参考[privacy contract sdk](https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97)
 
 ---------------------
 [Google Protobuf]:https://developers.google.com/protocol-buffers/
@@ -408,4 +408,4 @@ int Millionaire(int32_t in1, int32_t in2, const std::string& category)
 [百万富翁问题]:https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem
 [web3j]:https://docs.web3j.io/
 [plang编译器使用手册]:https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]-plang%e7%bc%96%e8%af%91%e5%99%a8%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c
-[privacy contract sdk]:https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97
+[privacy contract sdk]:https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6SDK%E6%8C%87%E5%8D%97
