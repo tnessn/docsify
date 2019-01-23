@@ -99,7 +99,7 @@ MacOS is not supported for the time being
 
 - [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#What-is-Wasm-contract)
 
-- [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-contract)
+- [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#how-to-deploy-a-contract)
 
 - [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#How-to-add-a-contract-that-has-been-created)
 
