@@ -32,7 +32,7 @@
 
 * [JSON RPC API](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 * [Javascript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
-* [Wasm Contract](en-us/%5BEnglish%5D-Wasm-Contract-Development-Guide)
+* [Wasm Contract](en-us/development/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 
 

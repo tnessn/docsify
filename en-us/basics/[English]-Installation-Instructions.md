@@ -1,4 +1,4 @@
-**This document provides `PlatON` installation guide for different environments， After installation, you can refer to the document [Private Network](en-us/%5BEnglish%5D-Private-Networks) to start.**
+**This document provides `PlatON` installation guide for different environments， After installation, you can refer to the document [Private Network](en-us/basics/%5BEnglish%5D-Private-Networks) to start.**
 
 Follow the appropriate link below to find installation instructions for your platform.
 + Installation Instructions for Linux/Unix
