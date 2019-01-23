@@ -192,3 +192,6 @@
 .markdown-section pre, .markdown-section pre > code{
     font-size: 12px
 }
+#main h3 a{
+    border-bottom: 0; 
+}
