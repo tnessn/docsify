@@ -93,17 +93,17 @@ MacOS is not supported for the time being
 
 ### Transaction
 
-- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_Confirm-Transactions#How-to-confirm-a-transaction)
+- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_confirm-transactions#How-to-confirm-a-transaction)
 
 ### Wasm contracts
 
-- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-Wasm-contract)
+- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#What-is-Wasm-contract)
 
 - [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-contract)
 
-- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-add-a-contract-that-has-been-created)
+- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#How-to-add-a-contract-that-has-been-created)
 
-- [How to execute a contract ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-contract)
+- [How to execute a contract ](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#How-to-execute-a-contract)
 
 ### Validator Node
 
